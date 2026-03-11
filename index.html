@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylvain Chignaguet | Consultant QA Senior Freelance</title>
+    <meta name="description" content="Sylvain — Consultant QA Senior Freelance à Bordeaux. Automatisation Cypress & Appium, stratégie de test, intégration IA. Expert jeux vidéo.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0D1117;
+            --bg-card: #161B22;
+            --accent-primary: #00E5A0;
+            --accent-secondary: #6C63FF;
+            --text-primary: #E6EDF3;
+            --text-secondary: #8B949E;
+            --highlight: #1F6FEB;
+            --border-color: rgba(230, 237, 243, 0.1);
+            
+            --font-heading: 'Syne', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Dot Grid Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: radial-gradient(rgba(139, 148, 158, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--accent-primary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: rgba(0, 229, 160, 0.1);
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px rgba(0, 229, 160, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 25px rgba(0, 229, 160, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-label {
+            font-family: var(--font-code);
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 229, 160, 0.1);
+            border-radius: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hero-visual {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            z-index: 1;
+        }
+
+        .code-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .code-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .code-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-dot:nth-child(1) { background: #FF5F56; }
+        .code-dot:nth-child(2) { background: #FFBD2E; }
+        .code-dot:nth-child(3) { background: #27C93F; }
+
+        .code-line { margin-bottom: 4px; }
+        .code-keyword { color: var(--accent-secondary); }
+        .code-string { color: var(--accent-primary); }
+        .code-function { color: var(--highlight); }
+        .code-comment { color: var(--text-secondary); font-style: italic; }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .expertise-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 229, 160, 0.05);
+        }
+        
+        .expertise-ia {
+            border-color: rgba(108, 99, 255, 0.3);
+        }
+        
+        .expertise-gaming {
+            border-color: rgba(31, 111, 235, 0.3);
+        }
+
+        .expertise-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--accent-primary);
+        }
+
+        .expertise-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .expertise-tag {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
+        /* Offres Section */
+        .offres-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .offre-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .offre-card:hover {
+            border-color: var(--text-secondary);
+            transform: translateY(-5px);
+        }
+
+        .offre-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .offre-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--text-primary);
+        }
+
+        .offre-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .offre-card p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .offre-tags {
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Special Cards */
+        .offre-card.special-ia {
+            border-color: rgba(108, 99, 255, 0.3);
+            background: linear-gradient(180deg, rgba(108, 99, 255, 0.05) 0%, var(--bg-card) 100%);
+            position: relative;
+        }
+        
+        .offre-card.special-ia:hover {
+            border-color: var(--accent-secondary);
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.15);
+        }
+
+        .offre-card.special-ia .offre-icon {
+            background: rgba(108, 99, 255, 0.1);
+        }
+
+        .offre-card.special-ia .offre-icon svg {
+            stroke: var(--accent-secondary);
+        }
+
+        .offre-card.special-ia .offre-tags {
+            color: var(--accent-secondary);
+        }
+
+        .badge-innovation {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: var(--accent-secondary);
+            color: white;
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+        }
+
+        .offre-card.special-gaming {
+            border-color: rgba(31, 111, 235, 0.3);
+            background: linear-gradient(180deg, rgba(31, 111, 235, 0.05) 0%, var(--bg-card) 100%);
+        }
+
+        .offre-card.special-gaming:hover {
+            border-color: var(--highlight);
+            box-shadow: 0 10px 30px rgba(31, 111, 235, 0.15);
+        }
+
+        .offre-card.special-gaming .offre-icon {
+            background: rgba(31, 111, 235, 0.1);
+        }
+
+        .offre-card.special-gaming .offre-icon svg {
+            stroke: var(--highlight);
+        }
+
+        .offre-card.special-gaming .offre-tags {
+            color: var(--highlight);
+        }
+
+        /* Approche Section */
+        .approche-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .approche-item {
+            display: flex;
+            gap: 24px;
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            align-items: flex-start;
+        }
+
+        .approche-number {
+            font-family: var(--font-code);
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            font-weight: 700;
+            opacity: 0.5;
+        }
+
+        .approche-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .approche-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Chiffres Section */
+        .chiffres-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 60px 0;
+        }
+
+        .chiffres-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .chiffre-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chiffre-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .chiffre-number span {
+            color: var(--accent-primary);
+        }
+
+        .chiffre-label {
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* A Propos Section */
+        .apropos-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .apropos-visual {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 24px;
+            background: linear-gradient(45deg, var(--bg-card), rgba(0, 229, 160, 0.05));
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .apropos-visual::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(from 0deg, transparent, var(--accent-primary), transparent 30%);
+            animation: rotate 10s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .apropos-visual-inner {
+            position: absolute;
+            inset: 2px;
+            background: var(--bg-dark);
+            border-radius: 22px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .apropos-visual svg {
+            width: 100px;
+            height: 100px;
+            stroke: var(--text-secondary);
+            stroke-width: 1;
+        }
+
+        .apropos-content h3 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .apropos-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Contact Section */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-method-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-method-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-primary);
+        }
+
+        .contact-method-text h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .contact-method-text a {
+            color: var(--text-secondary);
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+        }
+
+        .contact-method-text a:hover {
+            color: var(--accent-primary);
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(0, 229, 160, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-content {
+                margin-bottom: 60px;
+            }
+            .hero-location {
+                justify-content: center;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .apropos-layout, .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .chiffres-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-card);
+                flex-direction: column;
+                padding: 24px;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .chiffres-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .approche-item {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">Sylvain<span>.</span></a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#expertise">Expertise</a>
+                <a href="#offres">Offres</a>
+                <a href="#approche">Approche</a>
+                <a href="#apropos">À propos</a>
+                <a href="#contact" class="btn btn-primary">Discutons</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-content fade-up">
+                <div class="hero-label">Consultant QA Senior</div>
+                <h1>Automatisation <br><span style="color: var(--accent-primary)">Stratégie</span> · <span style="color: var(--accent-secondary)">IA</span></h1>
+                <h2>J'aide les équipes tech à livrer des logiciels fiables, plus vite.</h2>
+                <div class="hero-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Bordeaux · Nouvelle-Aquitaine · Remote France & World
+                </div>
+                <div class="hero-cta">
+                    <a href="#offres" class="btn btn-primary">Découvrir mes offres</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-visual fade-up delay-2">
+                <div class="code-block">
+                    <div class="code-header">
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                    </div>
+                    <div class="code-content" id="typewriter">
+                        <div class="code-line"><span class="code-function">describe</span>(<span class="code-string">'Qualité logicielle'</span>, () <span class="code-keyword">=></span> {</div>
+                        <div class="code-line">&nbsp;&nbsp;<span class="code-function">it</span>(<span class="code-string">'devrait garantir la fiabilité'</span>, () <span class="code-keyword">=></span> {</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cy.<span class="code-function">visit</span>(<span class="code-string">'/votre-produit'</span>)</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cy.<span class="code-function">get</span>(<span class="code-string">'[data-testid="quality"]'</span>)</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="code-function">should</span>(<span class="code-string">'be.visible'</span>)</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="code-function">and</span>(<span class="code-string">'have.class'</span>, <span class="code-string">'excellence'</span>)</div>
+                        <div class="code-line">&nbsp;&nbsp;})</div>
+                        <div class="code-line">})</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="section container">
+            <h2 class="section-title fade-up">Stack & <span>Expertise</span></h2>
+            <div class="expertise-grid">
+                <div class="expertise-card fade-up">
+                    <div class="expertise-icon">🌐</div>
+                    <h3>Automatisation Web</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Cypress</span>
+                        <span class="expertise-tag">Playwright</span>
+                        <span class="expertise-tag">Selenium</span>
+                    </div>
+                </div>
+                <div class="expertise-card fade-up delay-1">
+                    <div class="expertise-icon">📱</div>
+                    <h3>Mobile</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Appium</span>
+                        <span class="expertise-tag">iOS</span>
+                        <span class="expertise-tag">Android</span>
+                        <span class="expertise-tag">Flutter</span>
+                    </div>
+                </div>
+                <div class="expertise-card fade-up delay-2">
+                    <div class="expertise-icon">💻</div>
+                    <h3>Langages</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">TypeScript</span>
+                        <span class="expertise-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="expertise-card fade-up delay-3">
+                    <div class="expertise-icon">⚙️</div>
+                    <h3>CI/CD</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">GitHub Actions</span>
+                        <span class="expertise-tag">GitLab CI</span>
+                        <span class="expertise-tag">Jenkins</span>
+                    </div>
+                </div>
+                <div class="expertise-card fade-up">
+                    <div class="expertise-icon">🛠️</div>
+                    <h3>Outils QA</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Jira</span>
+                        <span class="expertise-tag">Xray</span>
+                        <span class="expertise-tag">Postman</span>
+                    </div>
+                </div>
+                <div class="expertise-card fade-up delay-1">
+                    <div class="expertise-icon">🗄️</div>
+                    <h3>Data & Backend</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Firebase</span>
+                        <span class="expertise-tag">Firestore</span>
+                    </div>
+                </div>
+                <div class="expertise-card expertise-ia fade-up delay-2">
+                    <div class="expertise-icon">🧠</div>
+                    <h3>IA & Innovation</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag" style="color: var(--accent-secondary)">GenAI</span>
+                        <span class="expertise-tag" style="color: var(--accent-secondary)">Copilotes QA</span>
+                    </div>
+                </div>
+                <div class="expertise-card expertise-gaming fade-up delay-3">
+                    <div class="expertise-icon">🎮</div>
+                    <h3>Gaming</h3>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag" style="color: var(--highlight)">QA Jeux Vidéo</span>
+                        <span class="expertise-tag" style="color: var(--highlight)">Gameplay</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offres Section -->
+        <section id="offres" class="section container">
+            <h2 class="section-title fade-up">Ce que j'apporte à <span>votre équipe</span></h2>
+            <div class="offres-grid">
+                <div class="offre-card fade-up">
+                    <div class="offre-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
+                    <h3>Automatisation de Tests</h3>
+                    <p>Mise en place de suites de tests robustes avec Cypress et Playwright. Tests E2E, API, composants. Intégration complète dans vos pipelines CI/CD pour un feedback continu.</p>
+                    <div class="offre-tags">
+                        <span>#Cypress</span> <span>#Playwright</span> <span>#CI/CD</span> <span>#API</span>
+                    </div>
+                </div>
+
+                <div class="offre-card fade-up delay-1">
+                    <div class="offre-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </div>
+                    <h3>QA Mobile Cross-Platform</h3>
+                    <p>Automatisation des parcours utilisateurs iOS et Android avec Appium. Stratégie de test mobile adaptée à vos contraintes de devices et d'OS.</p>
+                    <div class="offre-tags">
+                        <span>#Appium</span> <span>#iOS</span> <span>#Android</span>
+                    </div>
+                </div>
+
+                <div class="offre-card fade-up delay-2">
+                    <div class="offre-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    </div>
+                    <h3>Stratégie QA & Accompagnement</h3>
+                    <p>Audit de maturité QA, définition de KPI qualité, rédaction de cahiers de tests, coaching d'équipes. Je structure votre approche testing de A à Z.</p>
+                    <div class="offre-tags">
+                        <span>#Audit</span> <span>#KPI</span> <span>#Coaching</span>
+                    </div>
+                </div>
+
+                <div class="offre-card special-ia fade-up">
+                    <div class="badge-innovation">Innovation</div>
+                    <div class="offre-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3>IA au Service de la Qualité</h3>
+                    <p>Intégration d'intelligence artificielle dans vos process QA : génération automatique de scénarios, maintenance prédictive des tests, réduction du flaky testing, copilotes QA sur mesure.</p>
+                    <div class="offre-tags">
+                        <span>#GenAI</span> <span>#SmartMaintenance</span>
+                    </div>
+                </div>
+
+                <div class="offre-card special-gaming fade-up delay-1">
+                    <div class="offre-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+                    </div>
+                    <h3>QA Jeux Vidéo</h3>
+                    <p>Expérience dédiée au testing de jeux : tests fonctionnels et de gameplay, automatisation de scénarios in-game, tests de performance et de charge, pipelines QA adaptés aux workflows studios.</p>
+                    <div class="offre-tags">
+                        <span>#Gaming</span> <span>#Gameplay</span> <span>#Performance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approche Section -->
+        <section id="approche" class="section container">
+            <h2 class="section-title fade-up">Mon <span>approche</span></h2>
+            <div class="approche-list">
+                <div class="approche-item fade-up">
+                    <div class="approche-number">01</div>
+                    <div class="approche-content">
+                        <h3>Shift-Left</h3>
+                        <p>J'intègre la qualité dès la conception, pas en fin de sprint. Détecter un bug tôt coûte infiniment moins cher que de le corriger en production.</p>
+                    </div>
+                </div>
+                <div class="approche-item fade-up">
+                    <div class="approche-number">02</div>
+                    <div class="approche-content">
+                        <h3>Automatiser l'essentiel</h3>
+                        <p>Je ne cherche pas 100% de couverture aveugle. Je cible les tests à forte valeur ajoutée (parcours critiques) pour un ROI maximal et une maintenance maîtrisée.</p>
+                    </div>
+                </div>
+                <div class="approche-item fade-up">
+                    <div class="approche-number">03</div>
+                    <div class="approche-content">
+                        <h3>Données & KPI</h3>
+                        <p>Chaque décision QA est guidée par des métriques concrètes. Je mets en place des dashboards clairs pour suivre la santé de votre produit.</p>
+                    </div>
+                </div>
+                <div class="approche-item fade-up">
+                    <div class="approche-number">04</div>
+                    <div class="approche-content">
+                        <h3>Innovation continue</h3>
+                        <p>Je veille en permanence sur les outils et pratiques émergentes, IA incluse, pour vous apporter les solutions les plus performantes du marché.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chiffres Section -->
+        <section class="chiffres-section">
+            <div class="container chiffres-grid" id="chiffres">
+                <div class="chiffre-item fade-up">
+                    <div class="chiffre-number"><span class="counter" data-target="10">0</span>+</div>
+                    <div class="chiffre-label">Années d'expérience QA</div>
+                </div>
+                <div class="chiffre-item fade-up delay-1">
+                    <div class="chiffre-number"><span class="counter" data-target="5">0</span>+</div>
+                    <div class="chiffre-label">Frameworks maîtrisés</div>
+                </div>
+                <div class="chiffre-item fade-up delay-2">
+                    <div class="chiffre-number"><span class="counter" data-target="30">0</span>+</div>
+                    <div class="chiffre-label">Projets accompagnés</div>
+                </div>
+                <div class="chiffre-item fade-up delay-3">
+                    <div class="chiffre-number"><span>100</span>%</div>
+                    <div class="chiffre-label">Bordeaux & Remote 🇫🇷</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A Propos Section -->
+        <section id="apropos" class="section container">
+            <div class="apropos-layout">
+                <div class="apropos-visual fade-up">
+                    <div class="apropos-visual-inner" style="overflow: hidden;">
+                        <img src="profile.jpg" alt="Sylvain Chignaguet" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="apropos-content fade-up delay-1">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">À <span>propos</span></h2>
+                    <p>Ex militaire reconverti et passionné de qualité logicielle, j'ai fait de l'automatisation des tests mon expertise principale. Après plusieurs années à structurer des stratégies QA pour des équipes produit et des studios de jeux vidéo, j'ai lancé mon activité de consulting indépendant à Bordeaux.</p>
+                    <p>Mon objectif : aider les équipes tech à livrer plus vite, avec plus de confiance, grâce à des tests automatisés intelligents et une approche qualité pragmatique.</p>
+                    <p>Quand je ne suis pas en train d'écrire des tests Cypress ou de débugger un pipeline CI, je développe des applications mobiles Flutter et j'explore les dernières avancées de l'IA appliquée au testing.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Malt">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section container">
+            <div class="contact-layout">
+                <div class="contact-info fade-up">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 16px;">Un projet ? <span>Parlons-en.</span></h2>
+                    <p>Disponible pour des missions de consulting à Bordeaux et en remote dans toute la France.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div class="contact-method-text">
+                                <h4>Email</h4>
+                                <a href="mailto:sylvain.chignaguet@gmail.com">sylvain.chignaguet@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </div>
+                            <div class="contact-method-text">
+                                <h4>Calendly</h4>
+                                <a href="https://calendly.com/sylvain-chignaguet" target="_blank" rel="noopener noreferrer">📅 Réserver un créneau</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-up delay-1">
+                    <form action="https://formsubmit.co/sylvain.chignaguet+contact@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Type de besoin</label>
+                            <select id="subject" name="subject" class="form-control" required>
+                                <option value="">Sélectionnez une option...</option>
+                                <option value="auto">Automatisation de tests</option>
+                                <option value="strat">Stratégie QA</option>
+                                <option value="ia">IA + QA</option>
+                                <option value="gaming">QA Gaming</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Votre message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="Nouveau contact depuis le site vitrine !">
+                        <input type="hidden" name="_template" value="box">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner">
+            <div>&copy; 2026 Sylvain Chignaguet — Consultant QA Freelance &middot; Bordeaux</div>
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu on link click
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Intersection Observer for fade-up animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Trigger count-up if it's the chiffres section
+                        if (entry.target.classList.contains('chiffre-item')) {
+                            const counter = entry.target.querySelector('.counter');
+                            if (counter && !counter.classList.contains('counted')) {
+                                startCountUp(counter);
+                                counter.classList.add('counted');
+                            }
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Count-up animation function
+            function startCountUp(el) {
+                const target = parseInt(el.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const stepTime = Math.abs(Math.floor(duration / target));
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += 1;
+                    el.textContent = current;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        el.textContent = target;
+                    }
+                }, stepTime);
+            }
+        });
+    </script>
+</body>
+</html>
+
