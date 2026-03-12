@@ -142,3 +142,9 @@ And('le lien GitHub est présent dans le footer', () => {
     .getLinkByText('GitHub')
     .should('have.attr', 'href', 'https://github.com/Sharogne');
 });
+
+And('le lien Malt est présent dans le footer', () => {
+  footerPage
+    .getLinkByText('Malt')
+    .should('have.attr', 'href', 'https://www.malt.fr/profile/sylvainchignaguet');
+});

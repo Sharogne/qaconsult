@@ -12,8 +12,9 @@ build/
 .env.*.local
 !.env.example
 
-# Claude AI (config locale machine)
-.claude/
+# Claude AI (configs locales machine)
+.claude/settings.json
+.claude/settings.local.json
 
 # Assets source bruts / fichiers lourds
 fixtures/

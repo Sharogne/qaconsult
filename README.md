@@ -14,18 +14,24 @@
   &nbsp;·&nbsp;
   <a href="https://github.com/Sharogne">GitHub</a>
   &nbsp;·&nbsp;
+  <a href="https://www.malt.fr/profile/sylvainchignaguet">Malt</a>
+  &nbsp;·&nbsp;
   <a href="https://calendly.com/sylvain-chignaguet">Calendly</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.chignaguet.fr">www.chignaguet.fr</a>
 </p>
 
 ---
 
 ## À propos de ce dépôt
 
-Ce dépôt remplit deux fonctions :
+Ce dépôt remplit trois fonctions :
 
 1. **Site vitrine professionnel** — le code source du portfolio de Sylvain Chignaguet, consultant QA senior freelance à Bordeaux. Site statique HTML/CSS/JS pur, servi par Vite.
 
 2. **Démonstration QA assistée par IA** — une suite de tests Cypress E2E structurée en **Gherkin/Cucumber** avec **Page Objects**, conçue avec l'assistance de [Claude Code](https://claude.ai/claude-code) (Anthropic). Ce projet illustre comment l'IA peut accélérer la mise en place d'une stratégie de test sans sacrifier la qualité ni la lisibilité.
+
+3. **Support de formation** — tous les fichiers Cypress (feature, steps, page objects, commands, support) sont **annotés de commentaires pédagogiques** expliquant les concepts, les choix d'architecture et les bonnes pratiques. Le dossier `.claude/commands/` est versionné et lisible directement : il documente les prompts utilisés pour générer et maintenir les tests.
 
 ---
 
@@ -68,13 +74,13 @@ qaconsult/
 │       │   └── footer.po.ts       # Sélecteurs footer         [data-cy]
 │       ├── commands.ts            # Commandes Cypress personnalisées
 │       └── e2e.ts                 # Support global
-├── .claude/
+├── .claude/                       # Versionné (settings.json exclus du git)
 │   └── commands/
-│       ├── add-feature.md         # /add-feature  — crée feature complète
-│       ├── add-scenario.md        # /add-scenario — ajoute un scénario BDD
-│       ├── new-page-object.md     # /new-page-object — crée un page object
-│       ├── audit-cy.md            # /audit-cy     — audit couverture data-cy
-│       └── cypress-review.md     # /cypress-review — revue qualité tests
+│       ├── add-feature.md         # /add-feature      — crée feature complète
+│       ├── add-scenario.md        # /add-scenario      — ajoute un scénario BDD
+│       ├── new-page-object.md     # /new-page-object   — crée un page object
+│       ├── audit-cy.md            # /audit-cy          — audit couverture data-cy
+│       └── cypress-review.md      # /cypress-review    — revue qualité tests
 ├── index.html                     # Site complet (HTML/CSS/JS + attributs data-cy)
 ├── cypress.config.ts              # Configuration Cypress + Cucumber
 ├── vite.config.ts
@@ -120,6 +126,8 @@ npm run test:e2e:open
 ---
 
 ## Architecture des tests
+
+> Chaque fichier contient des **commentaires pédagogiques** expliquant les concepts Cypress, BDD et POM au fil du code. Ils sont conservés dans le dépôt pour servir de référence lors de formations ou d'onboarding.
 
 Les tests sont organisés en **4 couches** :
 
@@ -178,7 +186,7 @@ get iaCard()     { return cy.get('[data-cy*="offre-card-ia"]'); } // 1 carte
 
 ### Commandes Claude Code (`.claude/commands/`)
 
-Ce projet inclut des commandes Claude Code pour maintenir la qualité au fil des évolutions :
+Ce projet inclut des commandes Claude Code versionnées pour maintenir la qualité au fil des évolutions. Chaque fichier `.md` est un prompt structuré invocable depuis Claude Code avec `/nom-commande` :
 
 | Commande | Description |
 |---|---|
