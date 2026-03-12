@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test:e2e": "cypress run",
     "test:e2e:open": "cypress open",
+    "cy:run": "start-server-and-test dev http://localhost:5173 test:e2e",
     "cy:open": "start-server-and-test dev http://localhost:5173 test:e2e:open",
     "lint": "tsc --noEmit"
   },
