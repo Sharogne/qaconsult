@@ -10,7 +10,8 @@
       "@/*": ["./*"]
     },
     "noEmit": true,
-    "strict": true
+    "strict": true,
+    "types": ["cypress"]
   },
   "include": ["cypress.config.ts", "cypress/**/*.ts"]
 }

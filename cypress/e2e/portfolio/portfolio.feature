@@ -1,80 +1,47 @@
-# language: fr
-# ─────────────────────────────────────────────────────────────────────────────
-# Fichier Feature (Gherkin)
-#
-# C'est le cœur du BDD (Behavior-Driven Development).
-# Il décrit le comportement attendu de l'application en langage naturel,
-# compréhensible par les développeurs, testeurs ET les non-techniciens.
-#
-# Structure d'une fonctionnalité :
-#   Fonctionnalité → titre de la fonctionnalité testée
-#   En tant que    → qui est l'utilisateur concerné
-#   Je veux        → ce qu'il veut faire
-#   Afin de        → la valeur métier obtenue (le "pourquoi")
-# ─────────────────────────────────────────────────────────────────────────────
-Fonctionnalité: Portfolio Sylvain Chignaguet — Consultant QA Senior
-  En tant que visiteur du site
-  Je veux naviguer dans le portfolio
-  Afin de découvrir les offres et contacter Sylvain
+Feature: Portfolio Sylvain Chignaguet — Senior QA Consultant
 
-  # ── Contexte ────────────────────────────────────────────────────────────────
-  # Le Contexte (Background) s'exécute AVANT chaque scénario de ce fichier.
-  # Évite de répéter le même "Given" dans chaque scénario.
-  Contexte:
-    Étant donné que je visite la page d'accueil
+  Background:
+    Given I visit the homepage
 
-  # ── Scénarios ───────────────────────────────────────────────────────────────
-  # Un scénario = un comportement précis à tester.
-  # Structure : Given (contexte) → When (action) → Then (résultat attendu)
-  # "Et" est un alias de Given/When/Then pour améliorer la lisibilité.
+  Scenario: Header and navigation display
+    Then the header is visible
+    And the logo "Sylvain" is displayed
+    And the navigation links are present
+    And the mobile menu button is present
 
-  Scénario: Affichage du header et de la navigation
-    # Pas de When ici : c'est une vérification passive, sans action utilisateur
-    Alors le header est visible
-    Et le logo "Sylvain" est affiché
-    Et les liens de navigation sont présents
-    Et le bouton menu mobile est présent
+  Scenario: Hero section display
+    Then the main title is visible
+    And the subtitle mentions "J'aide les équipes tech"
+    And the location "Bordeaux" is displayed
+    And the Cypress code block is present
 
-  Scénario: Affichage du hero
-    Alors le titre principal est visible
-    # {string} est un paramètre Gherkin : la valeur entre guillemets est injectée
-    # dans la step definition TypeScript correspondante
-    Et le sous-titre mentionne "J'aide les équipes tech"
-    Et la localisation "Bordeaux" est affichée
-    Et le bloc de code Cypress est présent
+  Scenario: Hero CTA usage
+    When I click on the CTA "Découvrir mes offres"
+    Then the anchor points to section "#offres"
 
-  Scénario: Utilisation des CTA du hero
-    # When déclenche une action utilisateur (clic, saisie, navigation...)
-    Quand je clique sur le CTA "Découvrir mes offres"
-    # Then vérifie le résultat observable dans l'interface
-    Alors l'ancre pointe vers la section "#offres"
+  Scenario: Expertise cards display
+    Then the expertise section is visible
+    And at least one expertise card is displayed
+    And the technology "Cypress" is mentioned
 
-  Scénario: Affichage des cartes d'expertise
-    Alors la section expertise est visible
-    Et au moins une carte d'expertise est affichée
-    Et la technologie "Cypress" est mentionnée
+  Scenario: Service offers display
+    Then the offers section is visible
+    And at least 4 offer cards are displayed
+    And the card "IA au Service de la Qualité" has the badge "Innovation"
 
-  Scénario: Affichage des offres de service
-    Alors la section offres est visible
-    Et au moins 4 cartes d'offre sont affichées
-    # Deux paramètres {string} → deux arguments injectés dans le step TypeScript
-    Et la carte "IA au Service de la Qualité" a le badge "Innovation"
+  Scenario: Contact form verification
+    When I navigate to the contact section
+    Then the field "Nom complet" is present
+    And the field "Adresse email" is present
+    And the need selector is present
+    And the message field is present
+    And the submit button is visible
 
-  Scénario: Vérification du formulaire de contact
-    Quand je navigue vers la section contact
-    Alors le champ "Nom complet" est présent
-    Et le champ "Adresse email" est présent
-    Et le sélecteur de besoin est présent
-    Et le champ message est présent
-    Et le bouton d'envoi est visible
+  Scenario: Profile picture loading
+    Then the profile picture loads correctly
 
-  Scénario: Chargement de la photo de profil
-    # Vérifie que l'image est réellement chargée (naturalWidth > 0),
-    # pas seulement que la balise <img> est présente dans le DOM
-    Alors la photo de profil se charge correctement
-
-  Scénario: Affichage du footer
-    Alors le footer mentionne "Sylvain Chignaguet"
-    Et le lien LinkedIn est présent dans le footer
-    Et le lien GitHub est présent dans le footer
-    Et le lien Malt est présent dans le footer
+  Scenario: Footer display
+    Then the footer mentions "Sylvain Chignaguet"
+    And the LinkedIn link is present in the footer
+    And the GitHub link is present in the footer
+    And the Malt link is present in the footer

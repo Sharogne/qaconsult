@@ -3,12 +3,16 @@ export class FooterPage {
     return cy.get('[data-cy="footer"]');
   }
 
-  get links() {
-    return cy.get('[data-cy="footer-links"]');
+  get linkedinLink() {
+    return cy.get('[data-cy="footer-link-linkedin"]');
   }
 
-  getLinkByText(text: string) {
-    return this.links.contains('a', text);
+  get githubLink() {
+    return cy.get('[data-cy="footer-link-github"]');
+  }
+
+  get maltLink() {
+    return cy.get('[data-cy="footer-link-malt"]');
   }
 }
 

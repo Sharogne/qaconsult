@@ -1,5 +1,6 @@
 import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
-import createEsbuildPlugin from '@bahmutov/cypress-esbuild-preprocessor';
+import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
+import { createEsbuildPlugin } from '@badeball/cypress-cucumber-preprocessor/esbuild';
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
@@ -13,7 +14,19 @@ export default defineConfig({
     viewportHeight: 720,
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
-      on('file:preprocessor', createEsbuildPlugin());
+      on(
+        'file:preprocessor',
+        createBundler({
+          plugins: [createEsbuildPlugin(config)],
+        })
+      );
+      on('before:browser:launch', (browser, launchOptions) => {
+        if (browser.family === 'chromium') {
+          launchOptions.args.push('--disable-gpu');
+          launchOptions.args.push('--no-sandbox');
+        }
+        return launchOptions;
+      });
       return config;
     },
   },

@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test:e2e": "cypress run",
     "test:e2e:open": "cypress open",
+    "cy:open": "start-server-and-test dev http://localhost:5173 test:e2e:open",
     "lint": "tsc --noEmit"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.0.0",
     "@types/node": "^22.14.0",
     "cypress": "^13.0.0",
+    "start-server-and-test": "^2.0.0",
     "esbuild": "^0.25.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"

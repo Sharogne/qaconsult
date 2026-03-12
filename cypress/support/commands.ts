@@ -6,6 +6,8 @@ Cypress.Commands.add('navigateToSection', (sectionId: string) => {
   cy.get(`#${sectionId}`).should('be.visible');
 });
 
+export {};
+
 declare global {
   namespace Cypress {
     interface Chainable {

@@ -114,14 +114,17 @@ npm run dev
 ### Tests E2E
 
 ```bash
-# Lancer les tests en mode headless (CI)
+# Démarrer Vite + ouvrir Cypress en une seule commande (recommandé)
+npm run cy:open
+
+# Lancer les tests en mode headless (CI) — dev server requis au préalable
 npm run test:e2e
 
-# Ouvrir l'interface Cypress pour le développement interactif
+# Ouvrir Cypress sans démarrer le serveur (si Vite tourne déjà)
 npm run test:e2e:open
 ```
 
-> **Note :** Le dev server doit être démarré avant de lancer les tests (`npm run dev` dans un terminal séparé).
+> **Note :** `npm run cy:open` démarre automatiquement le dev server et attend qu'il soit prêt avant d'ouvrir Cypress. Les commandes `test:e2e` et `test:e2e:open` nécessitent que `npm run dev` soit déjà lancé dans un terminal séparé.
 
 ---
 

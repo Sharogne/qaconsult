@@ -16,7 +16,7 @@ Effectue une revue qualité complète des tests Cypress de ce projet.
 
 ## 3. Feature files (Gherkin)
 
-- [ ] Scénarios en français, cohérents avec le style existant
+- [ ] Scénarios en Anglais, cohérents avec le style existant
 - [ ] Chaque scénario teste un comportement précis, pas plusieurs à la fois
 - [ ] Given/When/Then/And utilisés sémantiquement
 - [ ] Pas de logique technique dans les scénarios (valeurs hardcodées dans les steps, pas dans le feature)
