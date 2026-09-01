@@ -457,9 +457,12 @@
             letter-spacing: 0.06em;
             font-style: normal;
         }
-        /* À l'écran, seule l'année de changement : la période détaillée et la
-           durée alourdissaient une colonne de 150 px sans rien apporter à la
-           lecture. Le CV imprimé, lui, les rétablit. */
+        /* À l'écran, un seul repère par ligne, posé en haut de la carte donc
+           à la charnière entre deux postes : il porte la date de FIN de la
+           période, si bien que la colonne se lit aujourd'hui, 2024, 2020,
+           2017 en descendant. La période détaillée et la durée alourdissaient
+           une colonne de 150 px sans rien apporter ; le CV imprimé, lui, les
+           rétablit. */
         .tl-date .tl-year { font-size: 15px; letter-spacing: 0.02em; }
         .tl-date .tl-period, .tl-date .tl-duration { display: none; }
         .tl-date b { color: var(--text-2); font-weight: 500; }
@@ -1141,7 +1144,9 @@
                 <div class="hero-content fade-up">
                     <h1 class="hero-name" data-cy="hero-title">Sylvain <br>Chignaguet</h1>
 
-                    <p class="hero-role" data-cy="hero-subtitle">QA Automation Engineer.<br>Cap sur la <span>gestion de projet</span>.</p>
+                    <!-- L'espace avant le <br> est volontaire : l'impression masque le saut
+                         de ligne, et sans lui les deux phrases se colleraient. -->
+                    <p class="hero-role" data-cy="hero-subtitle">QA Automation Engineer. <br>Cap sur la <span>gestion de projet</span>.</p>
 
                     <p class="hero-pitch">Huit ans à construire la qualité de produits qui vont vite : du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai recruté, formé et encadré des QA, défini des stratégies de test de A à Z, piloté des releases. Aujourd'hui je veux en faire mon métier à plein temps.</p>
 
@@ -1256,28 +1261,28 @@
                 </div>
 
                 <div class="profil-proof fade-up delay-1">
-                    <div class="proof-item">
+                    <div class="proof-item" data-cy="proof-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                         <div>
                             <b>Encadrement &amp; recrutement</b>
                             <span>Recrutement, onboarding et management de 2 QA juniors chez Asobo. Puis recrutement d'un QA technique en tant que QA Lead.</span>
                         </div>
                     </div>
-                    <div class="proof-item">
+                    <div class="proof-item" data-cy="proof-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                         <div>
                             <b>Stratégie de A à Z</b>
                             <span>Définition de la stratégie et du plan QA sur trois projets, dont HoloLens et un titre non annoncé. Introduction de TestRail dans les équipes.</span>
                         </div>
                     </div>
-                    <div class="proof-item">
+                    <div class="proof-item" data-cy="proof-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                         <div>
                             <b>Release &amp; delivery</b>
                             <span>Build &amp; release management sur Microsoft Flight Simulator 2024 et A Plague Tale : Innocence. Livraison de builds, validation SDK.</span>
                         </div>
                     </div>
-                    <div class="proof-item">
+                    <div class="proof-item" data-cy="proof-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                         <div>
                             <b>Le cadre formel</b>
@@ -1302,7 +1307,7 @@
                 <!-- Phenix -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
-                        <b class="tl-year is-now">2024</b>
+                        <b class="tl-year is-now">aujourd'hui</b>
                         <span class="tl-period">févr. 2024 - aujourd'hui</span>
                     </div>
                     <div class="tl-rail" aria-hidden="true">
@@ -1334,7 +1339,7 @@
                 <!-- Asobo Studio -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
-                        <b class="tl-year">2017</b>
+                        <b class="tl-year">2024</b>
                         <span class="tl-period">juin 2017 - févr. 2024</span>
                         <em class="tl-duration">6 ans 9 mois</em>
                     </div>
@@ -1439,7 +1444,7 @@
                 <!-- Avant la tech -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
-                        <b class="tl-year">2009</b>
+                        <b class="tl-year">2017</b>
                         <span class="tl-period">2009 - 2017</span>
                     </div>
                     <div class="tl-rail" aria-hidden="true">
@@ -1741,28 +1746,28 @@
                 <h2 class="section-title">Quatre convictions</h2>
             </div>
             <div class="methode-list">
-                <div class="methode-item fade-up">
+                <div class="methode-item fade-up" data-cy="methode-item">
                     <div class="methode-number">01</div>
                     <div>
                         <h3>Shift-left</h3>
                         <p>La qualité s'intègre dès la conception, pas en fin de sprint. Détecter un bug au moment où on écrit la spec coûte infiniment moins cher que de le corriger en production, et évite les arbitrages désagréables la veille d'une release.</p>
                     </div>
                 </div>
-                <div class="methode-item fade-up">
+                <div class="methode-item fade-up" data-cy="methode-item">
                     <div class="methode-number">02</div>
                     <div>
                         <h3>Automatiser l'essentiel</h3>
                         <p>Je ne cherche pas 100 % de couverture. Je cible les parcours critiques, ceux dont la régression coûte vraiment, pour un retour sur investissement réel et une maintenance qui ne mange pas l'équipe. Une suite qu'on n'ose plus toucher est une suite morte.</p>
                     </div>
                 </div>
-                <div class="methode-item fade-up">
+                <div class="methode-item fade-up" data-cy="methode-item">
                     <div class="methode-number">03</div>
                     <div>
                         <h3>Décider sur des données</h3>
                         <p>Un plan de test se défend avec des chiffres : taux d'échec, temps de feedback, zones de code les plus fragiles. Des métriques lisibles évitent les débats d'opinion et permettent d'expliquer une décision de qualité à un product owner comme à une direction.</p>
                     </div>
                 </div>
-                <div class="methode-item fade-up">
+                <div class="methode-item fade-up" data-cy="methode-item">
                     <div class="methode-number">04</div>
                     <div>
                         <h3>Transmettre</h3>
@@ -1781,11 +1786,11 @@
                 <h2 class="section-title">Sur le matériel, pas seulement sur l'écran</h2>
             </div>
             <div class="terrain-grid">
-                <figure class="terrain-photo fade-up">
+                <figure class="terrain-photo fade-up" data-cy="terrain-photo">
                     <img src="/images/illu1.webp" alt="Session de test en réalité augmentée sur casque HoloLens" loading="lazy" width="560" height="340" style="object-position: left center;">
                     <figcaption class="terrain-caption">// Tests AR sur HoloLens</figcaption>
                 </figure>
-                <figure class="terrain-photo fade-up delay-1">
+                <figure class="terrain-photo fade-up delay-1" data-cy="terrain-photo">
                     <img src="/images/illu2.webp" alt="Travail de QA sur un dispositif de réalité mixte" loading="lazy" width="560" height="340" style="object-position: center 30%;">
                     <figcaption class="terrain-caption">// QA innovation &amp; XR</figcaption>
                 </figure>
@@ -1940,6 +1945,11 @@
             /* ---------------------------------------------------------------
                Compteurs animés
                --------------------------------------------------------------- */
+            // Animations en cours, pour pouvoir les interrompre : une impression
+            // déclenchée pendant le décompte figerait sinon un chiffre
+            // intermédiaire sur le CV.
+            const animationsCompteurs = new Map();
+
             function countUp(el) {
                 const target = parseInt(el.getAttribute('data-target'), 10);
                 if (Number.isNaN(target)) return;
@@ -1954,11 +1964,31 @@
                     // easeOutCubic : la valeur ralentit en approchant de la cible
                     const eased = 1 - Math.pow(1 - progress, 3);
                     el.textContent = String(Math.round(eased * target));
-                    if (progress < 1) requestAnimationFrame(tick);
-                    else el.textContent = String(target);
+                    if (progress < 1) {
+                        animationsCompteurs.set(el, requestAnimationFrame(tick));
+                    } else {
+                        animationsCompteurs.delete(el);
+                        el.textContent = String(target);
+                    }
                 };
 
-                requestAnimationFrame(tick);
+                animationsCompteurs.set(el, requestAnimationFrame(tick));
+            }
+
+            // Arrête toute animation en cours et affiche la valeur finale.
+            // `is-counted` empêche l'observateur de relancer le décompte après
+            // l'impression, ce qui remettrait les chiffres à zéro sous les yeux
+            // du visiteur.
+            function figerCompteurs() {
+                document.querySelectorAll('.counter').forEach(compteur => {
+                    const frame = animationsCompteurs.get(compteur);
+                    if (frame !== undefined) {
+                        cancelAnimationFrame(frame);
+                        animationsCompteurs.delete(compteur);
+                    }
+                    compteur.classList.add('is-counted');
+                    compteur.textContent = compteur.getAttribute('data-target');
+                });
             }
 
             /* ---------------------------------------------------------------
@@ -2013,11 +2043,11 @@
                 // Le bloc « avant la tech » doit figurer sur le CV imprimé.
                 depliePourImpression = [...document.querySelectorAll('.before-tech')].filter(d => !d.open);
                 depliePourImpression.forEach(d => { d.open = true; });
-                // Les compteurs ne se déclenchent qu'au scroll : sans cela, un CV
-                // imprimé sans avoir fait défiler la page afficherait des zéros.
-                document.querySelectorAll('.counter').forEach(c => {
-                    c.textContent = c.getAttribute('data-target');
-                });
+                // Les compteurs ne se déclenchent qu'au scroll, et une fois
+                // lancés ils mettent 1,6 s à arriver à destination. Sans ce
+                // gel, un CV imprimé trop tôt afficherait des zéros ou un
+                // chiffre attrapé au vol.
+                figerCompteurs();
             });
 
             const cvBtn = document.getElementById('download-cv');

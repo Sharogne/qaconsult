@@ -1,12 +1,7 @@
 // Page Object — bloc d'ouverture du CV.
-// Le bouton « Télécharger le CV » déclenche window.print() : on ne teste
-// que sa présence, l'ouverture d'une boîte de dialogue système étant hors
-// de portée d'un test navigateur.
+// Le bouton « Télécharger le CV » appelle window.print(). Ce qu'il déclenche
+// se teste ailleurs, dans cv-imprime.feature : ici on ne fait que l'atteindre.
 export class HeroPage {
-  get section() {
-    return cy.get('[data-cy="hero"]');
-  }
-
   get title() {
     return cy.get('[data-cy="hero-title"]');
   }

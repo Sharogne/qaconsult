@@ -59,18 +59,27 @@ qaconsult/
 │       └── illu2.webp
 ├── cypress/
 │   ├── e2e/
-│   │   └── portfolio/
-│   │       ├── portfolio.feature  # Scénarios Gherkin
-│   │       └── portfolio.steps.ts # Step definitions → Page Objects
+│   │   ├── portfolio/
+│   │   │   ├── portfolio.feature  # Scénarios Gherkin — le site à l'écran
+│   │   │   └── portfolio.steps.ts # Step definitions → Page Objects
+│   │   └── cv-imprime/
+│   │       ├── cv-imprime.feature # Scénarios Gherkin — le CV téléchargeable
+│   │       └── cv-imprime.steps.ts
+│   ├── plugins/
+│   │   └── print-cv.ts            # Génère le PDF réel et le mesure (Node)
 │   └── support/
 │       ├── page-objects/
+│       │   ├── index.ts           # Barrel : un seul chemin d'import
 │       │   ├── navigation.po.ts   # Header / navigation       [data-cy]
 │       │   ├── hero.po.ts         # Hero, photo, bouton CV    [data-cy]
-│       │   ├── about.po.ts        # Profil + compteurs        [data-cy]
+│       │   ├── profil.po.ts       # Profil et ses preuves     [data-cy]
+│       │   ├── chiffres.po.ts     # Compteurs animés          [data-cy]
 │       │   ├── experience.po.ts   # Timeline du parcours      [data-cy]
 │       │   ├── skills.po.ts       # Compétences & savoir-faire [data-cy]
 │       │   ├── education.po.ts    # Certifications, formation [data-cy]
 │       │   ├── projects.po.ts     # Projets personnels        [data-cy]
+│       │   ├── methode.po.ts      # Façon de travailler       [data-cy]
+│       │   ├── terrain.po.ts      # Photos de terrain         [data-cy]
 │       │   ├── hobbies.po.ts      # Centres d'intérêt         [data-cy]
 │       │   ├── contact.po.ts      # Formulaire de contact     [data-cy]
 │       │   └── footer.po.ts       # Pied de page              [data-cy]
@@ -143,14 +152,18 @@ npm run test:e2e:open
 Les tests sont organisés en **4 couches** :
 
 ```
-portfolio.feature       ← Scénarios lisibles par tous (PO, QA, dev)
+*.feature               ← Scénarios lisibles par tous (PO, QA, dev)
       ↓
-portfolio.steps.ts      ← Step definitions : orchestrent les page objects
+*.steps.ts              ← Step definitions : orchestrent les page objects
       ↓
-*.po.ts                 ← Page Objects : sélecteurs via [data-cy="..."] uniquement
+*.po.ts                 ← Page Objects : sélecteurs via [data-cy="..."]
       ↓
 index.html              ← Attributs data-cy sur chaque élément testé
 ```
+
+Le CV téléchargeable ajoute une cinquième pièce, à côté et non au-dessus :
+`cypress/plugins/print-cv.ts` tourne côté Node, pas dans le navigateur de
+test. Voir « Tester un CV qui n'existe qu'à l'impression » plus bas.
 
 ### Convention de sélection : `data-cy`
 
@@ -179,28 +192,88 @@ Quand un élément doit être atteint par son libellé plutôt que par un identi
 getLinkByText(text: string) { return this.navLinks.contains('a', text); }
 ```
 
+Une exception, assumée : quand le sujet du test **est** une règle CSS, le test
+nomme la classe qui l'implémente. Les dates du parcours existent en deux
+écritures dans le même bloc, `.tl-year` pour l'écran et `.tl-period` pour le CV
+imprimé ; vérifier que ce partage tient suppose de désigner ces classes. Poser
+un `data-cy` par-dessus ajouterait un alias sans rien découpler.
+
 ### Scénarios couverts
+
+**`portfolio.feature`** — 17 scénarios sur le site tel qu'il s'affiche.
 
 | Scénario | Page Object(s) |
 |---|---|
 | Header et navigation | `navigation.po.ts` |
+| Ouverture et fermeture du menu mobile | `navigation.po.ts` |
 | Section Hero (titre, sous-titre, localisation, photo) | `hero.po.ts` |
 | LinkedIn et GitHub mis en avant | `hero.po.ts` |
-| Bouton de téléchargement du CV | `hero.po.ts` |
-| Compteurs animés | `about.po.ts` |
-| Timeline du parcours (poste actuel, rôles Asobo, bloc replié) | `experience.po.ts` |
-| Compétences techniques | `skills.po.ts` |
+| Profil orienté gestion de projet et ses quatre preuves | `profil.po.ts` |
+| Compteurs animés | `chiffres.po.ts` |
+| Timeline du parcours (poste actuel, rôles Asobo) | `experience.po.ts` |
+| **Repères de dates lus comme des charnières** | `experience.po.ts` |
+| Bloc « Avant la tech » replié puis déplié | `experience.po.ts` |
+| Compétences techniques et savoir-faire | `skills.po.ts` |
 | Certifications et formation | `education.po.ts` |
 | **Projets personnels sans lien mort** | `projects.po.ts` |
+| Façon de travailler et photos de terrain | `methode.po.ts`, `terrain.po.ts` |
 | Centres d'intérêt | `hobbies.po.ts` |
 | Formulaire de contact | `contact.po.ts` |
-| Absence de résidus freelance et du téléphone à l'écran | — |
+| **Absence de résidus freelance et de données personnelles** | — |
 | Footer et liens sociaux | `footer.po.ts` |
 
-Deux scénarios méritent un mot, parce qu'ils testent une règle métier et pas seulement un affichage :
+**`cv-imprime.feature`** — 6 scénarios sur le CV téléchargeable (voir plus bas).
+
+Quatre scénarios méritent un mot, parce qu'ils testent une règle et pas seulement un affichage :
 
 - **« Personal projects have no dead links »** — trois des quatre projets présentés sont privés ou pas encore livrés. Le test vérifie qu'un seul lien de dépôt existe dans toute la section, pour qu'aucun recruteur ne tombe sur une 404.
-- **« No freelance leftovers and no phone number on screen »** — le numéro de téléphone reste dans le DOM pour le CV imprimé (`@media print`) mais ne doit jamais être visible à l'écran ; le test l'affirme avec `should('not.be.visible')`.
+- **« No freelance leftovers and no personal data on screen »** — le numéro de téléphone reste dans le DOM pour le CV imprimé (`@media print`) mais ne doit jamais être visible à l'écran ; le test l'affirme avec `should('not.be.visible')`. L'adresse postale complète, elle, n'existe nulle part dans la page.
+- **« Timeline dates read as change markers »** — le repère de date est posé en haut de chaque carte, donc à la charnière entre deux postes : il porte la fin de la période, pas son début. Le test lit la colonne entière et attend `aujourd'hui, 2024, 2020, 2017`, ce qui échouerait au premier repère remis à l'envers.
+- **« The printable CV still fits on two A4 pages »** — un CV qui déborde sur une troisième page se fait lire en diagonale.
+
+### Tester un CV qui n'existe qu'à l'impression
+
+Le bouton « Télécharger le CV » n'envoie aucun fichier : il appelle
+`window.print()`, et c'est la feuille `@media print` qui remet la page en forme.
+Le livrable n'existe donc qu'au moment de l'impression, hors de portée du
+navigateur piloté par Cypress. La suite le teste en deux temps.
+
+**Le déclenchement**, côté navigateur : `window.print()` ouvre une boîte de
+dialogue système. On la remplace par un espion, et le test vérifie que le clic
+la sollicite.
+
+```ts
+cy.window().then((fenetre) => cy.stub(fenetre, 'print').as('print'));
+heroPage.downloadCvButton.click();
+cy.get('@print').should('have.been.calledOnce');
+```
+
+**Le PDF**, côté Node : la tâche `analyserCvImprime` (`cypress/plugins/print-cv.ts`)
+rejoue l'impression dans un Chrome sans interface, produit le PDF A4 réel et en
+rapporte le nombre de pages, la hauteur du contenu et le texte affiché.
+
+```gherkin
+When I generate the printable CV
+Then the printable CV is 2 pages long
+And the printable CV keeps at least 120 px of slack before a third page
+```
+
+Deux détails d'implémentation valent la peine d'être connus :
+
+- **Le texte est lu dans le DOM, pas dans le PDF.** Chrome n'embarque que des
+  sous-ensembles de polices dont l'encodage est propre au document : relire les
+  chaînes du PDF demanderait de reconstruire la table `ToUnicode`, soit une
+  centaine de lignes fragiles. Le DOM est lu après passage en média `print`,
+  donc ce qu'il affiche est exactement ce que Chrome vient de dessiner.
+- **La marge résiduelle est vérifiée à part.** Firefox et Chromium n'arrondissent
+  pas les métriques de police de la même façon, d'une centaine de pixels sur
+  l'ensemble du document. Un CV qui tient tout juste sur deux pages sous
+  Chromium en occupe trois sous Firefox : le test exige donc de la place en
+  réserve, pas seulement le bon nombre de pages.
+
+Le navigateur est cherché dans cet ordre : celui que Cypress utilise déjà s'il
+est de la famille Chromium, puis `CHROME_PATH`, puis les emplacements habituels
+d'un Chrome ou Chromium système. Aucun trouvé, le test échoue en le disant.
 
 ### Commandes Claude Code (`.claude/commands/`)
 

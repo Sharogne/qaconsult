@@ -62,12 +62,23 @@ Le bouton « Télécharger le CV » réutilise la même page, remise en forme pa
 ```html
 <div class="tl-date">
     <b class="tl-year">2024</b>                                   <!-- écran -->
-    <span class="tl-period">févr. 2024 - aujourd'hui</span>       <!-- CV imprimé -->
+    <span class="tl-period">juin 2017 - févr. 2024</span>         <!-- CV imprimé -->
     <em class="tl-duration">6 ans 9 mois</em>                     <!-- CV imprimé -->
 </div>
 ```
 
-L'écran n'affiche que l'année de changement, pour rester lisible dans une colonne étroite. Le CV imprimé rétablit la période complète et la durée. Si vous changez une date, changez les deux lignes.
+Le CV imprimé rétablit la période complète et la durée. L'écran, lui, n'affiche qu'un repère par ligne, pour rester lisible dans une colonne étroite.
+
+**Attention à ce que porte ce repère.** Il est posé en haut de la carte, donc à la charnière entre deux postes : il indique la **fin** de la période, pas son début. Dans l'exemple ci-dessus, `2024` est l'année où le poste chez Asobo s'est arrêté, et il s'affiche juste sous la carte Phenix qui a commencé cette année-là. La colonne se lit donc du plus récent au plus ancien :
+
+```
+aujourd'hui   ← Phenix, toujours en cours
+2024          ← fin d'Asobo Studio
+2020          ← fin de Betclic
+2017          ← fin des années d'avant la tech
+```
+
+Si vous changez une date, changez les deux lignes, et vérifiez que la colonne reste décroissante de haut en bas. Un test le contrôle et échouera sinon.
 
 ### 3. Les compteurs animés se pilotent par un attribut, pas par le texte
 
@@ -125,13 +136,15 @@ Deux exceptions, à écrire sous forme d'entité pour ne pas casser le HTML :
 
 ```bash
 npm run lint     # vérifie le code des tests
-npm run cy:run   # exécute les 13 scénarios
+npm run cy:run   # exécute les 23 scénarios
 npm run build    # génère dist/
 ```
 
 Puis un commit sur `main`. La CI reconstruit, rejoue les tests et publie sur `chignaguet.fr`. **Si un test échoue, rien n'est publié** : c'est le garde-fou.
 
-Les tests vérifient certains textes littéralement. Si vous changez une phrase qu'ils surveillent, ils passeront au rouge et le message d'erreur vous dira laquelle. Les phrases concernées se trouvent dans `cypress/e2e/portfolio/portfolio.feature`.
+Les tests vérifient certains textes littéralement. Si vous changez une phrase qu'ils surveillent, ils passeront au rouge et le message d'erreur vous dira laquelle. Les phrases concernées se trouvent dans `cypress/e2e/portfolio/portfolio.feature`, pour le site, et dans `cypress/e2e/cv-imprime/cv-imprime.feature`, pour le CV téléchargeable.
+
+Ce second fichier surveille aussi la longueur du CV : il génère le PDF pour de vrai et refuse qu'il dépasse deux pages. Si vous ajoutez un paragraphe, une expérience ou un projet, c'est le test qui vous préviendra que quelque chose doit être raccourci ailleurs.
 
 ---
 
