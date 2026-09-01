@@ -1,3 +1,6 @@
+// Page Object — formulaire de contact.
+// Le <select> « type de besoin » a été retiré avec le volet freelance :
+// le formulaire se limite désormais à nom, email et message.
 export class ContactPage {
   get section() {
     return cy.get('[data-cy="contact-section"]');
@@ -13,10 +16,6 @@ export class ContactPage {
 
   get emailInput() {
     return cy.get('[data-cy="input-email"]');
-  }
-
-  get subjectSelect() {
-    return cy.get('[data-cy="select-subject"]');
   }
 
   get messageTextarea() {

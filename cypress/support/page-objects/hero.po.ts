@@ -1,3 +1,7 @@
+// Page Object — bloc d'ouverture du CV.
+// Le bouton « Télécharger le CV » déclenche window.print() : on ne teste
+// que sa présence, l'ouverture d'une boîte de dialogue système étant hors
+// de portée d'un test navigateur.
 export class HeroPage {
   get section() {
     return cy.get('[data-cy="hero"]');
@@ -19,16 +23,24 @@ export class HeroPage {
     return cy.get('[data-cy="hero-cta"]');
   }
 
-  get codeBlock() {
-    return cy.get('[data-cy="code-block"]');
+  get downloadCvButton() {
+    return cy.get('[data-cy="cv-download"]');
   }
 
-  get typewriter() {
-    return cy.get('[data-cy="typewriter"]');
+  get profileImage() {
+    return cy.get('[data-cy="profile-image"]');
+  }
+
+  get linkedinCard() {
+    return cy.get('[data-cy="social-linkedin"]');
+  }
+
+  get githubCard() {
+    return cy.get('[data-cy="social-github"]');
   }
 
   getCtaByText(text: string) {
-    return this.ctaContainer.contains('a', text);
+    return this.ctaContainer.contains('a, button', text);
   }
 }
 

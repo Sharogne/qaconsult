@@ -87,7 +87,9 @@ Then('the header is visible', () => {
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import { navigationPage } from '../../support/page-objects/navigation.po';
 import { heroPage }       from '../../support/page-objects/hero.po';
-import { expertisePage }  from '../../support/page-objects/expertise.po';
+import { experiencePage } from '../../support/page-objects/experience.po';
+import { skillsPage }     from '../../support/page-objects/skills.po';
+import { projectsPage }   from '../../support/page-objects/projects.po';
 import { contactPage }    from '../../support/page-objects/contact.po';
 import { footerPage }     from '../../support/page-objects/footer.po';
 ```
@@ -124,7 +126,7 @@ export const sectionPage = new SectionPage();
 | Cas | Sélecteur | Exemple |
 |-----|-----------|---------|
 | Élément unique | `cy.get('[data-cy="nom"]')` | `cy.get('[data-cy="submit-button"]')` |
-| Collection | `cy.get('[data-cy*="prefix-"]')` | `cy.get('[data-cy*="offre-card"]')` |
+| Collection | `cy.get('[data-cy="nom"]')` répété | `cy.get('[data-cy="project-card"]')` |
 | Sous-élément textuel | `.contains('tag', 'texte')` scopé | `this.section.contains('label', text)` |
 
 **Interdit dans les page objects :**
@@ -146,10 +148,8 @@ export const sectionPage = new SectionPage();
 | Type d'élément | Format | Exemple |
 |----------------|--------|---------|
 | Section | `[nom]-section` | `data-cy="contact-section"` |
-| Carte / item répété | `[type]-card` | `data-cy="offre-card"` |
-| Carte avec identité double | `[type]-card [type]-card-[id]` | `data-cy="offre-card offre-card-ia"` |
+| Carte / item répété | `[type]-card` | `data-cy="project-card"` |
 | Input | `input-[nom]` | `data-cy="input-name"` |
-| Select | `select-[nom]` | `data-cy="select-subject"` |
 | Textarea | `textarea-[nom]` | `data-cy="textarea-message"` |
 | Bouton | `[action]-button` | `data-cy="submit-button"` |
 | Lien footer | `footer-link-[réseau]` | `data-cy="footer-link-linkedin"` |
@@ -157,18 +157,28 @@ export const sectionPage = new SectionPage();
 | Logo | `[nom]-logo` | `data-cy="site-logo"` |
 | Navigation | `[nom]-nav` | `data-cy="main-nav"` |
 
-### Double identité (collection + ciblage individuel)
+### Cibler un élément d'une collection
+
+Une valeur `data-cy` unique pour toute la collection, et le ciblage individuel
+par le texte visible. On évite ainsi de multiplier les identifiants, et le test
+reste ancré sur ce que lit l'utilisateur.
 
 ```html
-<!-- Permet de cibler toutes les cartes OU une carte spécifique -->
-<div data-cy="offre-card offre-card-ia">...</div>
-<div data-cy="offre-card offre-card-audit">...</div>
+<article data-cy="project-card"><h3>Estran</h3>...</article>
+<article data-cy="project-card"><h3>CarCare</h3>...</article>
 ```
 
 ```ts
-get offreCards() { return cy.get('[data-cy*="offre-card"]');    } // toutes
-get iaCard()     { return cy.get('[data-cy*="offre-card-ia"]'); } // 1 seule
+get cards() { return cy.get('[data-cy="project-card"]'); }          // toutes
+getCardByName(name: string) {
+  return cy.contains('[data-cy="project-card"]', name);             // une seule
+}
 ```
+
+> Attention : `.contains(selector, texte)` cherche dans les **descendants** du
+> sujet. Chaîné sur une collection il ne peut donc pas retrouver les éléments de
+> cette collection eux-mêmes — il faut repartir de `cy.contains()` au niveau
+> document, comme ci-dessus.
 
 ---
 
