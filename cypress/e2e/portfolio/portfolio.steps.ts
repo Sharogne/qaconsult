@@ -1,21 +1,27 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
-import { navigationPage } from '../../support/page-objects/navigation.po';
-import { heroPage } from '../../support/page-objects/hero.po';
-import { aboutPage } from '../../support/page-objects/about.po';
-import { experiencePage } from '../../support/page-objects/experience.po';
-import { skillsPage } from '../../support/page-objects/skills.po';
-import { educationPage } from '../../support/page-objects/education.po';
-import { projectsPage } from '../../support/page-objects/projects.po';
-import { hobbiesPage } from '../../support/page-objects/hobbies.po';
-import { contactPage } from '../../support/page-objects/contact.po';
-import { footerPage } from '../../support/page-objects/footer.po';
+import {
+  navigationPage,
+  heroPage,
+  profilPage,
+  chiffresPage,
+  experiencePage,
+  skillsPage,
+  educationPage,
+  projectsPage,
+  methodePage,
+  terrainPage,
+  hobbiesPage,
+  contactPage,
+  footerPage,
+} from '../../support/page-objects';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/sylvain-chignaguet-a7534286/';
 const GITHUB_URL = 'https://github.com/Sharogne';
+const SITE_URL = 'https://www.chignaguet.fr';
 
 /* ==========================================================================
-   Background
+   Background et navigation
    ========================================================================== */
 
 Given('I visit the homepage', () => {
@@ -48,6 +54,32 @@ Then('the navigation links are present', () => {
 // (1280×720) on vérifie sa présence dans le DOM, pas sa visibilité.
 Then('the mobile menu button is present', () => {
   navigationPage.mobileMenuBtn.should('exist').and('have.attr', 'aria-expanded', 'false');
+});
+
+When('I switch to a mobile viewport', () => {
+  cy.viewport('iphone-x');
+});
+
+When('I open the mobile menu', () => {
+  navigationPage.mobileMenuBtn.click();
+});
+
+When('I follow the navigation link {string}', (label: string) => {
+  navigationPage.getLinkByText(label).click();
+});
+
+Then('the mobile menu is open', () => {
+  navigationPage.mobileMenuBtn.should('have.attr', 'aria-expanded', 'true');
+  navigationPage.navLinks.should('have.class', 'is-open');
+});
+
+Then('the mobile menu is closed', () => {
+  navigationPage.mobileMenuBtn.should('have.attr', 'aria-expanded', 'false');
+  navigationPage.navLinks.should('not.have.class', 'is-open');
+});
+
+Then('the section {string} is in view', (sectionId: string) => {
+  cy.get(`#${sectionId}`).should('be.visible');
 });
 
 /* ==========================================================================
@@ -91,23 +123,33 @@ Then('the GitHub card links to the GitHub profile', () => {
     .and('contain.text', 'GitHub');
 });
 
-Then('the CV download button is visible', () => {
-  heroPage.downloadCvButton.should('be.visible');
-});
-
-Then('the CV download button is labelled {string}', (label: string) => {
-  heroPage.downloadCvButton.should('contain.text', label);
+Then('the hero offers a link to the contact section', () => {
+  heroPage.getCtaByText('Me contacter').should('have.attr', 'href', '#contact');
 });
 
 /* ==========================================================================
-   Compteurs animés
+   Profil et chiffres
    ========================================================================== */
+
+Then('the profile section is visible', () => {
+  profilPage.section.scrollIntoView().should('be.visible');
+});
+
+Then('the profile tells the move towards project management', () => {
+  profilPage.section
+    .should('contain.text', 'pilotage')
+    .and('contain.text', 'lead QA, engineering manager, chef de projet technique');
+});
+
+Then('{int} proof items back the profile', (count: number) => {
+  profilPage.preuves.should('have.length', count);
+});
 
 // L'animation dure 1600 ms : le retry intégré de should() attend que la
 // valeur affichée rejoigne data-target, sans cy.wait() arbitraire.
 Then('each counter reaches its target value', () => {
-  aboutPage.counters.should('have.length.greaterThan', 0);
-  aboutPage.counters.each(($counter) => {
+  chiffresPage.counters.should('have.length.greaterThan', 0);
+  chiffresPage.counters.each(($counter) => {
     cy.wrap($counter).should(($el) => {
       expect($el.text().trim()).to.equal($el.attr('data-target'));
     });
@@ -134,8 +176,48 @@ Then('the entry for {string} lists the role {string}', (employer: string, role: 
   experiencePage.getItemContaining(employer).should('contain.text', role);
 });
 
+// Le repère de date est posé en haut de chaque carte, donc à la charnière
+// entre deux postes : il porte la date de fin de la période. La colonne se lit
+// « aujourd'hui » puis les années, en ordre décroissant. La période complète et
+// la durée existent dans le DOM mais sont réservées au CV imprimé.
+Then('each entry carries a single date marker', () => {
+  experiencePage.annees.should('have.length.at.least', 4);
+  experiencePage.annees.each(($annee) => {
+    expect($annee.text().trim(), 'repère de date à l\'écran').to.match(
+      /^(\d{4}|aujourd'hui)$/
+    );
+  });
+});
+
+Then('the date column reads {string} from the top down', (attendu: string) => {
+  const reperes = attendu.split(', ');
+  experiencePage.annees.should(($annees) => {
+    const lus = [...$annees].map((el) => el.textContent?.trim());
+    expect(lus, 'colonne de dates').to.deep.equal(reperes);
+  });
+});
+
+Then('the full periods stay hidden on screen', () => {
+  experiencePage.periodes.should('have.length.at.least', 4);
+  experiencePage.periodes.each(($periode) => {
+    cy.wrap($periode).should('not.be.visible');
+  });
+});
+
 Then('the pre-tech block is collapsed by default', () => {
   experiencePage.beforeTech.should('exist').and('not.have.attr', 'open');
+});
+
+When('I expand the pre-tech block', () => {
+  experiencePage.beforeTechToggle.click();
+});
+
+// `should('have.attr', 'open')` renvoie la valeur de l'attribut comme nouveau
+// sujet : enchaîner un `.and('contain.text')` derrière porterait sur une
+// chaîne, pas sur l'élément. D'où deux assertions séparées.
+Then('the pre-tech block reveals {string}', (employer: string) => {
+  experiencePage.beforeTech.should('have.attr', 'open');
+  experiencePage.beforeTech.should('contain.text', employer);
 });
 
 /* ==========================================================================
@@ -148,6 +230,10 @@ Then('the skills section is visible', () => {
 
 Then('at least {int} skill cards are displayed', (count: number) => {
   skillsPage.cards.should('have.length.at.least', count);
+});
+
+Then('{int} know-how cards are displayed', (count: number) => {
+  skillsPage.savoirFaireCards.should('have.length', count);
 });
 
 Then('the technology {string} is mentioned', (tech: string) => {
@@ -200,6 +286,31 @@ Then('the card {string} exposes no link', (name: string) => {
   projectsPage.getCardByName(name).find('a').should('not.exist');
 });
 
+Then('the section links to all public repositories', () => {
+  projectsPage.allReposLink.should('have.attr', 'href', GITHUB_URL);
+});
+
+/* ==========================================================================
+   Façon de travailler et terrain
+   ========================================================================== */
+
+Then('the working style section lists {int} convictions', (count: number) => {
+  methodePage.section.scrollIntoView().should('be.visible');
+  methodePage.convictions.should('have.length', count);
+});
+
+Then('the field photos load correctly', () => {
+  terrainPage.section.scrollIntoView().should('be.visible');
+  terrainPage.photos.should('have.length', 2);
+  terrainPage.photos.each(($img) => {
+    const img = $img[0] as HTMLImageElement;
+    cy.wrap($img).should(() => {
+      expect(img.naturalWidth, `chargement de ${img.getAttribute('src')}`).to.be.greaterThan(0);
+    });
+    expect(img.getAttribute('alt'), 'texte alternatif').to.not.be.empty;
+  });
+});
+
 /* ==========================================================================
    Centres d'intérêt
    ========================================================================== */
@@ -218,6 +329,12 @@ Then('{int} hobby cards are displayed', (count: number) => {
 
 Then('the field {string} is present', (label: string) => {
   contactPage.form.contains('label', label).should('be.visible');
+});
+
+Then('the name and email fields are required', () => {
+  contactPage.nameInput.should('have.attr', 'required');
+  contactPage.emailInput.should('have.attr', 'required');
+  contactPage.emailInput.should('have.attr', 'type', 'email');
 });
 
 Then('the message field is present', () => {
@@ -258,6 +375,12 @@ Then('the print-only CV blocks are hidden on screen', () => {
   });
 });
 
+// L'adresse postale complète n'est publiée nulle part : la page se limite à
+// la commune.
+Then('the postal address is nowhere on the page', () => {
+  cy.get('body').invoke('text').should('not.include', 'route de Créon');
+});
+
 /* ==========================================================================
    Pied de page
    ========================================================================== */
@@ -272,6 +395,10 @@ Then('the LinkedIn link is present in the footer', () => {
 
 Then('the GitHub link is present in the footer', () => {
   footerPage.githubLink.should('have.attr', 'href', GITHUB_URL);
+});
+
+Then('the website link is present in the footer', () => {
+  footerPage.websiteLink.should('have.attr', 'href', SITE_URL);
 });
 
 Then('the footer has no Malt link', () => {
