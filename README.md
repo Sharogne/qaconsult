@@ -92,6 +92,12 @@ qaconsult/
 
 ---
 
+## Modifier les textes
+
+Le site tient dans un seul fichier, `index.html`. Pour changer une phrase, un poste ou une date sans toucher au reste : **[CONTENU.md](CONTENU.md)** dit où chercher et quels sont les sept pièges (textes en double écran/impression, compteurs pilotés par attribut, `data-cy` à ne pas supprimer).
+
+---
+
 ## Démarrage rapide
 
 ### Prérequis
