@@ -3,6 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Les tests gardent aussi les pull requests : sans ce déclencheur, une suite
+  # cassée ne se voyait qu'une fois le code déjà sur main.
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,8 +15,11 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  # Un groupe par référence : une pull request ne vient plus faire la queue
+  # derrière un déploiement de main, et un nouveau push sur une PR annule le
+  # run précédent. Sur main, rien n'est annulé — un déploiement va au bout.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
@@ -59,6 +66,8 @@ jobs:
 
   deploy:
     needs: [build, e2e]
+    # Une pull request valide le build et les tests, mais ne publie jamais.
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
