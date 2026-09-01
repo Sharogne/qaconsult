@@ -51,7 +51,12 @@ Implémente les steps manquants en utilisant les page objects. Jamais de `cy.get
 Imports disponibles :
 - `navigationPage` → `navigation.po.ts`
 - `heroPage` → `hero.po.ts`
-- `expertisePage` → `expertise.po.ts` (inclut aussi les offres)
+- `aboutPage` → `about.po.ts` (section Profil + compteurs animés)
+- `experiencePage` → `experience.po.ts` (timeline du parcours)
+- `skillsPage` → `skills.po.ts` (compétences + savoir-faire)
+- `educationPage` → `education.po.ts` (certifications + formation)
+- `projectsPage` → `projects.po.ts` (projets personnels)
+- `hobbiesPage` → `hobbies.po.ts`
 - `contactPage` → `contact.po.ts`
 - `footerPage` → `footer.po.ts`
 

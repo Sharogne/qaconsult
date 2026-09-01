@@ -39,11 +39,10 @@ Dans `portfolio.steps.ts`, ajoute les steps manquants :
 |------|--------|---------|
 | Section | `[nom]-section` | `data-cy="contact-section"` |
 | Input | `input-[nom]` | `data-cy="input-name"` |
-| Select | `select-[nom]` | `data-cy="select-subject"` |
 | Textarea | `textarea-[nom]` | `data-cy="textarea-message"` |
 | Bouton | `[action]-button` | `data-cy="submit-button"` |
 | Lien footer | `footer-link-[réseau]` | `data-cy="footer-link-linkedin"` |
-| Carte | `[type]-card` | `data-cy="offre-card"` |
+| Carte | `[type]-card` | `data-cy="project-card"` |
 | Image | `[nom]-image` | `data-cy="profile-image"` |
 
 ---

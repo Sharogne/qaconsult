@@ -1,22 +1,18 @@
 <div align="center">
-  <img src="public/images/banner.webp" alt="Sylvain Chignaguet — Consultant QA Senior Freelance" width="1200" />
+  <img src="public/images/banner.webp" alt="Sylvain Chignaguet — QA Automation Engineer" width="1200" />
 </div>
 
-<h1 align="center">Sylvain Chignaguet · Consultant QA Senior Freelance</h1>
+<h1 align="center">Sylvain Chignaguet · QA Automation Engineer</h1>
 
 <p align="center">
-  <strong>Bordeaux · Remote France & World</strong><br>
-  Automatisation Cypress &amp; Appium &nbsp;·&nbsp; Stratégie de test &nbsp;·&nbsp; IA appliquée au QA
+  <strong>Bordeaux Métropole · Remote &amp; hybride</strong><br>
+  Automatisation Cypress &amp; Appium &nbsp;·&nbsp; Stratégie de test &nbsp;·&nbsp; Cap sur la gestion de projet
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/">LinkedIn</a>
   &nbsp;·&nbsp;
   <a href="https://github.com/Sharogne">GitHub</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.malt.fr/profile/sylvainchignaguet">Malt</a>
-  &nbsp;·&nbsp;
-  <a href="https://calendly.com/sylvain-chignaguet">Calendly</a>
   &nbsp;·&nbsp;
   <a href="https://www.chignaguet.fr">www.chignaguet.fr</a>
 </p>
@@ -27,7 +23,7 @@
 
 Ce dépôt remplit trois fonctions :
 
-1. **Site vitrine professionnel** — le code source du portfolio de Sylvain Chignaguet, consultant QA senior freelance à Bordeaux. Site statique HTML/CSS/JS pur, servi par Vite.
+1. **CV en ligne** — le code source de [chignaguet.fr](https://www.chignaguet.fr), le CV one-page de Sylvain Chignaguet, QA Automation Engineer à Bordeaux. Page unique statique en HTML/CSS/JS pur, servie par Vite, avec une feuille `@media print` qui la transforme en CV imprimable de trois pages.
 
 2. **Démonstration QA assistée par IA** — une suite de tests Cypress E2E structurée en **Gherkin/Cucumber** avec **Page Objects**, conçue avec l'assistance de [Claude Code](https://claude.ai/claude-code) (Anthropic). Ce projet illustre comment l'IA peut accélérer la mise en place d'une stratégie de test sans sacrifier la qualité ni la lisibilité.
 
@@ -46,6 +42,7 @@ Ce dépôt remplit trois fonctions :
 | Pattern | Page Objects + `data-cy` |
 | Typage | TypeScript |
 | Formulaire contact | [FormSubmit.co](https://formsubmit.co/) |
+| Hébergement | GitHub Pages (domaine `chignaguet.fr`) |
 
 ---
 
@@ -63,15 +60,20 @@ qaconsult/
 ├── cypress/
 │   ├── e2e/
 │   │   └── portfolio/
-│   │       ├── portfolio.feature  # Scénarios Gherkin (en français)
+│   │       ├── portfolio.feature  # Scénarios Gherkin
 │   │       └── portfolio.steps.ts # Step definitions → Page Objects
 │   └── support/
 │       ├── page-objects/
-│       │   ├── navigation.po.ts   # Sélecteurs header / nav  [data-cy]
-│       │   ├── hero.po.ts         # Sélecteurs hero           [data-cy]
-│       │   ├── expertise.po.ts    # Sélecteurs expertise & offres [data-cy]
-│       │   ├── contact.po.ts      # Sélecteurs formulaire     [data-cy]
-│       │   └── footer.po.ts       # Sélecteurs footer         [data-cy]
+│       │   ├── navigation.po.ts   # Header / navigation       [data-cy]
+│       │   ├── hero.po.ts         # Hero, photo, bouton CV    [data-cy]
+│       │   ├── about.po.ts        # Profil + compteurs        [data-cy]
+│       │   ├── experience.po.ts   # Timeline du parcours      [data-cy]
+│       │   ├── skills.po.ts       # Compétences & savoir-faire [data-cy]
+│       │   ├── education.po.ts    # Certifications, formation [data-cy]
+│       │   ├── projects.po.ts     # Projets personnels        [data-cy]
+│       │   ├── hobbies.po.ts      # Centres d'intérêt         [data-cy]
+│       │   ├── contact.po.ts      # Formulaire de contact     [data-cy]
+│       │   └── footer.po.ts       # Pied de page              [data-cy]
 │       ├── commands.ts            # Commandes Cypress personnalisées
 │       └── e2e.ts                 # Support global
 ├── .claude/                       # Versionné (settings.json exclus du git)
@@ -81,7 +83,7 @@ qaconsult/
 │       ├── new-page-object.md     # /new-page-object   — crée un page object
 │       ├── audit-cy.md            # /audit-cy          — audit couverture data-cy
 │       └── cypress-review.md      # /cypress-review    — revue qualité tests
-├── index.html                     # Site complet (HTML/CSS/JS + attributs data-cy)
+├── index.html                     # CV one-page complet (HTML/CSS/JS + attributs data-cy)
 ├── cypress.config.ts              # Configuration Cypress + Cucumber
 ├── vite.config.ts
 ├── tsconfig.json
@@ -164,15 +166,11 @@ get nameInput() { return cy.get('[data-cy="input-name"]'); }
 get submitButton() { return cy.get('[data-cy="submit-button"]'); }
 ```
 
-Pour les éléments à double identité (collection + ciblage individuel), la valeur `data-cy` contient les deux identifiants et le sélecteur utilise `[data-cy*="..."]` (CSS contains) :
-
-```html
-<div data-cy="offre-card offre-card-ia">...</div>
-```
+Quand un élément doit être atteint par son libellé plutôt que par un identifiant — un lien de navigation, un intitulé de poste — le `data-cy` est posé sur le conteneur et le ciblage se fait par `cy.contains()`. Cela garde le test proche de ce que lit l'utilisateur :
 
 ```ts
-get offreCards() { return cy.get('[data-cy*="offre-card"]');    } // 5 cartes
-get iaCard()     { return cy.get('[data-cy*="offre-card-ia"]'); } // 1 carte
+// navigation.po.ts
+getLinkByText(text: string) { return this.navLinks.contains('a', text); }
 ```
 
 ### Scénarios couverts
@@ -180,12 +178,23 @@ get iaCard()     { return cy.get('[data-cy*="offre-card-ia"]'); } // 1 carte
 | Scénario | Page Object(s) |
 |---|---|
 | Header et navigation | `navigation.po.ts` |
-| Section Hero (titre, CTA, code Cypress) | `hero.po.ts` |
-| Cartes d'expertise | `expertise.po.ts` |
-| Offres de service + badge Innovation | `expertise.po.ts` |
+| Section Hero (titre, sous-titre, localisation, photo) | `hero.po.ts` |
+| LinkedIn et GitHub mis en avant | `hero.po.ts` |
+| Bouton de téléchargement du CV | `hero.po.ts` |
+| Compteurs animés | `about.po.ts` |
+| Timeline du parcours (poste actuel, rôles Asobo, bloc replié) | `experience.po.ts` |
+| Compétences techniques | `skills.po.ts` |
+| Certifications et formation | `education.po.ts` |
+| **Projets personnels sans lien mort** | `projects.po.ts` |
+| Centres d'intérêt | `hobbies.po.ts` |
 | Formulaire de contact | `contact.po.ts` |
-| Chargement de la photo de profil | — |
+| Absence de résidus freelance et du téléphone à l'écran | — |
 | Footer et liens sociaux | `footer.po.ts` |
+
+Deux scénarios méritent un mot, parce qu'ils testent une règle métier et pas seulement un affichage :
+
+- **« Personal projects have no dead links »** — trois des quatre projets présentés sont privés ou pas encore livrés. Le test vérifie qu'un seul lien de dépôt existe dans toute la section, pour qu'aucun recruteur ne tombe sur une 404.
+- **« No freelance leftovers and no phone number on screen »** — le numéro de téléphone reste dans le DOM pour le CV imprimé (`@media print`) mais ne doit jamais être visible à l'écran ; le test l'affirme avec `should('not.be.visible')`.
 
 ### Commandes Claude Code (`.claude/commands/`)
 
@@ -208,7 +217,7 @@ Ce projet inclut des commandes Claude Code versionnées pour maintenir la qualit
 Ce projet applique les principes défendus dans le portfolio :
 
 - **Shift-Left** : les tests font partie du cycle de développement, pas une étape finale
-- **ROI maximal** : on cible les parcours critiques (navigation, formulaire, images)
+- **ROI maximal** : on cible les parcours critiques et les règles métier qui coûtent cher si elles cassent (liens morts, données personnelles exposées)
 - **Lisibilité** : les fichiers `.feature` servent de documentation vivante, compréhensible sans connaissance technique
 - **Séparation des responsabilités** : Gherkin / Steps / Page Objects / `data-cy` = chaque couche a un seul rôle
 - **Sélecteurs stables** : les attributs `data-cy` découplent les tests des classes CSS et de la structure HTML, rendant les tests insensibles aux refactorisations visuelles
@@ -217,14 +226,13 @@ Ce projet applique les principes défendus dans le portfolio :
 
 ## Contact
 
-Disponible pour des missions de consulting à Bordeaux et en remote dans toute la France.
+À l'écoute d'opportunités en CDI sur Bordeaux, en remote ou en hybride.
 
 - **Email :** sylvain.chignaguet@gmail.com
-- **Calendly :** https://calendly.com/sylvain-chignaguet
 - **LinkedIn :** https://www.linkedin.com/in/sylvain-chignaguet-a7534286/
 
 ---
 
 <p align="center">
-  <sub>© 2026 Sylvain Chignaguet — Consultant QA Senior Freelance · Bordeaux</sub>
+  <sub>© 2026 Sylvain Chignaguet — QA Automation Engineer · Bordeaux</sub>
 </p>

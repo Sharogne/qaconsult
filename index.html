@@ -3,1294 +3,1810 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sylvain Chignaguet | Consultant QA Senior Freelance</title>
-    <meta name="description" content="Sylvain — Consultant QA Senior Freelance à Bordeaux. Automatisation Cypress & Appium, stratégie de test, intégration IA. Expert jeux vidéo.">
-    
+
+    <title>Sylvain Chignaguet — QA Automation Engineer | CV</title>
+    <meta name="description" content="QA Automation Engineer avec 8 ans d'expérience (Phenix, Asobo Studio, Betclic). Cypress, TypeScript, CI/CD, Appium. Certifié PSM I, PSPO I, SAFe. En route vers la gestion de projet. Bordeaux & remote.">
+    <link rel="canonical" href="https://www.chignaguet.fr/">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Sylvain Chignaguet">
+    <meta property="og:url" content="https://www.chignaguet.fr/">
+    <meta property="og:title" content="Sylvain Chignaguet — QA Automation Engineer">
+    <meta property="og:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD — et le cap sur la gestion de projet.">
+    <meta property="og:image" content="https://www.chignaguet.fr/images/banner.webp">
+    <meta property="og:image:alt" content="Sylvain Chignaguet — QA Automation Engineer">
+    <meta property="profile:first_name" content="Sylvain">
+    <meta property="profile:last_name" content="Chignaguet">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sylvain Chignaguet — QA Automation Engineer">
+    <meta name="twitter:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD — et le cap sur la gestion de projet.">
+    <meta name="twitter:image" content="https://www.chignaguet.fr/images/banner.webp">
+
+    <meta name="theme-color" content="#0D1117">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D1117'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='bold' fill='%233FD39B' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sylvain Chignaguet",
+      "givenName": "Sylvain",
+      "familyName": "Chignaguet",
+      "jobTitle": "QA Automation Engineer",
+      "email": "mailto:sylvain.chignaguet@gmail.com",
+      "url": "https://www.chignaguet.fr/",
+      "image": "https://www.chignaguet.fr/images/profile.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baron",
+        "addressRegion": "Nouvelle-Aquitaine",
+        "postalCode": "33750",
+        "addressCountry": "FR"
+      },
+      "worksFor": { "@type": "Organization", "name": "Phenix" },
+      "alumniOf": [
+        { "@type": "Organization", "name": "Asobo Studio" },
+        { "@type": "Organization", "name": "Betclic Group" },
+        { "@type": "EducationalOrganization", "name": "Crossthink" }
+      ],
+      "knowsAbout": [
+        "Assurance qualité logicielle", "Automatisation de tests", "Cypress", "Playwright",
+        "Appium", "TypeScript", "CI/CD", "GitHub Actions", "BDD Cucumber Gherkin",
+        "TestRail", "Gestion de projet", "Méthodes agiles", "Scrum", "SAFe"
+      ],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "Professional Scrum Master I (PSM I)", "credentialCategory": "certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "Professional Scrum Product Owner I (PSPO I)", "credentialCategory": "certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "Scrum Master Certified (SMC)", "credentialCategory": "certification" },
+        { "@type": "EducationalOccupationalCredential", "name": "Certification SAFe", "credentialCategory": "certification" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/sylvain-chignaguet-a7534286/",
+        "https://github.com/Sharogne"
+      ]
+    }
+    </script>
+
     <style>
+        /* ==========================================================================
+           Tokens — charte « sombre tech affinée »
+           Dérivée de l'ancienne charte du site, désaturée d'un cran :
+           la couleur est un signal ponctuel, la hiérarchie repose sur le gris.
+           ========================================================================== */
         :root {
-            --bg-dark: #0D1117;
-            --bg-card: #161B22;
-            --accent-primary: #00E5A0;
-            --accent-secondary: #6C63FF;
-            --text-primary: #E6EDF3;
-            --text-secondary: #8B949E;
-            --highlight: #1F6FEB;
-            --border-color: rgba(230, 237, 243, 0.1);
-            
-            --font-heading: 'Syne', sans-serif;
-            --font-body: 'DM Sans', sans-serif;
-            --font-code: 'JetBrains Mono', monospace;
-            
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --bg:              #0D1117;
+            --bg-deep:         #0B0E14;
+            --surface:         #131922;
+            --card:            #161B22;
+            --card-hover:      #1C232D;
+
+            --border:          rgba(230, 237, 243, 0.09);
+            --border-solid:    #242C38;
+            --border-strong:   #2E3846;
+
+            --text:            #E6EDF3;
+            --text-2:          #A8B3BF;
+            --text-3:          #848F9C;
+
+            /* Menthe : action, présent, chiffres. Indigo : le fil « gestion de projet ». */
+            --accent:          #3FD39B;
+            --accent-bright:   #6FE3B7;
+            --accent-soft:     rgba(63, 211, 155, 0.10);
+            --accent-line:     rgba(63, 211, 155, 0.30);
+            --support:         #8B8CF0;
+            --support-soft:    rgba(139, 140, 240, 0.09);
+            --support-line:    rgba(139, 140, 240, 0.30);
+
+            --font-display: 'Syne', Georgia, serif;
+            --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+            --r-chip:  4px;
+            --r-field: 8px;
+            --r-card:  12px;
+            --r-block: 16px;
+            --r-pill:  999px;
+
+            --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
+            --t-micro:   160ms;
+            --t-state:   240ms;
+            --t-reveal:  520ms;
+
+            --shell:     1180px;
+            --gutter:    24px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        /* ==========================================================================
+           Base
+           ========================================================================== */
+        *, *::before, *::after { box-sizing: border-box; }
+        * { margin: 0; padding: 0; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; scroll-padding-top: 92px; }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
+            background-color: var(--bg);
+            color: var(--text);
             font-family: var(--font-body);
-            line-height: 1.6;
+            font-size: 17px;
+            line-height: 1.7;
             overflow-x: hidden;
-            position: relative;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Dot Grid Background */
+        /* Trame de fond discrète */
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: radial-gradient(rgba(139, 148, 158, 0.15) 1px, transparent 1px);
-            background-size: 24px 24px;
+            inset: 0;
+            background-image: radial-gradient(rgba(139, 148, 158, 0.10) 1px, transparent 1px);
+            background-size: 26px 26px;
             z-index: -1;
             pointer-events: none;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+        h1 { font-weight: 800; letter-spacing: -0.028em; }
+        p  { text-wrap: pretty; }
+
+        a { color: inherit; text-decoration: none; transition: color var(--t-state) var(--ease); }
+        a:hover { color: var(--accent-bright); }
+        img { max-width: 100%; display: block; }
+        ul { list-style: none; }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 12px;
+            z-index: 200;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 12px 20px;
+            border-radius: var(--r-pill);
             font-weight: 700;
-            line-height: 1.2;
         }
+        .skip-link:focus { left: 24px; color: var(--bg); }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: var(--transition);
+        /* ==========================================================================
+           Utilitaires de mise en page
+           ========================================================================== */
+        .container { width: 100%; max-width: var(--shell); margin: 0 auto; padding: 0 var(--gutter); }
+
+        .section { padding: 112px var(--gutter); }
+        .section--tight { padding: 80px var(--gutter); }
+
+        .section-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 44px; max-width: 760px; }
+        .eyebrow {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
         }
+        .eyebrow--support { color: var(--support); }
+        .eyebrow--muted   { color: var(--text-3); }
+        .section-title { font-size: clamp(28px, 4vw, 38px); font-weight: 800; letter-spacing: -0.02em; }
+        .section-intro { color: var(--text-2); font-size: 17px; }
 
-        ul {
-            list-style: none;
+        .mono { font-family: var(--font-mono); }
+
+        .chip {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            line-height: 1.4;
+            padding: 5px 10px;
+            border-radius: var(--r-chip);
+            background: var(--card-hover);
+            color: var(--text-2);
+            transition: background var(--t-state) var(--ease), color var(--t-state) var(--ease);
         }
+        .chip-row { display: flex; flex-wrap: wrap; gap: 7px; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            border-radius: var(--r-pill);
+            padding: 5px 12px;
+            border: 1px solid var(--border-strong);
+            color: var(--text-3);
+            white-space: nowrap;
         }
+        .badge--accent  { color: var(--accent);  border-color: var(--accent-line); }
+        .badge--support { color: var(--support); border-color: var(--support-line); }
 
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .section-title span {
-            color: var(--accent-primary);
-        }
-
-        /* Buttons */
+        /* ==========================================================================
+           Boutons
+           ========================================================================== */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 24px;
-            border-radius: 8px;
+            gap: 10px;
+            height: 52px;
+            padding: 0 28px;
+            border-radius: var(--r-pill);
+            font-family: var(--font-body);
+            font-size: 16px;
             font-weight: 500;
-            font-family: var(--font-code);
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
             border: 1px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background var(--t-state) var(--ease), border-color var(--t-state) var(--ease),
+                        color var(--t-state) var(--ease), transform var(--t-micro) var(--ease);
         }
+        .btn:active { transform: translateY(1px); }
 
-        .btn-primary {
-            background-color: rgba(0, 229, 160, 0.1);
-            color: var(--accent-primary);
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 15px rgba(0, 229, 160, 0.1);
-        }
+        .btn-primary { background: var(--accent); color: var(--bg); font-weight: 700; }
+        .btn-primary:hover { background: var(--accent-bright); color: var(--bg); }
 
-        .btn-primary:hover {
-            background-color: var(--accent-primary);
-            color: var(--bg-dark);
-            box-shadow: 0 0 25px rgba(0, 229, 160, 0.3);
-        }
+        .btn-secondary { background: transparent; border-color: var(--border-strong); color: var(--text); }
+        .btn-secondary:hover { border-color: var(--accent-line); background: var(--accent-soft); color: var(--accent); }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-primary);
-            border-color: var(--border-color);
-        }
+        .btn-sm { height: 44px; padding: 0 20px; font-size: 14px; }
 
-        .btn-secondary:hover {
-            border-color: var(--text-primary);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* Header */
+        /* ==========================================================================
+           En-tête
+           ========================================================================== */
         header {
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(13, 17, 23, 0.8);
+            z-index: 100;
+            background: rgba(13, 17, 23, 0.86);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 16px 0;
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--t-state) var(--ease), background var(--t-state) var(--ease);
         }
+        header.is-scrolled { border-bottom-color: var(--border); }
 
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
 
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+        .logo { font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+        .logo span { color: var(--accent); }
+        .logo:hover { color: var(--text); }
 
-        .logo span {
-            color: var(--accent-primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-primary);
-        }
+        .nav-links { display: flex; align-items: center; gap: 34px; }
+        .nav-links a { font-size: 15px; color: var(--text-2); }
+        .nav-links a:hover { color: var(--text); }
+        .nav-links .btn { color: var(--bg); }
 
         .mobile-menu-btn {
             display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
             background: none;
             border: none;
-            color: var(--text-primary);
+            color: var(--text-2);
             cursor: pointer;
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
+        /* ==========================================================================
+           Hero
+           ========================================================================== */
+        .hero { padding: 72px var(--gutter) 88px; }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+            gap: 56px;
             align-items: center;
-            padding-top: 80px;
-            position: relative;
-            overflow: hidden;
         }
+        .hero-content { display: flex; flex-direction: column; gap: 26px; }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url('/images/background.webp');
-            background-size: cover;
-            background-position: center 30%;
-            opacity: 0.07;
-            z-index: 0;
-            pointer-events: none;
-            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-            z-index: 2;
-        }
-
-        .hero-label {
-            font-family: var(--font-code);
-            color: var(--accent-primary);
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(0, 229, 160, 0.1);
-            border-radius: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 5vw, 4.5rem);
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        .hero h2 {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            color: var(--text-secondary);
-            margin-bottom: 24px;
+        .hero-name { font-size: clamp(42px, 6.4vw, 68px); line-height: 1.04; }
+        .hero-role {
+            font-family: var(--font-body);
+            font-size: clamp(20px, 2.6vw, 26px);
             font-weight: 500;
+            line-height: 1.35;
+            letter-spacing: 0;
         }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            max-width: 500px;
-        }
+        .hero-role span { color: var(--support); }
+        .hero-pitch { color: var(--text-2); font-size: 18px; line-height: 1.72; max-width: 60ch; }
 
         .hero-location {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 16px;
-        }
-
-        .hero-visual {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-            z-index: 1;
-        }
-
-        .code-block {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            font-family: var(--font-code);
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            position: relative;
-            overflow: hidden;
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .code-block::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-        }
-
-        .code-header {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .code-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .code-dot:nth-child(1) { background: #FF5F56; }
-        .code-dot:nth-child(2) { background: #FFBD2E; }
-        .code-dot:nth-child(3) { background: #27C93F; }
-
-        .code-line { margin-bottom: 4px; }
-        .code-keyword { color: var(--accent-secondary); }
-        .code-string { color: var(--accent-primary); }
-        .code-function { color: var(--highlight); }
-        .code-comment { color: var(--text-secondary); font-style: italic; }
-
-        /* Expertise Section */
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .expertise-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .expertise-card:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 229, 160, 0.05);
-        }
-        
-        .expertise-ia {
-            border-color: rgba(108, 99, 255, 0.3);
-        }
-        
-        .expertise-gaming {
-            border-color: rgba(31, 111, 235, 0.3);
-        }
-
-        .expertise-icon {
-            font-size: 2rem;
-            margin-bottom: 16px;
-            color: var(--accent-primary);
-        }
-
-        .expertise-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-
-        .expertise-tags {
-            display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 14px;
+            color: var(--text-3);
+            font-size: 15px;
         }
+        .hero-location > span { display: inline-flex; align-items: center; gap: 8px; }
+        .hero-location .dot { width: 4px; height: 4px; border-radius: var(--r-pill); background: var(--border-strong); }
 
-        .expertise-tag {
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            color: var(--text-secondary);
-        }
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
 
-        /* Offres Section */
-        .offres-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-
-        .offre-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .offre-card:hover {
-            border-color: var(--text-secondary);
-            transform: translateY(-5px);
-        }
-
-        .offre-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+        .social-row { display: flex; flex-wrap: wrap; gap: 12px; }
+        .social-card {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
+            gap: 13px;
+            padding: 11px 18px 11px 12px;
+            border-radius: var(--r-card);
+            border: 1px solid var(--border-strong);
+            background: var(--surface);
+            transition: border-color var(--t-state) var(--ease), background var(--t-state) var(--ease),
+                        transform var(--t-state) var(--ease);
         }
+        .social-card:hover {
+            border-color: var(--accent-line);
+            background: var(--card-hover);
+            color: var(--text);
+            transform: translateY(-2px);
+        }
+        .social-card-icon {
+            width: 38px; height: 38px;
+            flex-shrink: 0;
+            border-radius: 9px;
+            background: var(--card-hover);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent);
+        }
+        .social-card-text { display: flex; flex-direction: column; gap: 2px; }
+        .social-card-text strong { font-size: 15px; font-weight: 700; color: var(--text); }
+        .social-card-text span { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
+        .social-card-arrow { color: var(--text-3); margin-left: 4px; display: flex; }
 
-        .offre-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--text-primary);
-        }
-
-        .offre-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 16px;
-        }
-
-        .offre-card p {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            flex-grow: 1;
-        }
-
-        .offre-tags {
-            font-family: var(--font-code);
-            font-size: 0.8rem;
-            color: var(--accent-primary);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        /* Special Cards */
-        .offre-card.special-ia {
-            border-color: rgba(108, 99, 255, 0.3);
-            background: linear-gradient(180deg, rgba(108, 99, 255, 0.05) 0%, var(--bg-card) 100%);
-            position: relative;
-        }
-        
-        .offre-card.special-ia:hover {
-            border-color: var(--accent-secondary);
-            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.15);
-        }
-
-        .offre-card.special-ia .offre-icon {
-            background: rgba(108, 99, 255, 0.1);
-        }
-
-        .offre-card.special-ia .offre-icon svg {
-            stroke: var(--accent-secondary);
-        }
-
-        .offre-card.special-ia .offre-tags {
-            color: var(--accent-secondary);
-        }
-
-        .badge-innovation {
+        .hero-visual { display: flex; justify-content: flex-end; }
+        .hero-portrait { position: relative; width: 100%; max-width: 400px; }
+        .hero-portrait::before {
+            content: '';
             position: absolute;
-            top: -12px;
-            right: 24px;
-            background: var(--accent-secondary);
-            color: white;
-            font-family: var(--font-code);
-            font-size: 0.7rem;
-            padding: 4px 12px;
+            left: -22px; top: -22px; right: 22px; bottom: 22px;
+            border: 1px solid var(--accent-line);
             border-radius: 20px;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+            pointer-events: none;
         }
-
-        .offre-card.special-gaming {
-            border-color: rgba(31, 111, 235, 0.3);
-            background: linear-gradient(180deg, rgba(31, 111, 235, 0.05) 0%, var(--bg-card) 100%);
-        }
-
-        .offre-card.special-gaming:hover {
-            border-color: var(--highlight);
-            box-shadow: 0 10px 30px rgba(31, 111, 235, 0.15);
-        }
-
-        .offre-card.special-gaming .offre-icon {
-            background: rgba(31, 111, 235, 0.1);
-        }
-
-        .offre-card.special-gaming .offre-icon svg {
-            stroke: var(--highlight);
-        }
-
-        .offre-card.special-gaming .offre-tags {
-            color: var(--highlight);
-        }
-
-        /* Approche Section */
-        .approche-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .approche-item {
-            display: flex;
-            gap: 24px;
-            background: var(--bg-card);
-            padding: 32px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            align-items: flex-start;
-        }
-
-        .approche-number {
-            font-family: var(--font-code);
-            font-size: 1.5rem;
-            color: var(--accent-primary);
-            font-weight: 700;
-            opacity: 0.5;
-        }
-
-        .approche-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        .approche-content p {
-            color: var(--text-secondary);
-        }
-
-        /* Chiffres Section */
-        .chiffres-section {
+        .hero-portrait-frame {
             position: relative;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 80px 0;
-            background-image: url('/images/banner.webp');
-            background-size: cover;
-            background-position: center 40%;
+            aspect-ratio: 40 / 47;
+            border-radius: 20px;
             overflow: hidden;
+            border: 1px solid var(--border-solid);
+            background: var(--card);
         }
-
-        .chiffres-section::before {
+        .hero-portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-portrait-frame::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(13, 17, 23, 0.92) 0%,
-                rgba(13, 17, 23, 0.80) 50%,
-                rgba(13, 17, 23, 0.92) 100%
-            );
-            z-index: 0;
+            background: linear-gradient(180deg, rgba(13,17,23,0) 45%, rgba(13,17,23,0.82) 100%);
+        }
+        .hero-portrait-stat {
+            position: absolute;
+            left: -28px;
+            bottom: 32px;
+            background: var(--card);
+            border: 1px solid var(--border-solid);
+            border-radius: var(--r-card);
+            padding: 14px 18px;
+        }
+        .hero-portrait-stat b {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .hero-portrait-stat b i { font-style: normal; font-size: 17px; }
+        .hero-portrait-stat span {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: var(--text-3);
         }
 
-        .chiffres-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+        /* ==========================================================================
+           Chiffres
+           ========================================================================== */
+        .chiffres-section { background: var(--bg-deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .chiffres-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding: 48px var(--gutter); }
+        .chiffre-number { font-family: var(--font-display); font-size: 38px; font-weight: 800; line-height: 1; }
+        .chiffre-number span.suffix { color: var(--accent); }
+        .chiffre-label { font-size: 14px; color: var(--text-3); margin-top: 8px; }
+
+        /* ==========================================================================
+           Profil
+           ========================================================================== */
+        .profil-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+        .profil-body { display: flex; flex-direction: column; gap: 20px; color: var(--text-2); }
+        .profil-body strong { color: var(--text); font-weight: 500; }
+
+        .profil-proof { display: flex; flex-direction: column; gap: 12px; }
+        .proof-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--card);
+            border: 1px solid var(--support-line);
+            border-radius: var(--r-card);
+            padding: 18px 20px;
+        }
+        .proof-item svg { color: var(--support); flex-shrink: 0; margin-top: 3px; }
+        .proof-item b { display: block; font-size: 15.5px; font-weight: 700; margin-bottom: 3px; }
+        .proof-item span { font-size: 14.5px; line-height: 1.6; color: var(--text-2); }
+
+        /* ==========================================================================
+           Parcours — timeline
+           ========================================================================== */
+        .timeline { display: flex; flex-direction: column; }
+        .tl-row { display: grid; grid-template-columns: 150px 34px minmax(0, 1fr); }
+        .tl-date { padding: 24px 22px 0 0; text-align: right; }
+        .tl-date b, .tl-date span, .tl-date em {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            font-style: normal;
+        }
+        .tl-date b { color: var(--text-2); font-weight: 500; }
+        .tl-date .is-now { color: var(--accent); }
+        .tl-date span { color: var(--text-3); }
+        .tl-date em { color: var(--text-3); font-size: 11px; padding-top: 6px; }
+
+        .tl-rail { position: relative; display: flex; justify-content: center; }
+        .tl-line { width: 2px; height: 100%; background: var(--border-solid); border-radius: 1px; }
+        .tl-line-fill {
+            position: absolute;
+            inset: 0;
+            width: 2px;
+            margin: 0 auto;
+            background: linear-gradient(var(--accent), var(--support));
+            border-radius: 1px;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 900ms var(--ease);
+        }
+        .tl-row.is-visible .tl-line-fill { transform: scaleY(1); }
+        .tl-node {
+            position: absolute;
+            top: 28px;
+            width: 11px; height: 11px;
+            border-radius: var(--r-pill);
+            background: var(--bg);
+            border: 2px solid var(--border-strong);
+        }
+        /* Dernière entrée : le rail s'éteint au lieu de pendre dans le vide. */
+        .tl-row:last-child .tl-line { background: linear-gradient(var(--border-solid), transparent); }
+        .tl-row:last-child .tl-line-fill { background: linear-gradient(var(--support), transparent); }
+
+        .tl-node--now {
+            width: 13px; height: 13px;
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 5px rgba(63, 211, 155, 0.16);
         }
 
-        .chiffre-item {
+        .tl-body { padding: 16px 0 34px 24px; }
+
+        .job {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-card);
+            padding: 24px 26px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 14px;
+            transition: border-color var(--t-state) var(--ease), background var(--t-state) var(--ease);
         }
+        .job:hover { border-color: var(--border-strong); background: var(--card-hover); }
+        .job--now { border-color: var(--accent-line); }
+        .job--now:hover { border-color: var(--accent); }
+        .job--group { background: var(--surface); gap: 18px; }
 
-        .chiffre-number {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            line-height: 1;
-            margin-bottom: 8px;
+        .job-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .job-title { font-family: var(--font-body); font-size: 20px; font-weight: 700; letter-spacing: 0; }
+        .job-org { font-size: 15px; color: var(--text-3); margin-top: 4px; }
+        .job-org.is-now { color: var(--accent); font-weight: 500; }
+
+        .job-points { display: flex; flex-direction: column; gap: 9px; }
+        .job-points li { position: relative; padding-left: 22px; font-size: 14.5px; line-height: 1.62; color: var(--text-2); }
+        .job-points li::before { content: '—'; position: absolute; left: 0; top: 0; color: var(--accent); }
+        .job-points strong { color: var(--text); font-weight: 500; }
+
+        .job-group-head {
+            display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
         }
+        .job-roles { display: flex; flex-direction: column; gap: 18px; }
+        .job-role { display: flex; gap: 16px; align-items: flex-start; }
+        .job-role-dot { width: 7px; height: 7px; border-radius: var(--r-pill); background: var(--border-strong); margin-top: 9px; flex-shrink: 0; }
+        .job-role-dot--lead { background: var(--support); }
+        .job-role-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 5px; }
+        .job-role-meta h4 { font-family: var(--font-body); font-size: 16.5px; font-weight: 700; letter-spacing: 0; }
+        .job-role-meta .mono { font-size: 11.5px; color: var(--text-3); }
+        .job-role p { font-size: 14.5px; line-height: 1.62; color: var(--text-2); }
+        .job-role p strong { color: var(--text); font-weight: 500; }
+        .job-role cite { font-style: normal; color: var(--text); }
 
-        .chiffre-number span {
-            color: var(--accent-primary);
+        /* Bloc « avant la tech » repliable */
+        .before-tech { border: 1px dashed var(--border-solid); border-radius: var(--r-card); }
+        .before-tech > summary {
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            padding: 22px 26px;
+            cursor: pointer;
+            list-style: none;
+            color: var(--text-2);
+            font-size: 17px;
+            font-weight: 700;
         }
-
-        .chiffre-label {
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .before-tech > summary::-webkit-details-marker { display: none; }
+        .before-tech > summary:hover { color: var(--text); }
+        .before-tech-hint {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.10em; text-transform: uppercase;
+            color: var(--text-3);
+            font-weight: 400;
         }
+        .before-tech[open] .before-tech-hint svg { transform: rotate(180deg); }
+        .before-tech-hint svg { transition: transform var(--t-state) var(--ease); }
+        .before-tech-body { padding: 0 26px 22px; display: flex; flex-direction: column; gap: 16px; }
+        .before-tech-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
+        .before-tech-grid b { display: block; font-size: 14.5px; font-weight: 500; color: var(--text); }
+        .before-tech-grid span { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
+        .before-tech-note { font-size: 13.5px; line-height: 1.6; color: var(--text-3); border-top: 1px solid var(--border); padding-top: 14px; }
 
-        /* Terrain Section */
-        .terrain-section {
-            padding: 100px 0;
+        /* ==========================================================================
+           Compétences
+           ========================================================================== */
+        .skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-card);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: border-color var(--t-state) var(--ease), background var(--t-state) var(--ease),
+                        transform var(--t-state) var(--ease);
         }
+        .skill-card:hover { background: var(--card-hover); border-color: var(--accent-line); transform: translateY(-3px); }
+        .skill-card:hover .chip { background: var(--accent-soft); color: var(--accent); }
+        .skill-card svg { color: var(--accent); }
+        .skill-card h3 { font-family: var(--font-body); font-size: 16.5px; font-weight: 700; letter-spacing: 0; }
+        .skill-card--support { border-color: var(--support-line); }
+        .skill-card--support svg { color: var(--support); }
+        .skill-card--support .chip { background: var(--support-soft); color: var(--support); }
+        .skill-card--support:hover { border-color: var(--support); }
+        .skill-card--support:hover .chip { background: rgba(139, 140, 240, 0.18); color: var(--support); }
 
-        .terrain-grid {
+        .savoirfaire { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
+        .savoirfaire-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-card);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: border-color var(--t-state) var(--ease);
+        }
+        .savoirfaire-card:hover { border-color: var(--border-strong); }
+        .savoirfaire-card h3 { font-family: var(--font-body); font-size: 17px; font-weight: 700; letter-spacing: 0; }
+        .savoirfaire-card p { font-size: 14.5px; line-height: 1.65; color: var(--text-2); }
+
+        /* ==========================================================================
+           Certifications & formation
+           ========================================================================== */
+        .education-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: start; }
+        .certs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+        .cert-card {
+            background: var(--card);
+            border: 1px solid var(--support-line);
+            border-radius: var(--r-card);
+            padding: 18px 20px;
+            transition: background var(--t-state) var(--ease), transform var(--t-state) var(--ease);
+        }
+        .cert-card:hover { background: var(--card-hover); transform: translateY(-2px); }
+        .cert-card b { display: block; font-size: 15.5px; font-weight: 700; }
+        .cert-card span { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
+
+        .cert-note {
+            display: flex; align-items: center; gap: 12px;
+            background: var(--support-soft);
+            border: 1px solid var(--support-line);
+            border-radius: var(--r-card);
+            padding: 16px 20px;
+            margin-top: 16px;
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: var(--text-2);
+        }
+        .cert-note svg { color: var(--support); flex-shrink: 0; }
+        .cert-note strong { color: var(--text); font-weight: 500; }
+
+        .diplomas li { display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+        .diplomas li:first-child { padding-top: 0; }
+        .diplomas li:last-child { border-bottom: none; padding-bottom: 0; }
+        .diplomas .year { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); width: 62px; flex-shrink: 0; padding-top: 3px; }
+        .diplomas .year.is-key { color: var(--support); }
+        .diplomas b { display: block; font-size: 16px; font-weight: 700; }
+        .diplomas span { font-size: 14px; color: var(--text-2); }
+
+        /* ==========================================================================
+           Projets personnels
+           ========================================================================== */
+        .projects-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; flex-wrap: wrap; margin-bottom: 40px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-card);
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: border-color var(--t-state) var(--ease), background var(--t-state) var(--ease),
+                        transform var(--t-state) var(--ease);
+        }
+        .project-card:hover { background: var(--card-hover); transform: translateY(-3px); }
+        .project-card--public { border-color: var(--accent-line); }
+        .project-card--public:hover { border-color: var(--accent); }
+        .project-card--wip { border-color: var(--support-line); }
+        .project-card--wip:hover { border-color: var(--support); }
+        .project-card--soon { background: var(--surface); }
+        .project-card--soon:hover { background: var(--card); border-color: var(--border-strong); }
+
+        .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .project-top .mono { font-size: 11px; color: var(--text-3); }
+        .project-card h3 { font-family: var(--font-body); font-size: 21px; font-weight: 700; letter-spacing: 0; line-height: 1.25; }
+        .project-sub { font-size: 14px; color: var(--text-3); margin-top: 6px; }
+        .project-desc { font-size: 14.5px; line-height: 1.68; color: var(--text-2); flex-grow: 1; }
+        .project-desc strong { color: var(--text); font-weight: 500; }
+
+        .project-foot {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 14px; font-weight: 500;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+            color: var(--text-3);
+        }
+        .project-foot--link { color: var(--accent); }
+        .project-foot--link:hover { color: var(--accent-bright); }
+
+        /* ==========================================================================
+           Façon de travailler
+           ========================================================================== */
+        .methode-list { display: flex; flex-direction: column; gap: 4px; }
+        .methode-item {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 96px minmax(0, 1fr);
             gap: 24px;
-            margin-top: 0;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: start;
         }
+        .methode-item:last-child { border-bottom: none; }
+        .methode-number { font-family: var(--font-display); font-size: 34px; font-weight: 800; color: #5A6675; line-height: 1; transition: color var(--t-state) var(--ease); }
+        .methode-item:hover .methode-number { color: var(--accent); }
+        .methode-item h3 { font-family: var(--font-body); font-size: 18px; font-weight: 700; letter-spacing: 0; margin-bottom: 8px; }
+        .methode-item p { font-size: 15.5px; line-height: 1.68; color: var(--text-2); max-width: 68ch; }
 
-        .terrain-photo {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 16/10;
-            border: 1px solid var(--border-color);
-            background: var(--bg-card);
-        }
-
-        .terrain-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .terrain-photo:hover img {
-            transform: scale(1.04);
-        }
-
+        /* ==========================================================================
+           Terrain
+           ========================================================================== */
+        .terrain-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+        .terrain-photo { position: relative; border-radius: var(--r-block); overflow: hidden; border: 1px solid var(--border-solid); }
+        .terrain-photo img { width: 100%; height: 340px; object-fit: cover; transition: transform 700ms var(--ease); }
+        .terrain-photo:hover img { transform: scale(1.03); }
         .terrain-caption {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 20px 24px 20px;
-            background: linear-gradient(transparent, rgba(13, 17, 23, 0.9));
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--accent-primary);
-            letter-spacing: 0.5px;
-            transform: translateY(4px);
-            transition: var(--transition);
+            left: 0; right: 0; bottom: 0;
+            padding: 32px 22px 18px;
+            background: linear-gradient(180deg, rgba(13,17,23,0) 0%, rgba(13,17,23,0.9) 100%);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            color: var(--text-2);
         }
 
-        .terrain-photo:hover .terrain-caption {
-            transform: translateY(0);
-        }
-
-        .terrain-photo:first-child {
-            border-color: rgba(0, 229, 160, 0.15);
-        }
-
-        .terrain-photo:last-child {
-            border-color: rgba(108, 99, 255, 0.15);
-        }
-
-        .terrain-photo:last-child .terrain-caption {
-            color: var(--accent-secondary);
-        }
-
-        @media (max-width: 768px) {
-            .terrain-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* A Propos Section */
-        .apropos-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .apropos-visual {
-            position: relative;
-            aspect-ratio: 1;
-            border-radius: 24px;
-            background: linear-gradient(45deg, var(--bg-card), rgba(0, 229, 160, 0.05));
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .apropos-visual::after {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: conic-gradient(from 0deg, transparent, var(--accent-primary), transparent 30%);
-            animation: rotate 10s linear infinite;
-            opacity: 0.1;
-        }
-
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
-        }
-
-        .apropos-visual-inner {
-            position: absolute;
-            inset: 2px;
-            background: var(--bg-dark);
-            border-radius: 22px;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .apropos-visual svg {
-            width: 100px;
-            height: 100px;
-            stroke: var(--text-secondary);
-            stroke-width: 1;
-        }
-
-        .apropos-content h3 {
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
-
-        .apropos-content p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 1.1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .social-link {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            transform: translateY(-3px);
-        }
-
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        /* Contact Section */
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info h3 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-
-        .contact-info p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        .contact-methods {
+        /* ==========================================================================
+           Hobbies
+           ========================================================================== */
+        .hobbies-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+        .hobby-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-card);
+            padding: 22px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 12px;
+            transition: border-color var(--t-state) var(--ease), transform var(--t-state) var(--ease);
         }
+        .hobby-card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+        .hobby-card svg { color: var(--text-2); }
+        .hobby-card h3 { font-family: var(--font-body); font-size: 16.5px; font-weight: 700; letter-spacing: 0; }
+        .hobby-card p { font-size: 14px; line-height: 1.6; color: var(--text-2); }
 
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
+        /* ==========================================================================
+           Contact
+           ========================================================================== */
+        .contact-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+        .contact-methods { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+        .contact-method { display: flex; align-items: center; gap: 16px; }
         .contact-method-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 46px; height: 46px;
+            flex-shrink: 0;
+            border-radius: var(--r-card);
+            border: 1px solid var(--border-solid);
+            background: var(--card);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent);
         }
-
-        .contact-method-icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--accent-primary);
-        }
-
-        .contact-method-text h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-
-        .contact-method-text a {
-            color: var(--text-secondary);
-            font-family: var(--font-code);
-            font-size: 0.9rem;
-        }
-
-        .contact-method-text a:hover {
-            color: var(--accent-primary);
-        }
+        .contact-method h3 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); font-weight: 400; margin-bottom: 3px; }
+        .contact-method a, .contact-method p { font-size: 16px; color: var(--text); }
+        .contact-method a:hover { color: var(--accent); }
 
         .contact-form {
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r-block);
+            padding: 32px;
         }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
+        .form-group { margin-bottom: 20px; }
         .form-group label {
             display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-2);
             margin-bottom: 8px;
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
         }
-
         .form-control {
             width: 100%;
-            background: var(--bg-dark);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 12px 16px;
-            color: var(--text-primary);
+            background: var(--bg);
+            border: 1px solid var(--border-solid);
+            border-radius: var(--r-field);
+            padding: 13px 15px;
+            color: var(--text);
             font-family: var(--font-body);
-            font-size: 1rem;
-            transition: var(--transition);
+            font-size: 15px;
+            transition: border-color var(--t-state) var(--ease), background var(--t-state) var(--ease);
         }
+        .form-control:hover { border-color: var(--border-strong); }
+        .form-control:focus { outline: none; border-color: var(--accent); background: var(--surface); }
+        .form-control:focus-visible { outline: none; }
+        textarea.form-control { min-height: 128px; resize: vertical; }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 2px rgba(0, 229, 160, 0.1);
-        }
+        /* ==========================================================================
+           Pied de page
+           ========================================================================== */
+        footer { border-top: 1px solid var(--border); padding: 40px 0; background: var(--bg-deep); }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+        .footer-inner > div:first-child { font-size: 14px; color: var(--text-3); }
+        .footer-links { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; }
+        .footer-links a { color: var(--text-3); }
+        .footer-links a:hover { color: var(--accent); }
 
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
+        /* Coordonnées réservées au CV imprimé */
+        .print-only { display: none; }
 
-        .form-note {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-top: 16px;
-            font-style: italic;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 32px 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Animations */
+        /* ==========================================================================
+           Animations
+           ========================================================================== */
         .fade-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(16px);
+            transition: opacity var(--t-reveal) var(--ease), transform var(--t-reveal) var(--ease);
+        }
+        .fade-up.is-visible { opacity: 1; transform: none; }
+        .delay-1 { transition-delay: 90ms; }
+        .delay-2 { transition-delay: 180ms; }
+        .delay-3 { transition-delay: 270ms; }
+
+        /* ==========================================================================
+           Responsive
+           ========================================================================== */
+        @media (max-width: 1080px) {
+            .skills-grid  { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .hobbies-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .savoirfaire  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        @media (max-width: 900px) {
+            :root { --gutter: 20px; }
+            .section { padding: 80px var(--gutter); }
 
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 120px;
-            }
-            .hero-content {
-                margin-bottom: 60px;
-            }
-            .hero-location {
-                justify-content: center;
-            }
-            .hero-cta {
-                justify-content: center;
-            }
-            .apropos-layout, .contact-layout {
-                grid-template-columns: 1fr;
-            }
-            .chiffres-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--bg-card);
+                top: 76px; left: 0; right: 0;
                 flex-direction: column;
-                padding: 24px;
-                border-bottom: 1px solid var(--border-color);
+                align-items: stretch;
+                gap: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                padding: 8px var(--gutter) 20px;
             }
-            .nav-links.active {
-                display: flex;
+            .nav-links.is-open { display: flex; }
+            .nav-links a { padding: 14px 0; font-size: 16px; border-bottom: 1px solid var(--border); }
+            .nav-links .btn { margin-top: 16px; border-bottom: none; }
+            .mobile-menu-btn { display: flex; }
+
+            .hero { padding: 48px var(--gutter) 64px; }
+            .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+            .hero-visual { justify-content: flex-start; order: -1; }
+            .hero-portrait { max-width: 300px; }
+            .hero-portrait-stat { left: auto; right: -20px; }
+            .social-row { flex-direction: column; align-items: stretch; }
+
+            .chiffres-grid   { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+            .profil-layout,
+            .education-layout,
+            .contact-layout  { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+            .projects-grid   { grid-template-columns: minmax(0, 1fr); }
+            .terrain-grid    { grid-template-columns: minmax(0, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            /* Timeline : rail décalé à gauche, les dates passent dans la carte */
+            .tl-row { grid-template-columns: 26px minmax(0, 1fr); }
+            .tl-date {
+                grid-column: 2;
+                grid-row: 1;
+                text-align: left;
+                padding: 0 0 10px 22px;
             }
-            .mobile-menu-btn {
-                display: block;
+            .tl-date b, .tl-date span { display: inline; }
+            .tl-date span::before { content: ' '; }
+            .tl-rail { grid-column: 1; grid-row: 1 / span 2; }
+            .tl-node { top: 4px; }
+            .tl-body { grid-column: 2; grid-row: 2; padding: 0 0 28px 22px; }
+
+            .job, .project-card, .contact-form { padding: 20px; }
+            .methode-item { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+            .before-tech-grid { grid-template-columns: minmax(0, 1fr); }
+        }
+
+        @media (max-width: 560px) {
+            .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .savoirfaire { grid-template-columns: minmax(0, 1fr); }
+            .certs-grid  { grid-template-columns: minmax(0, 1fr); }
+            .hero-cta .btn { width: 100%; }
+            .terrain-photo img { height: 240px; }
+        }
+
+        /* ==========================================================================
+           Accessibilité — mouvement réduit
+           ========================================================================== */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                transition-delay: 0ms !important;
+                scroll-behavior: auto !important;
             }
-            .hero h1 {
-                font-size: 2.5rem;
+            .fade-up { opacity: 1; transform: none; }
+            .tl-line-fill { transform: scaleY(1); }
+        }
+
+        /* ==========================================================================
+           Impression — le CV téléchargeable
+           ========================================================================== */
+        @media print {
+            /* Objectif : un CV dense et lisible, pas une capture du site.
+               Le chrome de carte disparaît, la page redevient un document. */
+            :root {
+                --bg: #fff; --bg-deep: #fff; --surface: #fff; --card: #fff; --card-hover: #fff;
+                --text: #111; --text-2: #2b2b2b; --text-3: #555;
+                --border: #d5d5d5; --border-solid: #cfcfcf; --border-strong: #bbb;
+                --accent: #0a7a52; --accent-line: #0a7a52; --accent-soft: transparent;
+                --support: #3b3f8f; --support-line: #3b3f8f; --support-soft: transparent;
+                --gutter: 0px;
             }
-            .chiffres-grid {
-                grid-template-columns: 1fr;
+            @page { margin: 12mm 12mm 14mm; }
+
+            body { background: #fff; color: #111; font-size: 9.5pt; line-height: 1.42; }
+            body::before { display: none; }
+
+            /* Hors sujet sur un CV papier */
+            header, footer, .mobile-menu-btn, .hero-cta, .social-row,
+            .contact-form, .terrain-section, .hero-portrait-stat,
+            .before-tech-hint, .projects-head .btn, .section-intro,
+            .skip-link { display: none !important; }
+            .hero-portrait::before { display: none; }
+
+            .print-only { display: block; font-size: 9pt; line-height: 1.5; margin-top: 4pt; }
+            .print-only p { color: #222; }
+
+            .fade-up { opacity: 1 !important; transform: none !important; }
+            .tl-line-fill { transform: scaleY(1) !important; }
+            .before-tech { border: none; }
+            .before-tech > summary { cursor: default; padding: 0 0 6pt; font-size: 11pt; }
+            .before-tech-body { padding: 0; }
+
+            a { color: #111; text-decoration: none; }
+
+            .container, .section, .hero, .chiffres-grid { max-width: none; padding-left: 0; padding-right: 0; }
+            .section { padding: 9pt 0 0; }
+            .section-head { margin-bottom: 6pt; gap: 2pt; }
+            .section-title { font-size: 14pt; }
+            .eyebrow { font-size: 7.5pt; letter-spacing: 0.10em; }
+
+            /* En-tête du CV.
+               Note : une feuille A4 fait 794 px de large, donc les media queries
+               « mobile » s'appliquent aussi ici — il faut les défaire une à une. */
+            .hero { padding: 0 0 6pt; }
+            .hero-grid { grid-template-columns: minmax(0, 1fr) 116px; gap: 16pt; align-items: start; }
+            .hero-visual { order: 1; justify-content: flex-end; }
+            .hero-portrait { max-width: 116px; }
+            .hero-content { gap: 6pt; }
+            .hero-name { font-size: 24pt; line-height: 1.05; }
+            .hero-name br { display: none; }
+            .hero-role { font-size: 11.5pt; }
+            .hero-role br { display: none; }
+            .hero-pitch { font-size: 9.5pt; }
+            .hero-location { font-size: 9pt; gap: 8pt; }
+            .hero-portrait-frame { border-radius: 4pt; aspect-ratio: 1 / 1.1; }
+            .hero-portrait-frame::after { display: none; }
+
+            .chiffres-section { border: none; }
+            .chiffres-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 6pt 0; gap: 10pt; }
+            .chiffre-number { font-size: 15pt; }
+            .chiffre-label { font-size: 8pt; margin-top: 2pt; }
+
+            /* Cartes : on retire le chrome, on garde la structure */
+            .job, .project-card, .skill-card, .cert-card, .hobby-card,
+            .savoirfaire-card, .proof-item, .contact-form {
+                border: none; background: none; padding: 0;
             }
-            .footer-inner {
-                flex-direction: column;
-                gap: 16px;
+            .job { gap: 5pt; }
+            .job--group { gap: 6pt; }
+            .job-group-head { padding-bottom: 4pt; }
+            .job-title { font-size: 11.5pt; }
+            .job-org { font-size: 9pt; margin-top: 1pt; }
+            .job-points { gap: 2pt; }
+            .job-points li { font-size: 9pt; line-height: 1.38; }
+            .job-roles { gap: 7pt; }
+            .job-role-meta { margin-bottom: 2pt; gap: 6pt; }
+            .job-role-meta h4 { font-size: 10pt; }
+            .job-role p { font-size: 9pt; line-height: 1.38; }
+            .tl-row { grid-template-columns: 92px 18px minmax(0, 1fr); }
+            .tl-date { grid-column: 1; grid-row: 1; text-align: right; padding: 0 10pt 0 0; }
+            .tl-date b, .tl-date span { display: block; }
+            .tl-date span::before { content: none; }
+            .tl-rail { grid-column: 2; grid-row: 1; }
+            .tl-body { grid-column: 3; grid-row: 1; }
+            .tl-date b, .tl-date span, .tl-date em { font-size: 8pt; }
+            .tl-node { top: 3px; }
+            .tl-body { padding: 0 0 12pt 12pt; }
+            .profil-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18pt; }
+
+            .badge { padding: 1pt 6pt; font-size: 7.5pt; border-color: #bbb; }
+            .chip { border: 1px solid #d5d5d5; background: none; padding: 1pt 5pt; font-size: 7.5pt; }
+            .chip-row { gap: 4pt; }
+
+            /* Compétences et loisirs : des listes, pas des vignettes */
+            .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 5pt 18pt; }
+            .skill-card { flex-direction: row; align-items: baseline; gap: 6pt; }
+            .skill-card svg { display: none; }
+            .skill-card h3 { font-size: 9.5pt; white-space: nowrap; }
+            .skill-card h3::after { content: ' :'; }
+
+            .savoirfaire { grid-template-columns: repeat(3, 1fr); gap: 6pt 14pt; margin-top: 8pt; }
+            .savoirfaire-card h3 { font-size: 9.5pt; }
+            .savoirfaire-card p { font-size: 8.5pt; line-height: 1.35; }
+
+            .education-layout { grid-template-columns: 1.15fr 1fr; gap: 18pt; }
+            .certs-grid { gap: 5pt 14pt; }
+            .cert-card b { font-size: 9.5pt; }
+            .cert-note { border: none; background: none; padding: 4pt 0 0; font-size: 8.5pt; }
+            .diplomas li { padding: 5pt 0; }
+            .diplomas b { font-size: 9.5pt; }
+            .diplomas span { font-size: 8.5pt; }
+
+            .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8pt 18pt; }
+            .project-card h3 { font-size: 11pt; }
+            .project-sub { font-size: 8.5pt; margin-top: 1pt; }
+            .project-desc { font-size: 8.5pt; line-height: 1.38; }
+            .project-foot { padding-top: 4pt; font-size: 8.5pt; }
+            .project-foot svg { display: none; }
+
+            .methode-item { padding: 6pt 0; grid-template-columns: 34px minmax(0, 1fr); gap: 10pt; }
+            .methode-number { font-size: 14pt; color: #999; }
+            .methode-item h3 { font-size: 10pt; margin-bottom: 2pt; }
+            .methode-item p { font-size: 8.5pt; line-height: 1.38; }
+
+            .hobbies-grid { grid-template-columns: repeat(4, 1fr); gap: 6pt 14pt; }
+            .hobby-card { gap: 3pt; }
+            .hobby-card svg { display: none; }
+            .hobby-card h3 { font-size: 9.5pt; }
+            .hobby-card p { font-size: 8.5pt; line-height: 1.35; }
+
+            .contact-layout { grid-template-columns: 1fr; gap: 0; }
+            .contact-methods { flex-direction: row; gap: 22pt; margin-top: 6pt; }
+            .contact-method-icon { display: none; }
+            .contact-method h3 { font-size: 7.5pt; }
+            .contact-method a, .contact-method p { font-size: 9pt; }
+
+            /* Rien ne doit être coupé au milieu */
+            .job, .project-card, .cert-card, .hobby-card, .savoirfaire-card,
+            .proof-item, .methode-item, .tl-row, .job-role, .diplomas li {
+                break-inside: avoid;
+                page-break-inside: avoid;
             }
-            .approche-item {
-                flex-direction: column;
-                gap: 16px;
-            }
+            h1, h2, h3, .section-head { break-after: avoid; page-break-after: avoid; }
+
+            .job:hover, .project-card:hover, .skill-card:hover,
+            .cert-card:hover, .hobby-card:hover { transform: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header data-cy="header">
+    <a href="#main" class="skip-link">Aller au contenu</a>
+
+    <!-- ======================================================================
+         En-tête
+         ====================================================================== -->
+    <header id="site-header" data-cy="header">
         <div class="container header-inner">
-            <a href="#" class="logo" data-cy="logo">Sylvain<span>.</span></a>
-            <nav class="nav-links" id="nav-links" data-cy="nav-links">
-                <a href="#expertise">Expertise</a>
-                <a href="#offres">Offres</a>
-                <a href="#approche">Approche</a>
-                <a href="#apropos">À propos</a>
-                <a href="#contact" class="btn btn-primary">Discutons</a>
+            <a href="#" class="logo" data-cy="logo">Sylvain Chignaguet<span>.</span></a>
+            <nav class="nav-links" id="nav-links" data-cy="nav-links" aria-label="Navigation principale">
+                <a href="#profil">Profil</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#competences">Compétences</a>
+                <a href="#projets">Projets</a>
+                <a href="#contact" class="btn btn-primary btn-sm">Me contacter</a>
             </nav>
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu" data-cy="mobile-menu-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links" data-cy="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
+    <main id="main">
+
+        <!-- ==================================================================
+             Hero
+             ================================================================== -->
         <section class="hero container" data-cy="hero">
-            <div class="hero-content fade-up">
-                <div class="hero-label">Consultant QA Senior</div>
-                <h1 data-cy="hero-title">Automatisation <br><span style="color: var(--accent-primary)">Stratégie</span> · <span style="color: var(--accent-secondary)">IA</span></h1>
-                <h2 data-cy="hero-subtitle">J'aide les équipes tech à livrer des logiciels fiables, plus vite.</h2>
-                <div class="hero-location" data-cy="hero-location">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    Bordeaux · Nouvelle-Aquitaine · Remote France & World
-                </div>
-                <div class="hero-cta" data-cy="hero-cta">
-                    <a href="#offres" class="btn btn-primary">Découvrir mes offres</a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
-                </div>
-            </div>
-            <div class="hero-visual fade-up delay-2">
-                <div class="code-block" data-cy="code-block">
-                    <div class="code-header">
-                        <div class="code-dot"></div>
-                        <div class="code-dot"></div>
-                        <div class="code-dot"></div>
-                    </div>
-                    <div class="code-content" id="typewriter" data-cy="typewriter">
-                        <div class="code-line"><span class="code-function">describe</span>(<span class="code-string">'Qualité logicielle'</span>, () <span class="code-keyword">=></span> {</div>
-                        <div class="code-line">&nbsp;&nbsp;<span class="code-function">it</span>(<span class="code-string">'devrait garantir la fiabilité'</span>, () <span class="code-keyword">=></span> {</div>
-                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cy.<span class="code-function">visit</span>(<span class="code-string">'/votre-produit'</span>)</div>
-                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cy.<span class="code-function">get</span>(<span class="code-string">'[data-testid="quality"]'</span>)</div>
-                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="code-function">should</span>(<span class="code-string">'be.visible'</span>)</div>
-                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="code-function">and</span>(<span class="code-string">'have.class'</span>, <span class="code-string">'excellence'</span>)</div>
-                        <div class="code-line">&nbsp;&nbsp;})</div>
-                        <div class="code-line">})</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <div class="hero-grid">
+                <div class="hero-content fade-up">
+                    <h1 class="hero-name" data-cy="hero-title">Sylvain <br>Chignaguet</h1>
 
-        <!-- Expertise Section -->
-        <section id="expertise" class="section container" data-cy="expertise-section">
-            <h2 class="section-title fade-up">Stack & <span>Expertise</span></h2>
-            <div class="expertise-grid">
-                <div class="expertise-card fade-up" data-cy="expertise-card">
-                    <div class="expertise-icon">🌐</div>
-                    <h3>Automatisation Web</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag">Cypress</span>
-                        <span class="expertise-tag">Playwright</span>
-                        <span class="expertise-tag">Selenium</span>
+                    <p class="hero-role" data-cy="hero-subtitle">QA Automation Engineer — <br>cap sur la <span>gestion de projet</span>.</p>
+
+                    <p class="hero-pitch">Huit ans à construire la qualité de produits qui vont vite : du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai recruté, formé et encadré des QA, défini des stratégies de test de A à Z, piloté des releases. Aujourd'hui je veux en faire mon métier à plein temps.</p>
+
+                    <div class="hero-location" data-cy="hero-location">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Baron (33) · Bordeaux Métropole
+                        </span>
+                        <span class="dot" aria-hidden="true"></span>
+                        <span>Remote &amp; hybride</span>
+                    </div>
+
+                    <div class="hero-cta" data-cy="hero-cta">
+                        <button type="button" class="btn btn-primary" id="download-cv" data-cy="cv-download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Télécharger le CV
+                        </button>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+
+                    <div class="social-row">
+                        <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" class="social-card" data-cy="social-linkedin">
+                            <span class="social-card-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </span>
+                            <span class="social-card-text">
+                                <strong>LinkedIn</strong>
+                                <span>in/sylvain-chignaguet</span>
+                            </span>
+                            <span class="social-card-arrow" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </span>
+                        </a>
+                        <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" class="social-card" data-cy="social-github">
+                            <span class="social-card-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </span>
+                            <span class="social-card-text">
+                                <strong>GitHub</strong>
+                                <span>github.com/Sharogne</span>
+                            </span>
+                            <span class="social-card-arrow" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Coordonnées complètes : uniquement sur le CV imprimé -->
+                    <div class="print-only">
+                        <p><strong>sylvain.chignaguet@gmail.com</strong> · 06 45 13 01 82 · Baron (33750), Nouvelle-Aquitaine</p>
+                        <p>linkedin.com/in/sylvain-chignaguet-a7534286 · github.com/Sharogne · www.chignaguet.fr</p>
                     </div>
                 </div>
-                <div class="expertise-card fade-up delay-1" data-cy="expertise-card">
-                    <div class="expertise-icon">📱</div>
-                    <h3>Mobile</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag">Appium</span>
-                        <span class="expertise-tag">iOS</span>
-                        <span class="expertise-tag">Android</span>
-                        <span class="expertise-tag">Flutter</span>
-                    </div>
-                </div>
-                <div class="expertise-card fade-up delay-2" data-cy="expertise-card">
-                    <div class="expertise-icon">💻</div>
-                    <h3>Langages</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag">TypeScript</span>
-                        <span class="expertise-tag">JavaScript</span>
-                    </div>
-                </div>
-                <div class="expertise-card fade-up delay-3" data-cy="expertise-card">
-                    <div class="expertise-icon">⚙️</div>
-                    <h3>CI/CD</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag">GitHub Actions</span>
-                        <span class="expertise-tag">GitLab CI</span>
-                        <span class="expertise-tag">Jenkins</span>
-                    </div>
-                </div>
-                <div class="expertise-card fade-up" data-cy="expertise-card">
-                    <div class="expertise-icon">🛠️</div>
-                    <h3>Outils QA</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag">Jira</span>
-                        <span class="expertise-tag">Xray</span>
-                        <span class="expertise-tag">Postman</span>
-                    </div>
-                </div>
-                <div class="expertise-card fade-up delay-1" data-cy="expertise-card">
-                    <div class="expertise-icon">🗄️</div>
-                    <h3>Data & Backend</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag">Firebase</span>
-                        <span class="expertise-tag">Firestore</span>
-                    </div>
-                </div>
-                <div class="expertise-card expertise-ia fade-up delay-2" data-cy="expertise-card">
-                    <div class="expertise-icon">🧠</div>
-                    <h3>IA & Innovation</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag" style="color: var(--accent-secondary)">GenAI</span>
-                        <span class="expertise-tag" style="color: var(--accent-secondary)">Copilotes QA</span>
-                    </div>
-                </div>
-                <div class="expertise-card expertise-gaming fade-up delay-3" data-cy="expertise-card">
-                    <div class="expertise-icon">🎮</div>
-                    <h3>Gaming</h3>
-                    <div class="expertise-tags">
-                        <span class="expertise-tag" style="color: var(--highlight)">QA Jeux Vidéo</span>
-                        <span class="expertise-tag" style="color: var(--highlight)">Gameplay</span>
+
+                <div class="hero-visual fade-up delay-1">
+                    <div class="hero-portrait">
+                        <div class="hero-portrait-frame">
+                            <img src="/images/profile.jpg" alt="Portrait de Sylvain Chignaguet" width="400" height="470" data-cy="profile-image">
+                        </div>
+                        <div class="hero-portrait-stat">
+                            <b>8<i> ans</i></b>
+                            <span>en QA</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Offres Section -->
-        <section id="offres" class="section container" data-cy="offres-section">
-            <h2 class="section-title fade-up">Ce que j'apporte à <span>votre équipe</span></h2>
-            <div class="offres-grid">
-                <div class="offre-card fade-up" data-cy="offre-card">
-                    <div class="offre-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-                    </div>
-                    <h3>Automatisation de Tests</h3>
-                    <p>Mise en place de suites de tests robustes avec Cypress et Playwright. Tests E2E, API, composants. Intégration complète dans vos pipelines CI/CD pour un feedback continu.</p>
-                    <div class="offre-tags">
-                        <span>#Cypress</span> <span>#Playwright</span> <span>#CI/CD</span> <span>#API</span>
-                    </div>
-                </div>
-
-                <div class="offre-card fade-up delay-1" data-cy="offre-card">
-                    <div class="offre-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                    </div>
-                    <h3>QA Mobile Cross-Platform</h3>
-                    <p>Automatisation des parcours utilisateurs iOS et Android avec Appium. Stratégie de test mobile adaptée à vos contraintes de devices et d'OS.</p>
-                    <div class="offre-tags">
-                        <span>#Appium</span> <span>#iOS</span> <span>#Android</span>
-                    </div>
-                </div>
-
-                <div class="offre-card fade-up delay-2" data-cy="offre-card">
-                    <div class="offre-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-                    </div>
-                    <h3>Stratégie QA & Accompagnement</h3>
-                    <p>Audit de maturité QA, définition de KPI qualité, rédaction de cahiers de tests, coaching d'équipes. Je structure votre approche testing de A à Z.</p>
-                    <div class="offre-tags">
-                        <span>#Audit</span> <span>#KPI</span> <span>#Coaching</span>
-                    </div>
-                </div>
-
-                <div class="offre-card special-ia fade-up" data-cy="offre-card offre-card-ia">
-                    <div class="badge-innovation" data-cy="badge-innovation">Innovation</div>
-                    <div class="offre-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    </div>
-                    <h3>IA au Service de la Qualité</h3>
-                    <p>Intégration d'intelligence artificielle dans vos process QA : génération automatique de scénarios, maintenance prédictive des tests, réduction du flaky testing, copilotes QA sur mesure.</p>
-                    <div class="offre-tags">
-                        <span>#GenAI</span> <span>#SmartMaintenance</span>
-                    </div>
-                </div>
-
-                <div class="offre-card special-gaming fade-up delay-1" data-cy="offre-card">
-                    <div class="offre-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
-                    </div>
-                    <h3>QA Jeux Vidéo</h3>
-                    <p>Expérience dédiée au testing de jeux : tests fonctionnels et de gameplay, automatisation de scénarios in-game, tests de performance et de charge, pipelines QA adaptés aux workflows studios.</p>
-                    <div class="offre-tags">
-                        <span>#Gaming</span> <span>#Gameplay</span> <span>#Performance</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Approche Section -->
-        <section id="approche" class="section container">
-            <h2 class="section-title fade-up">Mon <span>approche</span></h2>
-            <div class="approche-list">
-                <div class="approche-item fade-up">
-                    <div class="approche-number">01</div>
-                    <div class="approche-content">
-                        <h3>Shift-Left</h3>
-                        <p>J'intègre la qualité dès la conception, pas en fin de sprint. Détecter un bug tôt coûte infiniment moins cher que de le corriger en production.</p>
-                    </div>
-                </div>
-                <div class="approche-item fade-up">
-                    <div class="approche-number">02</div>
-                    <div class="approche-content">
-                        <h3>Automatiser l'essentiel</h3>
-                        <p>Je ne cherche pas 100% de couverture aveugle. Je cible les tests à forte valeur ajoutée (parcours critiques) pour un ROI maximal et une maintenance maîtrisée.</p>
-                    </div>
-                </div>
-                <div class="approche-item fade-up">
-                    <div class="approche-number">03</div>
-                    <div class="approche-content">
-                        <h3>Données & KPI</h3>
-                        <p>Chaque décision QA est guidée par des métriques concrètes. Je mets en place des dashboards clairs pour suivre la santé de votre produit.</p>
-                    </div>
-                </div>
-                <div class="approche-item fade-up">
-                    <div class="approche-number">04</div>
-                    <div class="approche-content">
-                        <h3>Innovation continue</h3>
-                        <p>Je veille en permanence sur les outils et pratiques émergentes, IA incluse, pour vous apporter les solutions les plus performantes du marché.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Terrain Section -->
-        <section id="terrain" class="terrain-section container">
-            <h2 class="section-title fade-up">En <span>terrain</span></h2>
-            <div class="terrain-grid">
-                <div class="terrain-photo fade-up delay-1">
-                    <img src="/images/illu1.webp" alt="Tests AR/VR sur HoloLens" loading="lazy" style="object-position: left center;">
-                    <div class="terrain-caption">// Tests AR sur HoloLens</div>
-                </div>
-                <div class="terrain-photo fade-up delay-2">
-                    <img src="/images/illu2.webp" alt="QA Innovation &amp; XR" loading="lazy" style="object-position: center 30%;">
-                    <div class="terrain-caption">// QA Innovation & XR</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Chiffres Section -->
-        <section class="chiffres-section">
-            <div class="container chiffres-grid" id="chiffres">
+        <!-- ==================================================================
+             Chiffres
+             ================================================================== -->
+        <section class="chiffres-section" aria-label="Chiffres clés">
+            <div class="container chiffres-grid" id="chiffres" data-cy="chiffres">
                 <div class="chiffre-item fade-up">
-                    <div class="chiffre-number"><span class="counter" data-target="10">0</span>+</div>
+                    <div class="chiffre-number"><span class="counter" data-target="8">0</span><span class="suffix">+</span></div>
                     <div class="chiffre-label">Années d'expérience QA</div>
                 </div>
                 <div class="chiffre-item fade-up delay-1">
-                    <div class="chiffre-number"><span class="counter" data-target="5">0</span>+</div>
+                    <div class="chiffre-number"><span class="counter" data-target="5">0</span><span class="suffix">+</span></div>
                     <div class="chiffre-label">Frameworks maîtrisés</div>
                 </div>
                 <div class="chiffre-item fade-up delay-2">
-                    <div class="chiffre-number"><span class="counter" data-target="30">0</span>+</div>
+                    <div class="chiffre-number"><span class="counter" data-target="30">0</span><span class="suffix">+</span></div>
                     <div class="chiffre-label">Projets accompagnés</div>
                 </div>
                 <div class="chiffre-item fade-up delay-3">
-                    <div class="chiffre-number"><span>100</span>%</div>
-                    <div class="chiffre-label">Bordeaux & Remote 🇫🇷</div>
+                    <div class="chiffre-number"><span class="counter" data-target="4">0</span></div>
+                    <div class="chiffre-label">Certifications agile &amp; pilotage</div>
                 </div>
             </div>
         </section>
 
-        <!-- A Propos Section -->
-        <section id="apropos" class="section container">
-            <div class="apropos-layout">
-                <div class="apropos-visual fade-up">
-                    <div class="apropos-visual-inner" style="overflow: hidden;">
-                        <img src="/images/profile.jpg" alt="Sylvain Chignaguet" style="width: 100%; height: 100%; object-fit: cover;" data-cy="profile-image">
+        <!-- ==================================================================
+             Profil
+             ================================================================== -->
+        <section id="profil" class="section container" data-cy="about-section">
+            <div class="profil-layout">
+                <div class="fade-up">
+                    <div class="section-head">
+                        <p class="eyebrow">01 · Profil</p>
+                        <h2 class="section-title">De la qualité au pilotage</h2>
+                    </div>
+                    <div class="profil-body">
+                        <p>Ex-militaire reconverti, je suis arrivé à la qualité logicielle par le jeu vidéo et je n'en suis plus sorti. Huit ans plus tard, j'ai fait le tour du métier : le test manuel, l'automatisation, la stratégie, l'outillage, la release.</p>
+                        <p>Ce qui m'anime aujourd'hui a changé de nature. Ce n'est plus d'écrire le test le plus élégant, c'est de <strong>faire en sorte qu'une équipe livre bien</strong> : arbitrer ce qu'on teste et ce qu'on ne teste pas, poser un plan que tout le monde comprend, désamorcer les risques avant qu'ils ne deviennent des incidents, et faire monter les gens en compétence.</p>
+                        <p>Cette bascule, je ne l'ai pas seulement décidée : je l'ai déjà pratiquée. Encadrement, recrutement, définition de stratégie, gestion de release — ce sont des choses que j'ai faites, pas des choses que j'aimerais faire. La formation en gestion de projet et les certifications agiles sont venues structurer ce que le terrain m'avait appris.</p>
+                        <p>Je cherche donc un poste où la qualité et le pilotage ne sont pas deux métiers séparés : <strong>lead QA, engineering manager, chef de projet technique</strong> — le titre compte moins que le périmètre.</p>
                     </div>
                 </div>
-                <div class="apropos-content fade-up delay-1">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">À <span>propos</span></h2>
-                    <p>Ex militaire reconverti et passionné de qualité logicielle, j'ai fait de l'automatisation des tests mon expertise principale. Après plusieurs années à structurer des stratégies QA pour des équipes produit et des studios de jeux vidéo, j'ai lancé mon activité de consulting indépendant à Bordeaux.</p>
-                    <p>Mon objectif : aider les équipes tech à livrer plus vite, avec plus de confiance, grâce à des tests automatisés intelligents et une approche qualité pragmatique.</p>
-                    <p>Quand je ne suis pas en train d'écrire des tests Cypress ou de débugger un pipeline CI, je développe des applications mobiles Flutter et j'explore les dernières avancées de l'IA appliquée au testing.</p>
-                    
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a>
-                        <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        </a>
-                        <a href="https://www.malt.fr/profile/sylvainchignaguet" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Malt">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                        </a>
+
+                <div class="profil-proof fade-up delay-1">
+                    <div class="proof-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <div>
+                            <b>Encadrement &amp; recrutement</b>
+                            <span>Recrutement, onboarding et management de 2 QA juniors chez Asobo. Puis recrutement d'un QA technique en tant que QA Lead.</span>
+                        </div>
+                    </div>
+                    <div class="proof-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        <div>
+                            <b>Stratégie de A à Z</b>
+                            <span>Définition de la stratégie et du plan QA sur trois projets, dont HoloLens et un titre non annoncé. Introduction de TestRail dans les équipes.</span>
+                        </div>
+                    </div>
+                    <div class="proof-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        <div>
+                            <b>Release &amp; delivery</b>
+                            <span>Build &amp; release management sur Microsoft Flight Simulator 2024 et A Plague Tale : Innocence. Livraison de builds, validation SDK.</span>
+                        </div>
+                    </div>
+                    <div class="proof-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <div>
+                            <b>Le cadre formel</b>
+                            <span>PSM I, PSPO I, Scrum Master Certified, SAFe®, et une formation en gestion de projet chez Crossthink en 2024.</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ==================================================================
+             Parcours
+             ================================================================== -->
+        <section id="parcours" class="section container" data-cy="experience-section">
+            <div class="section-head fade-up">
+                <p class="eyebrow">02 · Parcours</p>
+                <h2 class="section-title">Huit ans de qualité, quatre passages en pilotage</h2>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Phenix -->
+                <article class="tl-row fade-up" data-cy="experience-item">
+                    <div class="tl-date">
+                        <b class="is-now">FÉV. 2024</b>
+                        <span>→ aujourd'hui</span>
+                    </div>
+                    <div class="tl-rail" aria-hidden="true">
+                        <div class="tl-line"><div class="tl-line-fill"></div></div>
+                        <div class="tl-node tl-node--now"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="job job--now">
+                            <div class="job-head">
+                                <div>
+                                    <h3 class="job-title">QA Automation Engineer</h3>
+                                    <p class="job-org is-now">Phenix · Paris, full-remote</p>
+                                </div>
+                                <p class="badge badge--accent">Poste actuel</p>
+                            </div>
+                            <ul class="job-points">
+                                <li><strong>QA owner de la squad</strong> : garant de la qualité produit, identification des risques en amont, amélioration continue de la stratégie de test.</li>
+                                <li>Cycle QA complet : automatisation Cypress + TypeScript, automatisation Android avec Appium, tests manuels et recette utilisateur (UAT).</li>
+                                <li>Pipelines end-to-end intégrés aux workflows GitHub Actions, suites BDD Cucumber/Gherkin, campagnes de test pilotées sous TestRail.</li>
+                                <li>Collaboration étroite avec les équipes produit et développement, de la planification des tests à la validation en production.</li>
+                            </ul>
+                            <div class="chip-row">
+                                <span class="chip">Cypress</span><span class="chip">TypeScript</span><span class="chip">Appium</span><span class="chip">GitHub Actions</span><span class="chip">TestRail</span><span class="chip">Cucumber</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Asobo Studio -->
+                <article class="tl-row fade-up" data-cy="experience-item">
+                    <div class="tl-date">
+                        <b>JUIN 2017</b>
+                        <span>→ févr. 2024</span>
+                        <em>6 ans 9 mois</em>
+                    </div>
+                    <div class="tl-rail" aria-hidden="true">
+                        <div class="tl-line"><div class="tl-line-fill"></div></div>
+                        <div class="tl-node"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="job job--group">
+                            <div class="job-group-head">
+                                <div>
+                                    <h3 class="job-title">Asobo Studio</h3>
+                                    <p class="job-org">Bordeaux · quatre postes, une progression continue</p>
+                                </div>
+                                <p class="badge">Tester → Lead</p>
+                            </div>
+
+                            <div class="job-roles">
+                                <div class="job-role">
+                                    <span class="job-role-dot" aria-hidden="true"></span>
+                                    <div>
+                                        <div class="job-role-meta">
+                                            <h4>Build &amp; Release Specialist</h4>
+                                            <span class="mono">déc. 2022 → févr. 2024</span>
+                                        </div>
+                                        <p>Build &amp; release sur <cite>Microsoft Flight Simulator 2024</cite> : gestion des releases et des builds internes, livraison, test des outils du SDK.</p>
+                                    </div>
+                                </div>
+
+                                <div class="job-role">
+                                    <span class="job-role-dot job-role-dot--lead" aria-hidden="true"></span>
+                                    <div>
+                                        <div class="job-role-meta">
+                                            <h4>QA Lead</h4>
+                                            <span class="mono">avr. 2022 → déc. 2022</span>
+                                            <span class="badge badge--support">Pilotage</span>
+                                        </div>
+                                        <p>Main QA sur un projet non annoncé : définition de la stratégie QA du projet, <strong>recrutement d'un QA technique</strong> pour le volet SDK, release management et delivery.</p>
+                                    </div>
+                                </div>
+
+                                <div class="job-role">
+                                    <span class="job-role-dot job-role-dot--lead" aria-hidden="true"></span>
+                                    <div>
+                                        <div class="job-role-meta">
+                                            <h4>Main QA — HoloLens</h4>
+                                            <span class="mono">mai 2020 → août 2022</span>
+                                            <span class="badge badge--support">Management</span>
+                                        </div>
+                                        <p><strong>Recrutement, onboarding et encadrement de deux QA juniors.</strong> Rédaction de la stratégie et du plan QA sous Notion, introduction de TestRail dans l'équipe, support client via Zendesk.</p>
+                                    </div>
+                                </div>
+
+                                <div class="job-role">
+                                    <span class="job-role-dot" aria-hidden="true"></span>
+                                    <div>
+                                        <div class="job-role-meta">
+                                            <h4>QA Tester</h4>
+                                            <span class="mono">juin 2017 → mai 2020</span>
+                                        </div>
+                                        <p><cite>A Plague Tale : Innocence</cite> : debug et feedback, création et suivi de tickets sous TFS, build &amp; release management, sanity checks hebdomadaires et rapports de performance.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chip-row">
+                                <span class="chip">Perforce</span><span class="chip">TFS</span><span class="chip">TestRail</span><span class="chip">Notion</span><span class="chip">Zendesk</span><span class="chip">Visual Studio</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Betclic -->
+                <article class="tl-row fade-up" data-cy="experience-item">
+                    <div class="tl-date">
+                        <b>JANV. 2020</b>
+                        <span>→ juin 2020</span>
+                    </div>
+                    <div class="tl-rail" aria-hidden="true">
+                        <div class="tl-line"><div class="tl-line-fill"></div></div>
+                        <div class="tl-node"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="job">
+                            <div class="job-head">
+                                <div>
+                                    <h3 class="job-title">QA Automation Engineer</h3>
+                                    <p class="job-org">Betclic Group · Bordeaux</p>
+                                </div>
+                            </div>
+                            <ul class="job-points">
+                                <li>Rédaction et exécution des campagnes de tests de non-régression sous qTest.</li>
+                                <li>Écriture de tests automatisés en Groovy avec Katalon — premier vrai virage vers l'automatisation.</li>
+                            </ul>
+                            <div class="chip-row">
+                                <span class="chip">Katalon</span><span class="chip">Groovy</span><span class="chip">qTest</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Avant la tech -->
+                <article class="tl-row fade-up" data-cy="experience-item">
+                    <div class="tl-date">
+                        <b>2009</b>
+                        <span>→ 2017</span>
+                    </div>
+                    <div class="tl-rail" aria-hidden="true">
+                        <div class="tl-line"><div class="tl-line-fill"></div></div>
+                        <div class="tl-node"></div>
+                    </div>
+                    <div class="tl-body">
+                        <details class="before-tech" data-cy="before-tech">
+                            <summary>
+                                Avant la tech
+                                <span class="before-tech-hint">
+                                    Déplier
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </span>
+                            </summary>
+                            <div class="before-tech-body">
+                                <div class="before-tech-grid">
+                                    <div>
+                                        <b>Surveillant &amp; animateur Rock School</b>
+                                        <span>Lycée Grand Lebrun, Bordeaux · 2012-2017</span>
+                                    </div>
+                                    <div>
+                                        <b>Opérateur sonar</b>
+                                        <span>Marine Nationale, Brest · 2011</span>
+                                    </div>
+                                    <div>
+                                        <b>Accastillage nautique</b>
+                                        <span>The Compas, Bordeaux · 2011-2012</span>
+                                    </div>
+                                    <div>
+                                        <b>Accessoiriste &amp; machiniste</b>
+                                        <span>Opéra National de Bordeaux · 2009-2010</span>
+                                    </div>
+                                </div>
+                                <p class="before-tech-note">Opération Unified Protector (OTAN) à bord du LV Lavallée. La rigueur militaire et le travail de plateau ont façonné ma façon de tenir un planning et une équipe — c'est de là que vient le reste.</p>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Compétences
+             ================================================================== -->
+        <section id="competences" class="section container" data-cy="skills-section">
+            <div class="section-head fade-up">
+                <p class="eyebrow">03 · Compétences</p>
+                <h2 class="section-title">Ce que je sais faire</h2>
+                <p class="section-intro">Des outils pratiqués en production, pas en tutoriel.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card fade-up" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <h3>Automatisation web</h3>
+                    <div class="chip-row"><span class="chip">Cypress</span><span class="chip">Playwright</span><span class="chip">Selenium</span></div>
+                </div>
+                <div class="skill-card fade-up delay-1" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    <h3>Mobile</h3>
+                    <div class="chip-row"><span class="chip">Appium</span><span class="chip">Android</span><span class="chip">iOS</span><span class="chip">Flutter</span></div>
+                </div>
+                <div class="skill-card fade-up delay-2" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <h3>Langages</h3>
+                    <div class="chip-row"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Groovy</span></div>
+                </div>
+                <div class="skill-card fade-up delay-3" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6h.09A1.65 1.65 0 0 0 10 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    <h3>CI / CD</h3>
+                    <div class="chip-row"><span class="chip">GitHub Actions</span><span class="chip">GitLab CI</span><span class="chip">Jenkins</span></div>
+                </div>
+                <div class="skill-card fade-up" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                    <h3>Outils QA</h3>
+                    <div class="chip-row"><span class="chip">TestRail</span><span class="chip">Jira</span><span class="chip">Xray</span><span class="chip">qTest</span><span class="chip">Postman</span></div>
+                </div>
+                <div class="skill-card fade-up delay-1" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    <h3>Data &amp; backend</h3>
+                    <div class="chip-row"><span class="chip">Firebase</span><span class="chip">Firestore</span><span class="chip">API REST</span></div>
+                </div>
+                <div class="skill-card skill-card--support fade-up delay-2" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <h3>IA appliquée au test</h3>
+                    <div class="chip-row"><span class="chip">GenAI</span><span class="chip">Copilotes QA</span></div>
+                </div>
+                <div class="skill-card fade-up delay-3" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+                    <h3>Jeu vidéo</h3>
+                    <div class="chip-row"><span class="chip">Gameplay</span><span class="chip">Build &amp; release</span><span class="chip">Perforce</span></div>
+                </div>
+            </div>
+
+            <div class="savoirfaire">
+                <div class="savoirfaire-card fade-up" data-cy="savoirfaire-card">
+                    <h3>Automatisation de tests</h3>
+                    <p>Mise en place de suites robustes avec Cypress et Playwright — E2E, API, composants — et intégration complète dans les pipelines CI/CD pour un feedback continu.</p>
+                </div>
+                <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
+                    <h3>QA mobile cross-platform</h3>
+                    <p>Automatisation des parcours utilisateurs iOS et Android avec Appium, et stratégie de test mobile adaptée aux contraintes réelles de devices et d'OS.</p>
+                </div>
+                <div class="savoirfaire-card fade-up delay-2" data-cy="savoirfaire-card">
+                    <h3>Stratégie QA &amp; coaching</h3>
+                    <p>Audit de maturité, définition des KPI qualité, rédaction des plans de test, accompagnement des équipes. Structurer une approche testing de bout en bout.</p>
+                </div>
+                <div class="savoirfaire-card fade-up" data-cy="savoirfaire-card">
+                    <h3>IA au service de la qualité</h3>
+                    <p>Génération assistée de scénarios, maintenance prédictive des tests, réduction du flaky testing, copilotes QA sur mesure — et le recul nécessaire sur leurs limites.</p>
+                </div>
+                <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
+                    <h3>QA jeu vidéo</h3>
+                    <p>Tests fonctionnels et de gameplay, tests de performance, pipelines de build et de release adaptés aux workflows studio — Perforce, TFS, sanity checks.</p>
+                </div>
+                <div class="savoirfaire-card fade-up delay-2" data-cy="savoirfaire-card">
+                    <h3>Pilotage d'équipe</h3>
+                    <p>Recrutement, onboarding, montée en compétence, animation de rituels agiles et interface entre produit et développement. La partie du métier que je veux élargir.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Certifications & formation
+             ================================================================== -->
+        <section id="formation" class="section container" data-cy="education-section">
+            <div class="education-layout">
+                <div class="fade-up">
+                    <div class="section-head">
+                        <p class="eyebrow eyebrow--support">04 · Certifications</p>
+                        <h2 class="section-title">Le socle pilotage</h2>
+                    </div>
+                    <div class="certs-grid">
+                        <div class="cert-card" data-cy="certification-card">
+                            <b>Professional Scrum Master I</b>
+                            <span>PSM I · Scrum.org</span>
+                        </div>
+                        <div class="cert-card" data-cy="certification-card">
+                            <b>Professional Scrum Product Owner I</b>
+                            <span>PSPO I · Scrum.org</span>
+                        </div>
+                        <div class="cert-card" data-cy="certification-card">
+                            <b>Scrum Master Certified</b>
+                            <span>SMC</span>
+                        </div>
+                        <div class="cert-card" data-cy="certification-card">
+                            <b>Certification SAFe<sup>®</sup></b>
+                            <span>Scaled Agile Framework</span>
+                        </div>
+                    </div>
+                    <p class="cert-note">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Complétées par la formation <strong>« Gérer les équipes en mode agile »</strong>.</span>
+                    </p>
+                </div>
+
+                <div class="fade-up delay-1">
+                    <div class="section-head">
+                        <p class="eyebrow eyebrow--muted">05 · Formation</p>
+                        <h2 class="section-title">Parcours de formation</h2>
+                    </div>
+                    <ul class="diplomas">
+                        <li>
+                            <span class="year is-key">2024</span>
+                            <div>
+                                <b>Gestion de projet</b>
+                                <span>Crossthink · janvier → mars 2024</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="year">2009</span>
+                            <div>
+                                <b>BAC Techniques des métiers de la scène</b>
+                                <span>Lycée Antoine Lomet · 2007-2009</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="year">2007</span>
+                            <div>
+                                <b>BEP Électrotechnique</b>
+                                <span>Lycée Philadelphe de Gerde · 2005-2007</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Projets personnels
+             ================================================================== -->
+        <section id="projets" class="section container" data-cy="projects-section">
+            <div class="projects-head">
+                <div class="section-head fade-up" style="margin-bottom: 0;">
+                    <p class="eyebrow">06 · Projets personnels</p>
+                    <h2 class="section-title">Je livre aussi mes propres produits</h2>
+                    <p class="section-intro">Sur mon temps libre, je conçois et je déploie des applications complètes en pilotant des agents IA — Claude Code au quotidien. L'intérêt n'est pas de générer du code, c'est de <strong style="color: var(--text); font-weight: 500;">livrer</strong> : chaque projet embarque sa suite de tests, sa CI et sa documentation d'architecture. Cadrer, arbitrer, faire livrer, vérifier — c'est là que le réflexe QA et l'envie de piloter se rejoignent le plus clairement.</p>
+                </div>
+                <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm fade-up delay-1" data-cy="all-repos-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    Tous mes dépôts
+                </a>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card project-card--wip fade-up" data-cy="project-card">
+                    <div class="project-top">
+                        <p class="badge badge--support">Projet pro · livraison en cours</p>
+                        <span class="mono">2026</span>
+                    </div>
+                    <div>
+                        <h3>Estran</h3>
+                        <p class="project-sub">Site vitrine bilingue &amp; back office</p>
+                    </div>
+                    <p class="project-desc">Une maison d'édition, deux langues, un back office qui laisse l'éditeur gérer seul son catalogue — couvertures, quatrièmes, statuts brouillon/publié, traductions. Architecture volontairement frugale, déployée en conteneur sur VPS. Le site n'est pas encore en ligne : j'en dirai plus à la livraison.</p>
+                    <div class="chip-row">
+                        <span class="chip">Next.js 16</span><span class="chip">TypeScript</span><span class="chip">Tailwind v4</span><span class="chip">next-intl</span><span class="chip">Cypress</span><span class="chip">Docker</span>
+                    </div>
+                    <p class="project-foot">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Lien à venir une fois le projet livré
+                    </p>
+                </article>
+
+                <article class="project-card project-card--public fade-up delay-1" data-cy="project-card">
+                    <div class="project-top">
+                        <p class="badge badge--accent">Dépôt public</p>
+                        <span class="mono">2026</span>
+                    </div>
+                    <div>
+                        <h3>chignaguet.fr</h3>
+                        <p class="project-sub">Ce site, et sa suite de tests</p>
+                    </div>
+                    <p class="project-desc">La page que vous lisez, mais surtout ce qu'il y a derrière : une suite Cypress + Cucumber en Gherkin, structurée en Page Objects et <strong>annotée comme un support de formation</strong> — chaque fichier explique ses choix d'architecture. La CI refuse de déployer si un scénario casse.</p>
+                    <div class="chip-row">
+                        <span class="chip">Cypress</span><span class="chip">Cucumber</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">GitHub Actions</span>
+                    </div>
+                    <a href="https://github.com/Sharogne/qaconsult" target="_blank" rel="noopener noreferrer" class="project-foot project-foot--link" data-cy="project-link">
+                        github.com/Sharogne/qaconsult
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </article>
+
+                <article class="project-card project-card--soon fade-up" data-cy="project-card">
+                    <div class="project-top">
+                        <p class="badge">Test interne Play Store</p>
+                        <span class="mono">Android</span>
+                    </div>
+                    <div>
+                        <h3>Pile of Fame</h3>
+                        <p class="project-sub">Gestion de collection Warhammer</p>
+                    </div>
+                    <p class="project-desc">Une application Android pour gérer sa collection Warhammer et suivre l'avancement de ses projets de peinture : ce qui est acheté, monté, sous-couché, terminé. Née d'un besoin personnel — la fameuse « pile of shame » — et actuellement en test interne sur le Play Store.</p>
+                    <div class="chip-row">
+                        <span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Firestore</span>
+                    </div>
+                    <p class="project-foot">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Publication publique à venir
+                    </p>
+                </article>
+
+                <article class="project-card project-card--soon fade-up delay-1" data-cy="project-card">
+                    <div class="project-top">
+                        <p class="badge">Bêta interne</p>
+                        <span class="mono">Android</span>
+                    </div>
+                    <div>
+                        <h3>CarCare</h3>
+                        <p class="project-sub">Carnet d'entretien augmenté par IA</p>
+                    </div>
+                    <p class="project-desc">Le carnet d'entretien du véhicule, mais qui anticipe. L'IA personnalise les échéances selon l'usage réel plutôt que selon un barème générique, et l'application les pousse dans l'agenda : plus de vidange oubliée ni de contrôle technique découvert la veille.</p>
+                    <div class="chip-row">
+                        <span class="chip">Flutter</span><span class="chip">GenAI</span><span class="chip">Calendar API</span>
+                    </div>
+                    <p class="project-foot">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Publication publique à venir
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Façon de travailler
+             ================================================================== -->
+        <section id="methode" class="section container" data-cy="methode-section">
+            <div class="section-head fade-up">
+                <p class="eyebrow">07 · Façon de travailler</p>
+                <h2 class="section-title">Quatre convictions</h2>
+            </div>
+            <div class="methode-list">
+                <div class="methode-item fade-up">
+                    <div class="methode-number">01</div>
+                    <div>
+                        <h3>Shift-left</h3>
+                        <p>La qualité s'intègre dès la conception, pas en fin de sprint. Détecter un bug au moment où on écrit la spec coûte infiniment moins cher que de le corriger en production — et évite les arbitrages désagréables la veille d'une release.</p>
+                    </div>
+                </div>
+                <div class="methode-item fade-up">
+                    <div class="methode-number">02</div>
+                    <div>
+                        <h3>Automatiser l'essentiel</h3>
+                        <p>Je ne cherche pas 100 % de couverture. Je cible les parcours critiques, ceux dont la régression coûte vraiment, pour un retour sur investissement réel et une maintenance qui ne mange pas l'équipe. Une suite qu'on n'ose plus toucher est une suite morte.</p>
+                    </div>
+                </div>
+                <div class="methode-item fade-up">
+                    <div class="methode-number">03</div>
+                    <div>
+                        <h3>Décider sur des données</h3>
+                        <p>Un plan de test se défend avec des chiffres : taux d'échec, temps de feedback, zones de code les plus fragiles. Des métriques lisibles évitent les débats d'opinion et permettent d'expliquer une décision de qualité à un product owner comme à une direction.</p>
+                    </div>
+                </div>
+                <div class="methode-item fade-up">
+                    <div class="methode-number">04</div>
+                    <div>
+                        <h3>Transmettre</h3>
+                        <p>Une stratégie QA qui repose sur une seule personne est un risque. Documenter, former, commenter le code de test, faire monter les juniors — c'est ce qui transforme un travail individuel en capacité d'équipe. C'est aussi ce qui m'a donné envie de piloter.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Terrain
+             ================================================================== -->
+        <section id="terrain" class="section container terrain-section" data-cy="terrain-section">
+            <div class="section-head fade-up">
+                <p class="eyebrow eyebrow--muted">08 · En terrain</p>
+                <h2 class="section-title">Sur le matériel, pas seulement sur l'écran</h2>
+            </div>
+            <div class="terrain-grid">
+                <figure class="terrain-photo fade-up">
+                    <img src="/images/illu1.webp" alt="Session de test en réalité augmentée sur casque HoloLens" loading="lazy" width="560" height="340" style="object-position: left center;">
+                    <figcaption class="terrain-caption">// Tests AR sur HoloLens</figcaption>
+                </figure>
+                <figure class="terrain-photo fade-up delay-1">
+                    <img src="/images/illu2.webp" alt="Travail de QA sur un dispositif de réalité mixte" loading="lazy" width="560" height="340" style="object-position: center 30%;">
+                    <figcaption class="terrain-caption">// QA innovation &amp; XR</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Hobbies
+             ================================================================== -->
+        <section id="hobbies" class="section container" data-cy="hobbies-section">
+            <div class="section-head fade-up">
+                <p class="eyebrow eyebrow--muted">09 · En dehors du travail</p>
+                <h2 class="section-title">Ce qui m'occupe le reste du temps</h2>
+            </div>
+            <div class="hobbies-grid">
+                <div class="hobby-card fade-up" data-cy="hobby-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>
+                    <h3>Peinture</h3>
+                    <p>Figurines et modélisme. Le goût du détail et de la patience, hérité de l'atelier de l'Opéra.</p>
+                </div>
+                <div class="hobby-card fade-up delay-1" data-cy="hobby-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+                    <h3>Jeux vidéo</h3>
+                    <p>Sept ans passés à en fabriquer : difficile d'y jouer encore tout à fait innocemment.</p>
+                </div>
+                <div class="hobby-card fade-up delay-2" data-cy="hobby-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    <h3>Musique</h3>
+                    <p>Cinq ans à animer la Rock School du lycée Grand Lebrun, et l'habitude n'est jamais partie.</p>
+                </div>
+                <div class="hobby-card fade-up delay-3" data-cy="hobby-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
+                    <h3>Domotique</h3>
+                    <p>Home Assistant, self-hosting et applis Flutter : mon bac à sable pour tester ce qui m'intrigue.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Contact
+             ================================================================== -->
         <section id="contact" class="section container" data-cy="contact-section">
             <div class="contact-layout">
-                <div class="contact-info fade-up">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 16px;">Un projet ? <span>Parlons-en.</span></h2>
-                    <p>Disponible pour des missions de consulting à Bordeaux et en remote dans toute la France.</p>
-                    
+                <div class="fade-up">
+                    <div class="section-head">
+                        <p class="eyebrow">10 · Contact</p>
+                        <h2 class="section-title">Parlons-en</h2>
+                        <p class="section-intro">Je suis à l'écoute pour un poste en CDI sur Bordeaux, en remote ou en hybride. Si le profil vous parle, le plus simple est de m'écrire.</p>
+                    </div>
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <div class="contact-method-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            </div>
-                            <div class="contact-method-text">
-                                <h4>Email</h4>
+                            <span class="contact-method-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </span>
+                            <div>
+                                <h3>Email</h3>
                                 <a href="mailto:sylvain.chignaguet@gmail.com">sylvain.chignaguet@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact-method">
-                            <div class="contact-method-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            <span class="contact-method-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </span>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer">in/sylvain-chignaguet</a>
                             </div>
-                            <div class="contact-method-text">
-                                <h4>Calendly</h4>
-                                <a href="https://calendly.com/sylvain-chignaguet" target="_blank" rel="noopener noreferrer">📅 Réserver un créneau</a>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-method-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </span>
+                            <div>
+                                <h3>Localisation</h3>
+                                <p>Baron (33) · Bordeaux Métropole</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form fade-up delay-1">
                     <form action="https://formsubmit.co/sylvain.chignaguet+contact@gmail.com" method="POST" data-cy="contact-form">
                         <div class="form-group">
@@ -1302,108 +1818,141 @@
                             <input type="email" id="email" name="email" class="form-control" required data-cy="input-email">
                         </div>
                         <div class="form-group">
-                            <label for="subject">Type de besoin</label>
-                            <select id="subject" name="subject" class="form-control" required data-cy="select-subject">
-                                <option value="">Sélectionnez une option...</option>
-                                <option value="auto">Automatisation de tests</option>
-                                <option value="strat">Stratégie QA</option>
-                                <option value="ia">IA + QA</option>
-                                <option value="gaming">QA Gaming</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="message">Votre message</label>
                             <textarea id="message" name="message" class="form-control" required data-cy="textarea-message"></textarea>
                         </div>
-                        <input type="hidden" name="_subject" value="Nouveau contact depuis le site vitrine !">
+                        <input type="hidden" name="_subject" value="Contact depuis chignaguet.fr">
                         <input type="hidden" name="_template" value="box">
                         <button type="submit" class="btn btn-primary" style="width: 100%;" data-cy="submit-button">Envoyer le message</button>
                     </form>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <!-- Footer -->
+    <!-- ======================================================================
+         Pied de page
+         ====================================================================== -->
     <footer data-cy="footer">
         <div class="container footer-inner">
-            <div>&copy; 2026 Sylvain Chignaguet — Consultant QA Freelance &middot; Bordeaux</div>
-            <div class="footer-links" data-cy="footer-links">
-                <a href="#">Mentions légales</a>
+            <div>&copy; 2026 Sylvain Chignaguet — QA Automation Engineer · Bordeaux</div>
+            <nav class="footer-links" data-cy="footer-links" aria-label="Liens externes">
                 <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" data-cy="footer-link-linkedin">LinkedIn</a>
                 <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" data-cy="footer-link-github">GitHub</a>
-                <a href="https://www.malt.fr/profile/sylvainchignaguet" target="_blank" rel="noopener noreferrer" data-cy="footer-link-malt">Malt</a>
-                <a href="https://www.chignaguet.fr" target="_blank" rel="noopener noreferrer" data-cy="footer-link-website">chignaguet.fr</a>
-            </div>
+                <a href="https://www.chignaguet.fr" data-cy="footer-link-website">chignaguet.fr</a>
+            </nav>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Menu Toggle
-            const menuBtn = document.getElementById('mobile-menu-btn');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            /* ---------------------------------------------------------------
+               Menu mobile
+               --------------------------------------------------------------- */
+            const menuBtn  = document.getElementById('mobile-menu-btn');
             const navLinks = document.getElementById('nav-links');
-            
-            menuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
 
-            // Close mobile menu on link click
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
-            });
-
-            // Intersection Observer for fade-up animations
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
+            const closeMenu = () => {
+                navLinks.classList.remove('is-open');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.setAttribute('aria-label', 'Ouvrir le menu');
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        
-                        // Trigger count-up if it's the chiffres section
-                        if (entry.target.classList.contains('chiffre-item')) {
-                            const counter = entry.target.querySelector('.counter');
-                            if (counter && !counter.classList.contains('counted')) {
-                                startCountUp(counter);
-                                counter.classList.add('counted');
-                            }
-                        }
-                        
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-up').forEach(el => {
-                observer.observe(el);
+            menuBtn.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('is-open');
+                menuBtn.setAttribute('aria-expanded', String(isOpen));
+                menuBtn.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
             });
 
-            // Count-up animation function
-            function startCountUp(el) {
-                const target = parseInt(el.getAttribute('data-target'));
-                const duration = 2000; // 2 seconds
-                const stepTime = Math.abs(Math.floor(duration / target));
-                let current = 0;
-                
-                const timer = setInterval(() => {
-                    current += 1;
-                    el.textContent = current;
-                    if (current >= target) {
-                        clearInterval(timer);
-                        el.textContent = target;
-                    }
-                }, stepTime);
+            navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+            /* ---------------------------------------------------------------
+               Bordure de l'en-tête au défilement
+               --------------------------------------------------------------- */
+            const header = document.getElementById('site-header');
+            const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            /* ---------------------------------------------------------------
+               Compteurs animés
+               --------------------------------------------------------------- */
+            function countUp(el) {
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                if (Number.isNaN(target)) return;
+
+                if (reduceMotion) { el.textContent = String(target); return; }
+
+                const duration = 1600;
+                const start = performance.now();
+
+                const tick = now => {
+                    const progress = Math.min((now - start) / duration, 1);
+                    // easeOutCubic — la valeur ralentit en approchant de la cible
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = String(Math.round(eased * target));
+                    if (progress < 1) requestAnimationFrame(tick);
+                    else el.textContent = String(target);
+                };
+
+                requestAnimationFrame(tick);
             }
+
+            /* ---------------------------------------------------------------
+               Révélation au défilement
+               Une seule instance d'observateur pour toute la page ; chaque
+               élément est libéré dès qu'il est apparu.
+               --------------------------------------------------------------- */
+            const revealTargets = document.querySelectorAll('.fade-up, .tl-row');
+
+            if (!('IntersectionObserver' in window)) {
+                revealTargets.forEach(el => el.classList.add('is-visible'));
+                document.querySelectorAll('.counter').forEach(countUp);
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+
+                    entry.target.classList.add('is-visible');
+
+                    entry.target.querySelectorAll('.counter:not(.is-counted)').forEach(counter => {
+                        counter.classList.add('is-counted');
+                        countUp(counter);
+                    });
+
+                    obs.unobserve(entry.target);
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            revealTargets.forEach(el => observer.observe(el));
+
+            /* ---------------------------------------------------------------
+               Téléchargement du CV
+               La feuille @media print met la page en forme de CV imprimable.
+               Le jour où un PDF est déposé dans public/, remplacer ce bouton
+               par un <a href="/cv-sylvain-chignaguet.pdf" download>.
+               --------------------------------------------------------------- */
+            // Accroché à beforeprint plutôt qu'au seul bouton : Ctrl+P doit
+            // produire exactement le même document.
+            window.addEventListener('beforeprint', () => {
+                // Le bloc « avant la tech » doit figurer sur le CV imprimé.
+                document.querySelectorAll('.before-tech').forEach(d => { d.open = true; });
+                // Les compteurs ne se déclenchent qu'au scroll : sans cela, un CV
+                // imprimé sans avoir fait défiler la page afficherait des zéros.
+                document.querySelectorAll('.counter').forEach(c => {
+                    c.textContent = c.getAttribute('data-target');
+                });
+            });
+
+            const cvBtn = document.getElementById('download-cv');
+            if (cvBtn) cvBtn.addEventListener('click', () => window.print());
         });
     </script>
 </body>
 </html>
-
