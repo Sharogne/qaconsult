@@ -68,6 +68,7 @@ Feature: CV en ligne de Sylvain Chignaguet — QA Automation Engineer
     Then the page does not mention "Malt"
     And the page does not mention "Calendly"
     And the phone number is not visible on screen
+    And the print-only CV blocks are hidden on screen
 
   Scenario: Footer display
     Then the footer mentions "Sylvain Chignaguet"

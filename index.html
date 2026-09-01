@@ -909,148 +909,187 @@
            Impression — le CV téléchargeable
            ========================================================================== */
         @media print {
-            /* Objectif : un CV dense et lisible, pas une capture du site.
-               Le chrome de carte disparaît, la page redevient un document. */
+            /* Le CV imprimé est un document différent du site : deux pages A4
+               denses, hiérarchie de papier, et surtout aucune couleur portée
+               par un `background` — Firefox ne les imprime pas. Tout ce qui
+               doit rester visible passe par une bordure. */
             :root {
                 --bg: #fff; --bg-deep: #fff; --surface: #fff; --card: #fff; --card-hover: #fff;
-                --text: #111; --text-2: #2b2b2b; --text-3: #555;
-                --border: #d5d5d5; --border-solid: #cfcfcf; --border-strong: #bbb;
-                --accent: #0a7a52; --accent-line: #0a7a52; --accent-soft: transparent;
-                --support: #3b3f8f; --support-line: #3b3f8f; --support-soft: transparent;
+                --text: #14181D; --text-2: #3D454F; --text-3: #6B7480;
+                --border: #D8DDE3; --border-solid: #D8DDE3; --border-strong: #B4BCC5;
+                --accent: #0A7A52; --accent-line: #0A7A52; --accent-soft: transparent;
+                --support: #3B3F8F; --support-line: #3B3F8F; --support-soft: transparent;
                 --gutter: 0px;
             }
-            @page { margin: 12mm 12mm 14mm; }
+            @page { size: A4; margin: 12mm 12mm 14mm; }
 
-            body { background: #fff; color: #111; font-size: 9.5pt; line-height: 1.42; }
+            body { background: #fff; color: #14181D; font-size: 9.75pt; line-height: 1.46; }
             body::before { display: none; }
 
-            /* Hors sujet sur un CV papier */
+            /* Hors sujet sur un CV papier. Les deux dernières lignes sont un
+               choix de contenu : de la prose de site et une redite de la liste
+               de compétences située juste au-dessus. */
             header, footer, .mobile-menu-btn, .hero-cta, .social-row,
             .contact-form, .terrain-section, .hero-portrait-stat,
-            .before-tech-hint, .projects-head .btn, .section-intro,
-            .skip-link { display: none !important; }
+            .before-tech-hint, .projects-head .btn, .skip-link,
+            #methode, .savoirfaire, #contact { display: none !important; }
             .hero-portrait::before { display: none; }
 
-            .print-only { display: block; font-size: 9pt; line-height: 1.5; margin-top: 4pt; }
-            .print-only p { color: #222; }
+            .print-only { display: block; }
 
             .fade-up { opacity: 1 !important; transform: none !important; }
-            .tl-line-fill { transform: scaleY(1) !important; }
             .before-tech { border: none; }
-            .before-tech > summary { cursor: default; padding: 0 0 6pt; font-size: 11pt; }
+            .before-tech > summary { cursor: default; padding: 0 0 4pt; font-size: 10pt; }
             .before-tech-body { padding: 0; }
 
-            a { color: #111; text-decoration: none; }
+            a { color: #14181D; text-decoration: none; }
 
             .container, .section, .hero, .chiffres-grid { max-width: none; padding-left: 0; padding-right: 0; }
-            .section { padding: 9pt 0 0; }
-            .section-head { margin-bottom: 6pt; gap: 2pt; }
-            .section-title { font-size: 14pt; }
-            .eyebrow { font-size: 7.5pt; letter-spacing: 0.10em; }
+            .section { padding: 5pt 0 0; }
 
-            /* En-tête du CV.
-               Note : une feuille A4 fait 794 px de large, donc les media queries
-               « mobile » s'appliquent aussi ici — il faut les défaire une à une. */
-            .hero { padding: 0 0 6pt; }
-            .hero-grid { grid-template-columns: minmax(0, 1fr) 116px; gap: 16pt; align-items: start; }
+            /* Titres de section : un label fin suivi d'un filet, pas un titre
+               d'affichage. Le numéro sert à se repérer dans un scroll, il
+               n'encode rien sur une feuille. */
+            .eyebrow-num { display: none; }
+            .section-head { gap: 4pt; margin-bottom: 6pt; max-width: none; }
+            .eyebrow {
+                font-family: var(--font-body);
+                font-size: 8pt; font-weight: 700; letter-spacing: 0.16em;
+                text-transform: uppercase;
+                display: block; width: 100%;
+                border-bottom: 1px solid #D8DDE3;
+                padding-bottom: 3pt;
+            }
+            .section-title, .section-intro { display: none; }
+            .projects-head .section-intro { display: none; }
+
+            /* En-tête du CV. Une feuille A4 fait 794 px de large : les media
+               queries « mobile » s'appliquent aussi ici et doivent être défaites. */
+            .hero { padding: 0 0 8pt; }
+            .hero-grid { grid-template-columns: minmax(0, 1fr) 96px; gap: 18pt; align-items: start; }
             .hero-visual { order: 1; justify-content: flex-end; }
-            .hero-portrait { max-width: 116px; }
-            .hero-content { gap: 6pt; }
-            .hero-name { font-size: 24pt; line-height: 1.05; }
+            .hero-portrait { max-width: 96px; }
+            .hero-content { gap: 5pt; }
+            .hero-name { font-size: 25pt; line-height: 1.02; }
             .hero-name br { display: none; }
             .hero-role { font-size: 11.5pt; }
             .hero-role br { display: none; }
-            .hero-pitch { font-size: 9.5pt; }
-            .hero-location { font-size: 9pt; gap: 8pt; }
-            .hero-portrait-frame { border-radius: 4pt; aspect-ratio: 1 / 1.1; }
+            .hero-pitch { display: none; }
+            .hero-location { display: none; }
+            .hero-portrait-frame { border-radius: 0; aspect-ratio: 6 / 7; border-color: #D8DDE3; }
             .hero-portrait-frame::after { display: none; }
 
             .chiffres-section { border: none; }
-            .chiffres-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 6pt 0; gap: 10pt; }
+            .chiffres-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                border-top: 1px solid #D8DDE3; border-bottom: 1px solid #D8DDE3;
+                padding: 6pt 0; gap: 12pt;
+            }
+            .chiffre-item { display: flex; align-items: baseline; gap: 5pt; }
             .chiffre-number { font-size: 15pt; }
-            .chiffre-label { font-size: 8pt; margin-top: 2pt; }
+            .chiffre-label { font-size: 8pt; margin-top: 0; }
 
-            /* Cartes : on retire le chrome, on garde la structure */
-            .job, .project-card, .skill-card, .cert-card, .hobby-card,
-            .savoirfaire-card, .proof-item, .contact-form {
+            /* Profil : le paragraphe unique remplace les quatre du site. */
+            .profil-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+            .profil-proof { display: none; }
+            .profil-body > p:not(.profil-print) { display: none; }
+            .profil-print { font-size: 9.75pt; line-height: 1.5; color: var(--text-2); }
+
+            /* Timeline : le rail devient une BORDURE. Un fond de 2 px ne
+               s'imprime pas et la colonne vertébrale disparaissait. */
+            .tl-rail { display: none; }
+            .tl-row { grid-template-columns: 108px minmax(0, 1fr); }
+            .tl-date {
+                grid-column: 1; grid-row: 1; text-align: right;
+                padding: 0 12pt 0 0; line-height: 1.55;
+            }
+            .tl-date b, .tl-date span, .tl-date em { display: block; font-size: 8pt; padding-top: 0; }
+            .tl-date span::before { content: none; }
+            .tl-body {
+                grid-column: 2; grid-row: 1;
+                border-left: 1px solid #D8DDE3;
+                padding: 0 0 8pt 12pt;
+            }
+
+            .job, .project-card, .skill-card, .cert-card, .hobby-card, .contact-form {
                 border: none; background: none; padding: 0;
             }
-            .job { gap: 5pt; }
-            .job--group { gap: 6pt; }
-            .job-group-head { padding-bottom: 4pt; }
-            .job-title { font-size: 11.5pt; }
+            .job { gap: 3pt; }
+            .job--group { gap: 5pt; }
+            .job-group-head { padding-bottom: 3pt; }
+            .job-title { font-size: 11pt; }
             .job-org { font-size: 9pt; margin-top: 1pt; }
-            .job-points { gap: 2pt; }
-            .job-points li { font-size: 9pt; line-height: 1.38; }
-            .job-roles { gap: 7pt; }
-            .job-role-meta { margin-bottom: 2pt; gap: 6pt; }
-            .job-role-meta h4 { font-size: 10pt; }
-            .job-role p { font-size: 9pt; line-height: 1.38; }
-            .tl-row { grid-template-columns: 92px 18px minmax(0, 1fr); }
-            .tl-date { grid-column: 1; grid-row: 1; text-align: right; padding: 0 10pt 0 0; }
-            .tl-date b, .tl-date span { display: block; }
-            .tl-date span::before { content: none; }
-            .tl-rail { grid-column: 2; grid-row: 1; }
-            .tl-body { grid-column: 3; grid-row: 1; }
-            .tl-date b, .tl-date span, .tl-date em { font-size: 8pt; }
-            .tl-node { top: 3px; }
-            .tl-body { padding: 0 0 12pt 12pt; }
-            .profil-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18pt; }
+            .job-points { gap: 1pt; }
+            .job-points li { font-size: 9pt; line-height: 1.4; padding-left: 14pt; }
+            .job-roles { gap: 5pt; }
+            .job-role-meta { margin-bottom: 1pt; gap: 5pt; }
+            .job-role-meta h4 { font-size: 9.5pt; }
+            .job-role p { font-size: 9pt; line-height: 1.4; }
 
-            .badge { padding: 1pt 6pt; font-size: 7.5pt; border-color: #bbb; }
-            .chip { border: 1px solid #d5d5d5; background: none; padding: 1pt 5pt; font-size: 7.5pt; }
-            .chip-row { gap: 4pt; }
+            .badge { padding: 0 5pt; font-size: 7pt; border-color: #B4BCC5; }
+            .chip { border: 1px solid #D8DDE3; background: none; padding: 0 4pt; font-size: 7.5pt; }
+            .chip-row { gap: 3pt; }
 
-            /* Compétences et loisirs : des listes, pas des vignettes */
-            .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 5pt 18pt; }
+            /* Compétences : des listes, pas des vignettes. */
+            .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4pt 22pt; }
             .skill-card { flex-direction: row; align-items: baseline; gap: 6pt; }
             .skill-card svg { display: none; }
-            .skill-card h3 { font-size: 9.5pt; white-space: nowrap; }
-            .skill-card h3::after { content: ' :'; }
+            .skill-card h3 { font-size: 9pt; width: 108px; flex-shrink: 0; }
+            .skill-card .chip-row { gap: 0 4pt; }
+            .skill-card .chip { border: none; padding: 0; font-family: var(--font-body); font-size: 9pt; color: var(--text-2); }
+            .skill-card .chip + .chip::before { content: '· '; color: var(--text-3); }
 
-            .savoirfaire { grid-template-columns: repeat(3, 1fr); gap: 6pt 14pt; margin-top: 8pt; }
-            .savoirfaire-card h3 { font-size: 9.5pt; }
-            .savoirfaire-card p { font-size: 8.5pt; line-height: 1.35; }
-
-            .education-layout { grid-template-columns: 1.15fr 1fr; gap: 18pt; }
-            .certs-grid { gap: 5pt 14pt; }
-            .cert-card b { font-size: 9.5pt; }
-            .cert-note { border: none; background: none; padding: 4pt 0 0; font-size: 8.5pt; }
-            .diplomas li { padding: 5pt 0; }
-            .diplomas b { font-size: 9.5pt; }
+            .education-layout { grid-template-columns: 1.15fr 1fr; gap: 22pt; }
+            .certs-grid { grid-template-columns: minmax(0, 1fr); gap: 3pt; }
+            .cert-card { display: flex; align-items: baseline; justify-content: space-between; gap: 8pt; }
+            .cert-card b { font-size: 9pt; }
+            .cert-card span { font-size: 7.5pt; white-space: nowrap; }
+            .cert-note { border: none; background: none; padding: 3pt 0 0; font-size: 8.5pt; }
+            .cert-note svg { display: none; }
+            .diplomas li { padding: 4pt 0; }
+            .diplomas b { font-size: 9pt; }
             .diplomas span { font-size: 8.5pt; }
 
-            .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8pt 18pt; }
-            .project-card h3 { font-size: 11pt; }
-            .project-sub { font-size: 8.5pt; margin-top: 1pt; }
-            .project-desc { font-size: 8.5pt; line-height: 1.38; }
-            .project-foot { padding-top: 4pt; font-size: 8.5pt; }
+            .projects-head { margin-bottom: 6pt; }
+            .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7pt 22pt; }
+            .project-card h3 { font-size: 9.5pt; }
+            .project-sub { font-size: 8.5pt; margin-top: 0; }
+            .project-desc { font-size: 8.5pt; line-height: 1.42; }
+            .project-foot { padding-top: 3pt; font-size: 8pt; border-top: none; }
             .project-foot svg { display: none; }
 
-            .methode-item { padding: 6pt 0; grid-template-columns: 34px minmax(0, 1fr); gap: 10pt; }
-            .methode-number { font-size: 14pt; color: #999; }
-            .methode-item h3 { font-size: 10pt; margin-bottom: 2pt; }
-            .methode-item p { font-size: 8.5pt; line-height: 1.38; }
-
-            .hobbies-grid { grid-template-columns: repeat(4, 1fr); gap: 6pt 14pt; }
-            .hobby-card { gap: 3pt; }
+            .hobbies-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10pt; }
+            .hobby-card { gap: 2pt; }
             .hobby-card svg { display: none; }
-            .hobby-card h3 { font-size: 9.5pt; }
-            .hobby-card p { font-size: 8.5pt; line-height: 1.35; }
+            .hobby-card h3 { font-size: 9pt; }
+            .hobby-card p { font-size: 7.5pt; line-height: 1.35; }
 
-            .contact-layout { grid-template-columns: 1fr; gap: 0; }
-            .contact-methods { flex-direction: row; gap: 22pt; margin-top: 6pt; }
+            .before-tech-grid { display: block; font-size: 8.5pt; line-height: 1.5; }
+            .before-tech-grid > div { display: inline; }
+            .before-tech-grid > div + div::before { content: ' · '; color: var(--text-3); }
+            .before-tech-grid b { display: inline; font-size: 8.5pt; font-weight: 500; }
+            .before-tech-grid b::after { content: ','; }
+            .before-tech-grid span {
+                display: inline; font-size: 8.5pt; color: var(--text-3);
+                font-family: var(--font-body);
+            }
+            .before-tech-note { font-size: 8pt; line-height: 1.4; padding-top: 3pt; border-top: none; }
+
+            .contact-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+            .contact-methods { flex-direction: row; gap: 26pt; margin-top: 2pt; }
             .contact-method-icon { display: none; }
-            .contact-method h3 { font-size: 7.5pt; }
+            .contact-method h3 { font-size: 7pt; }
             .contact-method a, .contact-method p { font-size: 9pt; }
 
-            /* Rien ne doit être coupé au milieu */
-            .job, .project-card, .cert-card, .hobby-card, .savoirfaire-card,
-            .proof-item, .methode-item, .tl-row, .job-role, .diplomas li {
+            /* Ce qui ne doit jamais être coupé, c'est l'unité de lecture :
+               un poste, une carte, une ligne de diplôme. Un employeur, lui,
+               peut se poursuivre sur la page suivante. */
+            .job-role, .project-card, .cert-card, .hobby-card,
+            .proof-item, .diplomas li, .chiffre-item {
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
-            h1, h2, h3, .section-head { break-after: avoid; page-break-after: avoid; }
+            .section-head { break-after: avoid; page-break-after: avoid; }
 
             .job:hover, .project-card:hover, .skill-card:hover,
             .cert-card:hover, .hobby-card:hover { transform: none; }
@@ -1190,7 +1229,7 @@
             <div class="profil-layout">
                 <div class="fade-up">
                     <div class="section-head">
-                        <p class="eyebrow">01 · Profil</p>
+                        <p class="eyebrow"><span class="eyebrow-num">01 · </span>Profil</p>
                         <h2 class="section-title">De la qualité au pilotage</h2>
                     </div>
                     <div class="profil-body">
@@ -1198,6 +1237,9 @@
                         <p>Ce qui m'anime aujourd'hui a changé de nature. Ce n'est plus d'écrire le test le plus élégant, c'est de <strong>faire en sorte qu'une équipe livre bien</strong> : arbitrer ce qu'on teste et ce qu'on ne teste pas, poser un plan que tout le monde comprend, désamorcer les risques avant qu'ils ne deviennent des incidents, et faire monter les gens en compétence.</p>
                         <p>Cette bascule, je ne l'ai pas seulement décidée : je l'ai déjà pratiquée. Encadrement, recrutement, définition de stratégie, gestion de release — ce sont des choses que j'ai faites, pas des choses que j'aimerais faire. La formation en gestion de projet et les certifications agiles sont venues structurer ce que le terrain m'avait appris.</p>
                         <p>Je cherche donc un poste où la qualité et le pilotage ne sont pas deux métiers séparés : <strong>lead QA, engineering manager, chef de projet technique</strong> — le titre compte moins que le périmètre.</p>
+
+                        <!-- Sur le CV imprimé, ce paragraphe unique remplace les quatre ci-dessus. -->
+                        <p class="print-only profil-print">Ex-militaire reconverti, huit ans de qualité logicielle — du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai fait le tour du métier : test manuel, automatisation, stratégie, outillage, release. <strong>Le pilotage, je l'ai déjà pratiqué</strong> : encadrement de deux QA juniors, deux recrutements, stratégies QA définies de A à Z, gestion de release sur des titres livrés. Je cherche un poste où qualité et pilotage ne sont pas deux métiers séparés — lead QA, engineering manager, chef de projet technique.</p>
                     </div>
                 </div>
 
@@ -1239,7 +1281,7 @@
              ================================================================== -->
         <section id="parcours" class="section container" data-cy="experience-section">
             <div class="section-head fade-up">
-                <p class="eyebrow">02 · Parcours</p>
+                <p class="eyebrow"><span class="eyebrow-num">02 · </span>Parcours</p>
                 <h2 class="section-title">Huit ans de qualité, quatre passages en pilotage</h2>
             </div>
 
@@ -1434,7 +1476,7 @@
              ================================================================== -->
         <section id="competences" class="section container" data-cy="skills-section">
             <div class="section-head fade-up">
-                <p class="eyebrow">03 · Compétences</p>
+                <p class="eyebrow"><span class="eyebrow-num">03 · </span>Compétences</p>
                 <h2 class="section-title">Ce que je sais faire</h2>
                 <p class="section-intro">Des outils pratiqués en production, pas en tutoriel.</p>
             </div>
@@ -1480,6 +1522,11 @@
                     <h3>Jeu vidéo</h3>
                     <div class="chip-row"><span class="chip">Gameplay</span><span class="chip">Build &amp; release</span><span class="chip">Perforce</span></div>
                 </div>
+                <div class="skill-card fade-up" data-cy="skill-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h10"></path><path d="M9 3v2c0 4.4-2.2 8-5 8"></path><path d="M5 9c0 2.6 2.7 4.8 6 5"></path><path d="M12 20l4-9 4 9"></path><path d="M13.5 17h5"></path></svg>
+                    <h3>Langues</h3>
+                    <div class="chip-row"><span class="chip">Français natif</span><span class="chip">Anglais professionnel</span></div>
+                </div>
             </div>
 
             <div class="savoirfaire">
@@ -1517,7 +1564,7 @@
             <div class="education-layout">
                 <div class="fade-up">
                     <div class="section-head">
-                        <p class="eyebrow eyebrow--support">04 · Certifications</p>
+                        <p class="eyebrow eyebrow--support"><span class="eyebrow-num">04 · </span>Certifications</p>
                         <h2 class="section-title">Le socle pilotage</h2>
                     </div>
                     <div class="certs-grid">
@@ -1546,7 +1593,7 @@
 
                 <div class="fade-up delay-1">
                     <div class="section-head">
-                        <p class="eyebrow eyebrow--muted">05 · Formation</p>
+                        <p class="eyebrow eyebrow--muted"><span class="eyebrow-num">05 · </span>Formation</p>
                         <h2 class="section-title">Parcours de formation</h2>
                     </div>
                     <ul class="diplomas">
@@ -1582,7 +1629,7 @@
         <section id="projets" class="section container" data-cy="projects-section">
             <div class="projects-head">
                 <div class="section-head fade-up" style="margin-bottom: 0;">
-                    <p class="eyebrow">06 · Projets personnels</p>
+                    <p class="eyebrow"><span class="eyebrow-num">06 · </span>Projets personnels</p>
                     <h2 class="section-title">Je livre aussi mes propres produits</h2>
                     <p class="section-intro">Sur mon temps libre, je conçois et je déploie des applications complètes en pilotant des agents IA — Claude Code au quotidien. L'intérêt n'est pas de générer du code, c'est de <strong style="color: var(--text); font-weight: 500;">livrer</strong> : chaque projet embarque sa suite de tests, sa CI et sa documentation d'architecture. Cadrer, arbitrer, faire livrer, vérifier — c'est là que le réflexe QA et l'envie de piloter se rejoignent le plus clairement.</p>
                 </div>
@@ -1678,7 +1725,7 @@
              ================================================================== -->
         <section id="methode" class="section container" data-cy="methode-section">
             <div class="section-head fade-up">
-                <p class="eyebrow">07 · Façon de travailler</p>
+                <p class="eyebrow"><span class="eyebrow-num">07 · </span>Façon de travailler</p>
                 <h2 class="section-title">Quatre convictions</h2>
             </div>
             <div class="methode-list">
@@ -1718,7 +1765,7 @@
              ================================================================== -->
         <section id="terrain" class="section container terrain-section" data-cy="terrain-section">
             <div class="section-head fade-up">
-                <p class="eyebrow eyebrow--muted">08 · En terrain</p>
+                <p class="eyebrow eyebrow--muted"><span class="eyebrow-num">08 · </span>En terrain</p>
                 <h2 class="section-title">Sur le matériel, pas seulement sur l'écran</h2>
             </div>
             <div class="terrain-grid">
@@ -1738,7 +1785,7 @@
              ================================================================== -->
         <section id="hobbies" class="section container" data-cy="hobbies-section">
             <div class="section-head fade-up">
-                <p class="eyebrow eyebrow--muted">09 · En dehors du travail</p>
+                <p class="eyebrow eyebrow--muted"><span class="eyebrow-num">09 · </span>En dehors du travail</p>
                 <h2 class="section-title">Ce qui m'occupe le reste du temps</h2>
             </div>
             <div class="hobbies-grid">
@@ -1772,7 +1819,7 @@
             <div class="contact-layout">
                 <div class="fade-up">
                     <div class="section-head">
-                        <p class="eyebrow">10 · Contact</p>
+                        <p class="eyebrow"><span class="eyebrow-num">10 · </span>Contact</p>
                         <h2 class="section-title">Parlons-en</h2>
                         <p class="section-intro">Je suis à l'écoute pour un poste en CDI sur Bordeaux, en remote ou en hybride. Si le profil vous parle, le plus simple est de m'écrire.</p>
                     </div>
