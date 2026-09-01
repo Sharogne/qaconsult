@@ -248,6 +248,16 @@ Then('the phone number is not visible on screen', () => {
   cy.contains('06 45 13 01 82').should('not.be.visible');
 });
 
+// Le CV imprimé s'appuie sur des blocs présents dans le DOM mais masqués à
+// l'écran (coordonnées complètes, profil condensé). S'ils devenaient visibles,
+// la page afficherait deux fois le même profil et exposerait le téléphone.
+Then('the print-only CV blocks are hidden on screen', () => {
+  cy.get('.print-only').should('have.length.at.least', 2);
+  cy.get('.print-only').each(($el) => {
+    cy.wrap($el).should('not.be.visible');
+  });
+});
+
 /* ==========================================================================
    Pied de page
    ========================================================================== */
