@@ -1057,12 +1057,14 @@
             .project-desc { font-size: 8.5pt; line-height: 1.36; }
             .project-foot { padding-top: 3pt; font-size: 8pt; border-top: none; }
             .project-foot svg { display: none; }
+            /* Redite du badge de statut affiché en haut de la carte. */
+            .project-foot:not(.project-foot--link) { display: none; }
 
-            .hobbies-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10pt; }
-            .hobby-card { gap: 2pt; }
-            .hobby-card svg { display: none; }
-            .hobby-card h3 { font-size: 9pt; }
-            .hobby-card p { font-size: 7.5pt; line-height: 1.3; }
+            .hobbies-grid { display: block; }
+            .hobby-card { display: inline; }
+            .hobby-card + .hobby-card::before { content: '· '; color: var(--text-3); }
+            .hobby-card svg, .hobby-card p { display: none; }
+            .hobby-card h3 { display: inline; font-size: 9pt; font-weight: 500; }
 
             .before-tech-grid { display: block; font-size: 8.5pt; line-height: 1.5; }
             .before-tech-grid > div { display: inline; }
