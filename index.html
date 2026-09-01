@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sylvain Chignaguet — QA Automation Engineer | CV</title>
+    <title>Sylvain Chignaguet, QA Automation Engineer | CV</title>
     <meta name="description" content="QA Automation Engineer avec 8 ans d'expérience (Phenix, Asobo Studio, Betclic). Cypress, TypeScript, CI/CD, Appium. Certifié PSM I, PSPO I, SAFe. En route vers la gestion de projet. Bordeaux & remote.">
     <link rel="canonical" href="https://www.chignaguet.fr/">
     <meta name="robots" content="index, follow">
@@ -13,16 +13,16 @@
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Sylvain Chignaguet">
     <meta property="og:url" content="https://www.chignaguet.fr/">
-    <meta property="og:title" content="Sylvain Chignaguet — QA Automation Engineer">
-    <meta property="og:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD — et le cap sur la gestion de projet.">
+    <meta property="og:title" content="Sylvain Chignaguet, QA Automation Engineer">
+    <meta property="og:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le cap sur la gestion de projet.">
     <meta property="og:image" content="https://www.chignaguet.fr/images/banner.webp">
-    <meta property="og:image:alt" content="Sylvain Chignaguet — QA Automation Engineer">
+    <meta property="og:image:alt" content="Sylvain Chignaguet, QA Automation Engineer">
     <meta property="profile:first_name" content="Sylvain">
     <meta property="profile:last_name" content="Chignaguet">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sylvain Chignaguet — QA Automation Engineer">
-    <meta name="twitter:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD — et le cap sur la gestion de projet.">
+    <meta name="twitter:title" content="Sylvain Chignaguet, QA Automation Engineer">
+    <meta name="twitter:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le cap sur la gestion de projet.">
     <meta name="twitter:image" content="https://www.chignaguet.fr/images/banner.webp">
 
     <meta name="theme-color" content="#0D1117">
@@ -30,7 +30,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -76,7 +76,7 @@
 
     <style>
         /* ==========================================================================
-           Tokens — charte « sombre tech affinée »
+           Tokens : charte « sombre tech affinée »
            Dérivée de l'ancienne charte du site, désaturée d'un cran :
            la couleur est un signal ponctuel, la hiérarchie repose sur le gris.
            ========================================================================== */
@@ -104,7 +104,7 @@
             --support-soft:    rgba(139, 140, 240, 0.09);
             --support-line:    rgba(139, 140, 240, 0.30);
 
-            --font-display: 'Syne', Georgia, serif;
+            --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
             --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
@@ -152,8 +152,15 @@
             pointer-events: none;
         }
 
-        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
-        h1 { font-weight: 800; letter-spacing: -0.028em; }
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            /* 1.25 minimum : en dessous, les jambages des « g » et « q » sortent
+               de la boîte de ligne et se font rogner. */
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+        }
+        h1 { font-weight: 800; letter-spacing: -0.022em; }
         p  { text-wrap: pretty; }
 
         a { color: inherit; text-decoration: none; transition: color var(--t-state) var(--ease); }
@@ -198,7 +205,7 @@
         }
         .eyebrow--support { color: var(--support); }
         .eyebrow--muted   { color: var(--text-3); }
-        .section-title { font-size: clamp(28px, 4vw, 38px); font-weight: 800; letter-spacing: -0.02em; }
+        .section-title { font-size: clamp(27px, 3.6vw, 35px); font-weight: 700; letter-spacing: -0.018em; line-height: 1.28; }
         .section-intro { color: var(--text-2); font-size: 17px; }
 
         .mono { font-family: var(--font-mono); }
@@ -309,7 +316,7 @@
         }
         .hero-content { display: flex; flex-direction: column; gap: 26px; }
 
-        .hero-name { font-size: clamp(42px, 6.4vw, 68px); line-height: 1.04; }
+        .hero-name { font-size: clamp(40px, 6vw, 62px); line-height: 1.12; }
         .hero-role {
             font-family: var(--font-body);
             font-size: clamp(20px, 2.6vw, 26px);
@@ -366,20 +373,12 @@
 
         .hero-visual { display: flex; justify-content: flex-end; }
         .hero-portrait { position: relative; width: 100%; max-width: 400px; }
-        .hero-portrait::before {
-            content: '';
-            position: absolute;
-            left: -22px; top: -22px; right: 22px; bottom: 22px;
-            border: 1px solid var(--accent-line);
-            border-radius: 20px;
-            pointer-events: none;
-        }
         .hero-portrait-frame {
             position: relative;
             aspect-ratio: 40 / 47;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            border: 1px solid var(--border-solid);
+            border: 1px solid var(--accent-line);
             background: var(--card);
         }
         .hero-portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
@@ -446,7 +445,7 @@
         .proof-item span { font-size: 14.5px; line-height: 1.6; color: var(--text-2); }
 
         /* ==========================================================================
-           Parcours — timeline
+           Parcours : timeline
            ========================================================================== */
         .timeline { display: flex; flex-direction: column; }
         .tl-row { display: grid; grid-template-columns: 150px 34px minmax(0, 1fr); }
@@ -458,6 +457,11 @@
             letter-spacing: 0.06em;
             font-style: normal;
         }
+        /* À l'écran, seule l'année de changement : la période détaillée et la
+           durée alourdissaient une colonne de 150 px sans rien apporter à la
+           lecture. Le CV imprimé, lui, les rétablit. */
+        .tl-date .tl-year { font-size: 15px; letter-spacing: 0.02em; }
+        .tl-date .tl-period, .tl-date .tl-duration { display: none; }
         .tl-date b { color: var(--text-2); font-weight: 500; }
         .tl-date .is-now { color: var(--accent); }
         .tl-date span { color: var(--text-3); }
@@ -520,7 +524,7 @@
 
         .job-points { display: flex; flex-direction: column; gap: 9px; }
         .job-points li { position: relative; padding-left: 22px; font-size: 14.5px; line-height: 1.62; color: var(--text-2); }
-        .job-points li::before { content: '—'; position: absolute; left: 0; top: 0; color: var(--accent); }
+        .job-points li::before { content: '-'; position: absolute; left: 0; top: 0; color: var(--accent); }
         .job-points strong { color: var(--text); font-weight: 500; }
 
         .job-group-head {
@@ -890,7 +894,7 @@
         }
 
         /* ==========================================================================
-           Accessibilité — mouvement réduit
+           Accessibilité : mouvement réduit
            ========================================================================== */
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -906,12 +910,12 @@
         }
 
         /* ==========================================================================
-           Impression — le CV téléchargeable
+           Impression : le CV téléchargeable
            ========================================================================== */
         @media print {
             /* Le CV imprimé est un document différent du site : deux pages A4
                denses, hiérarchie de papier, et surtout aucune couleur portée
-               par un `background` — Firefox ne les imprime pas. Tout ce qui
+               par un `background`, que Firefox n'imprime pas. Tout ce qui
                doit rester visible passe par une bordure. */
             :root {
                 --bg: #fff; --bg-deep: #fff; --surface: #fff; --card: #fff; --card-hover: #fff;
@@ -933,7 +937,6 @@
             .contact-form, .terrain-section, .hero-portrait-stat,
             .before-tech-hint, .projects-head .btn, .skip-link,
             #methode, .savoirfaire, #contact { display: none !important; }
-            .hero-portrait::before { display: none; }
 
             .print-only { display: block; }
 
@@ -1004,6 +1007,8 @@
                 padding: 0 12pt 0 0; line-height: 1.55;
             }
             .tl-date b, .tl-date span, .tl-date em { display: block; font-size: 8pt; padding-top: 0; }
+            .tl-date .tl-year { display: none; }
+            .tl-date .tl-period, .tl-date .tl-duration { display: block; font-size: 8pt; }
             .tl-date span::before { content: none; }
             .tl-body {
                 grid-column: 2; grid-row: 1;
@@ -1027,17 +1032,21 @@
             .job-role p { font-size: 9pt; line-height: 1.34; }
 
             .badge { padding: 0 5pt; font-size: 7pt; border-color: #B4BCC5; }
-            .chip { border: 1px solid #D8DDE3; background: none; padding: 0 4pt; font-size: 7.5pt; }
-            .chip-row { gap: 3pt; }
+            /* Une seule forme de liste sur tout le CV : des valeurs séparées
+               par des points médians, jamais des puces encadrées. */
+            .chip {
+                border: none; background: none; padding: 0;
+                font-family: var(--font-body); font-size: 8pt; color: var(--text-2);
+            }
+            .chip + .chip::before { content: '· '; color: var(--text-3); }
+            .chip-row { gap: 0 4pt; }
 
             /* Compétences : des listes, pas des vignettes. */
             .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4pt 22pt; }
             .skill-card { flex-direction: row; align-items: baseline; gap: 6pt; }
             .skill-card svg { display: none; }
             .skill-card h3 { font-size: 9pt; width: 108px; flex-shrink: 0; }
-            .skill-card .chip-row { gap: 0 4pt; }
-            .skill-card .chip { border: none; padding: 0; font-family: var(--font-body); font-size: 9pt; color: var(--text-2); }
-            .skill-card .chip + .chip::before { content: '· '; color: var(--text-3); }
+            .skill-card .chip { font-size: 9pt; }
 
             .education-layout { grid-template-columns: 1.15fr 1fr; gap: 22pt; }
             .certs-grid { grid-template-columns: minmax(0, 1fr); gap: 3pt; }
@@ -1132,7 +1141,7 @@
                 <div class="hero-content fade-up">
                     <h1 class="hero-name" data-cy="hero-title">Sylvain <br>Chignaguet</h1>
 
-                    <p class="hero-role" data-cy="hero-subtitle">QA Automation Engineer — <br>cap sur la <span>gestion de projet</span>.</p>
+                    <p class="hero-role" data-cy="hero-subtitle">QA Automation Engineer.<br>Cap sur la <span>gestion de projet</span>.</p>
 
                     <p class="hero-pitch">Huit ans à construire la qualité de produits qui vont vite : du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai recruté, formé et encadré des QA, défini des stratégies de test de A à Z, piloté des releases. Aujourd'hui je veux en faire mon métier à plein temps.</p>
 
@@ -1238,11 +1247,11 @@
                     <div class="profil-body">
                         <p>Ex-militaire reconverti, je suis arrivé à la qualité logicielle par le jeu vidéo et je n'en suis plus sorti. Huit ans plus tard, j'ai fait le tour du métier : le test manuel, l'automatisation, la stratégie, l'outillage, la release.</p>
                         <p>Ce qui m'anime aujourd'hui a changé de nature. Ce n'est plus d'écrire le test le plus élégant, c'est de <strong>faire en sorte qu'une équipe livre bien</strong> : arbitrer ce qu'on teste et ce qu'on ne teste pas, poser un plan que tout le monde comprend, désamorcer les risques avant qu'ils ne deviennent des incidents, et faire monter les gens en compétence.</p>
-                        <p>Cette bascule, je ne l'ai pas seulement décidée : je l'ai déjà pratiquée. Encadrement, recrutement, définition de stratégie, gestion de release — ce sont des choses que j'ai faites, pas des choses que j'aimerais faire. La formation en gestion de projet et les certifications agiles sont venues structurer ce que le terrain m'avait appris.</p>
-                        <p>Je cherche donc un poste où la qualité et le pilotage ne sont pas deux métiers séparés : <strong>lead QA, engineering manager, chef de projet technique</strong> — le titre compte moins que le périmètre.</p>
+                        <p>Cette bascule, je l'ai déjà pratiquée sur le terrain avant de la décider : encadrement, recrutement, définition de stratégie, gestion de release. La formation en gestion de projet et les certifications agiles sont venues structurer ce que le métier m'avait appris.</p>
+                        <p>Je cherche donc un poste où la qualité et le pilotage ne sont pas deux métiers séparés : <strong>lead QA, engineering manager, chef de projet technique</strong>. Le titre compte moins que le périmètre.</p>
 
                         <!-- Sur le CV imprimé, ce paragraphe unique remplace les quatre ci-dessus. -->
-                        <p class="print-only profil-print">Ex-militaire reconverti, huit ans de qualité logicielle — du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai fait le tour du métier : test manuel, automatisation, stratégie, outillage, release. <strong>Le pilotage, je l'ai déjà pratiqué</strong> : encadrement de deux QA juniors, deux recrutements, stratégies QA définies de A à Z, gestion de release sur des titres livrés. Je cherche un poste où qualité et pilotage ne sont pas deux métiers séparés — lead QA, engineering manager, chef de projet technique.</p>
+                        <p class="print-only profil-print">Ex-militaire reconverti, huit ans de qualité logicielle, du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai fait le tour du métier : test manuel, automatisation, stratégie, outillage, release. <strong>Le pilotage, je l'ai déjà pratiqué</strong> : encadrement de deux QA juniors, deux recrutements, stratégies QA définies de A à Z, gestion de release sur des titres livrés. Je cherche un poste où qualité et pilotage ne sont pas deux métiers séparés : lead QA, engineering manager, chef de projet technique.</p>
                     </div>
                 </div>
 
@@ -1293,8 +1302,8 @@
                 <!-- Phenix -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
-                        <b class="is-now">FÉV. 2024</b>
-                        <span>→ aujourd'hui</span>
+                        <b class="tl-year is-now">2024</b>
+                        <span class="tl-period">févr. 2024 - aujourd'hui</span>
                     </div>
                     <div class="tl-rail" aria-hidden="true">
                         <div class="tl-line"><div class="tl-line-fill"></div></div>
@@ -1325,9 +1334,9 @@
                 <!-- Asobo Studio -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
-                        <b>JUIN 2017</b>
-                        <span>→ févr. 2024</span>
-                        <em>6 ans 9 mois</em>
+                        <b class="tl-year">2017</b>
+                        <span class="tl-period">juin 2017 - févr. 2024</span>
+                        <em class="tl-duration">6 ans 9 mois</em>
                     </div>
                     <div class="tl-rail" aria-hidden="true">
                         <div class="tl-line"><div class="tl-line-fill"></div></div>
@@ -1340,7 +1349,7 @@
                                     <h3 class="job-title">Asobo Studio</h3>
                                     <p class="job-org">Bordeaux · quatre postes, une progression continue</p>
                                 </div>
-                                <p class="badge">Tester → Lead</p>
+                                <p class="badge">Tester - Lead</p>
                             </div>
 
                             <div class="job-roles">
@@ -1349,7 +1358,7 @@
                                     <div>
                                         <div class="job-role-meta">
                                             <h4>Build &amp; Release Specialist</h4>
-                                            <span class="mono">déc. 2022 → févr. 2024</span>
+                                            <span class="mono">déc. 2022 - févr. 2024</span>
                                         </div>
                                         <p>Build &amp; release sur <cite>Microsoft Flight Simulator 2024</cite> : gestion des releases et des builds internes, livraison, test des outils du SDK.</p>
                                     </div>
@@ -1360,7 +1369,7 @@
                                     <div>
                                         <div class="job-role-meta">
                                             <h4>QA Lead</h4>
-                                            <span class="mono">avr. 2022 → déc. 2022</span>
+                                            <span class="mono">avr. 2022 - déc. 2022</span>
                                             <span class="badge badge--support">Pilotage</span>
                                         </div>
                                         <p>Main QA sur un projet non annoncé : définition de la stratégie QA du projet, <strong>recrutement d'un QA technique</strong> pour le volet SDK, release management et delivery.</p>
@@ -1371,8 +1380,8 @@
                                     <span class="job-role-dot job-role-dot--lead" aria-hidden="true"></span>
                                     <div>
                                         <div class="job-role-meta">
-                                            <h4>Main QA — HoloLens</h4>
-                                            <span class="mono">mai 2020 → août 2022</span>
+                                            <h4>Main QA sur HoloLens</h4>
+                                            <span class="mono">mai 2020 - août 2022</span>
                                             <span class="badge badge--support">Management</span>
                                         </div>
                                         <p><strong>Recrutement, onboarding et encadrement de deux QA juniors.</strong> Rédaction de la stratégie et du plan QA sous Notion, introduction de TestRail dans l'équipe, support client via Zendesk.</p>
@@ -1384,7 +1393,7 @@
                                     <div>
                                         <div class="job-role-meta">
                                             <h4>QA Tester</h4>
-                                            <span class="mono">juin 2017 → mai 2020</span>
+                                            <span class="mono">juin 2017 - mai 2020</span>
                                         </div>
                                         <p><cite>A Plague Tale : Innocence</cite> : debug et feedback, création et suivi de tickets sous TFS, build &amp; release management, sanity checks hebdomadaires et rapports de performance.</p>
                                     </div>
@@ -1401,8 +1410,8 @@
                 <!-- Betclic -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
-                        <b>JANV. 2020</b>
-                        <span>→ juin 2020</span>
+                        <b class="tl-year">2020</b>
+                        <span class="tl-period">janv. 2020 - juin 2020</span>
                     </div>
                     <div class="tl-rail" aria-hidden="true">
                         <div class="tl-line"><div class="tl-line-fill"></div></div>
@@ -1418,7 +1427,7 @@
                             </div>
                             <ul class="job-points">
                                 <li>Rédaction et exécution des campagnes de tests de non-régression sous qTest.</li>
-                                <li>Écriture de tests automatisés en Groovy avec Katalon — premier vrai virage vers l'automatisation.</li>
+                                <li>Écriture de tests automatisés en Groovy avec Katalon, premier virage vers l'automatisation.</li>
                             </ul>
                             <div class="chip-row">
                                 <span class="chip">Katalon</span><span class="chip">Groovy</span><span class="chip">qTest</span>
@@ -1430,8 +1439,8 @@
                 <!-- Avant la tech -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
-                        <b>2009</b>
-                        <span>→ 2017</span>
+                        <b class="tl-year">2009</b>
+                        <span class="tl-period">2009 - 2017</span>
                     </div>
                     <div class="tl-rail" aria-hidden="true">
                         <div class="tl-line"><div class="tl-line-fill"></div></div>
@@ -1465,7 +1474,7 @@
                                         <span>Opéra National de Bordeaux · 2009-2010</span>
                                     </div>
                                 </div>
-                                <p class="before-tech-note">Opération Unified Protector (OTAN) à bord du LV Lavallée. La rigueur militaire et le travail de plateau ont façonné ma façon de tenir un planning et une équipe — c'est de là que vient le reste.</p>
+                                <p class="before-tech-note">Opération Unified Protector (OTAN) à bord du LV Lavallée. La rigueur militaire et le travail de plateau ont façonné ma façon de tenir un planning et une équipe. C'est de là que vient le reste.</p>
                             </div>
                         </details>
                     </div>
@@ -1535,7 +1544,7 @@
             <div class="savoirfaire">
                 <div class="savoirfaire-card fade-up" data-cy="savoirfaire-card">
                     <h3>Automatisation de tests</h3>
-                    <p>Mise en place de suites robustes avec Cypress et Playwright — E2E, API, composants — et intégration complète dans les pipelines CI/CD pour un feedback continu.</p>
+                    <p>Mise en place de suites robustes avec Cypress et Playwright (E2E, API, composants), intégrées aux pipelines CI/CD pour un feedback continu.</p>
                 </div>
                 <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
                     <h3>QA mobile cross-platform</h3>
@@ -1547,11 +1556,11 @@
                 </div>
                 <div class="savoirfaire-card fade-up" data-cy="savoirfaire-card">
                     <h3>IA au service de la qualité</h3>
-                    <p>Génération assistée de scénarios, maintenance prédictive des tests, réduction du flaky testing, copilotes QA sur mesure — et le recul nécessaire sur leurs limites.</p>
+                    <p>Génération assistée de scénarios, maintenance prédictive des tests, réduction du flaky testing, copilotes QA sur mesure, avec le recul nécessaire sur leurs limites.</p>
                 </div>
                 <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
                     <h3>QA jeu vidéo</h3>
-                    <p>Tests fonctionnels et de gameplay, tests de performance, pipelines de build et de release adaptés aux workflows studio — Perforce, TFS, sanity checks.</p>
+                    <p>Tests fonctionnels et de gameplay, tests de performance, pipelines de build et de release adaptés aux workflows studio : Perforce, TFS, sanity checks.</p>
                 </div>
                 <div class="savoirfaire-card fade-up delay-2" data-cy="savoirfaire-card">
                     <h3>Pilotage d'équipe</h3>
@@ -1604,7 +1613,7 @@
                             <span class="year is-key">2024</span>
                             <div>
                                 <b>Gestion de projet</b>
-                                <span>Crossthink · janvier → mars 2024</span>
+                                <span>Crossthink · janvier - mars 2024</span>
                             </div>
                         </li>
                         <li>
@@ -1634,7 +1643,7 @@
                 <div class="section-head fade-up" style="margin-bottom: 0;">
                     <p class="eyebrow"><span class="eyebrow-num">06 · </span>Projets personnels</p>
                     <h2 class="section-title">Je livre aussi mes propres produits</h2>
-                    <p class="section-intro">Sur mon temps libre, je conçois et je déploie des applications complètes en pilotant des agents IA — Claude Code au quotidien. L'intérêt n'est pas de générer du code, c'est de <strong style="color: var(--text); font-weight: 500;">livrer</strong> : chaque projet embarque sa suite de tests, sa CI et sa documentation d'architecture. Cadrer, arbitrer, faire livrer, vérifier — c'est là que le réflexe QA et l'envie de piloter se rejoignent le plus clairement.</p>
+                    <p class="section-intro">Sur mon temps libre, je conçois et je déploie des applications complètes en pilotant des agents IA, Claude Code au quotidien. L'objectif reste la <strong style="color: var(--text); font-weight: 500;">livraison</strong> : chaque projet embarque sa suite de tests, sa CI et sa documentation d'architecture. Cadrer, arbitrer, faire livrer, vérifier : c'est là que le réflexe QA et l'envie de piloter se rejoignent.</p>
                 </div>
                 <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm fade-up delay-1" data-cy="all-repos-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -1653,7 +1662,7 @@
                         <h3>Estran</h3>
                         <p class="project-sub">Site vitrine bilingue &amp; back office</p>
                     </div>
-                    <p class="project-desc">Une maison d'édition, deux langues, un back office qui laisse l'éditeur gérer seul son catalogue — couvertures, quatrièmes, statuts brouillon/publié, traductions. Architecture volontairement frugale, déployée en conteneur sur VPS. Le site n'est pas encore en ligne : j'en dirai plus à la livraison.</p>
+                    <p class="project-desc">Une maison d'édition, deux langues, un back office qui laisse l'éditeur gérer seul son catalogue : couvertures, quatrièmes, statuts brouillon/publié, traductions. Architecture volontairement frugale, déployée en conteneur sur VPS. Le site n'est pas encore en ligne : j'en dirai plus à la livraison.</p>
                     <div class="chip-row">
                         <span class="chip">Next.js 16</span><span class="chip">TypeScript</span><span class="chip">Tailwind v4</span><span class="chip">next-intl</span><span class="chip">Cypress</span><span class="chip">Docker</span>
                     </div>
@@ -1672,7 +1681,7 @@
                         <h3>chignaguet.fr</h3>
                         <p class="project-sub">Ce site, et sa suite de tests</p>
                     </div>
-                    <p class="project-desc">La page que vous lisez, mais surtout ce qu'il y a derrière : une suite Cypress + Cucumber en Gherkin, structurée en Page Objects et <strong>annotée comme un support de formation</strong> — chaque fichier explique ses choix d'architecture. La CI refuse de déployer si un scénario casse.</p>
+                    <p class="project-desc">La page que vous lisez, mais surtout ce qu'il y a derrière : une suite Cypress + Cucumber en Gherkin, structurée en Page Objects et <strong>annotée comme un support de formation</strong> : chaque fichier explique ses choix d'architecture. La CI refuse de déployer si un scénario casse.</p>
                     <div class="chip-row">
                         <span class="chip">Cypress</span><span class="chip">Cucumber</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">GitHub Actions</span>
                     </div>
@@ -1691,7 +1700,7 @@
                         <h3>Pile of Fame</h3>
                         <p class="project-sub">Gestion de collection Warhammer</p>
                     </div>
-                    <p class="project-desc">Une application Android pour gérer sa collection Warhammer et suivre l'avancement de ses projets de peinture : ce qui est acheté, monté, sous-couché, terminé. Née d'un besoin personnel — la fameuse « pile of shame » — et actuellement en test interne sur le Play Store.</p>
+                    <p class="project-desc">Une application Android pour gérer sa collection Warhammer et suivre l'avancement de ses projets de peinture : ce qui est acheté, monté, sous-couché, terminé. Née d'un besoin personnel, la fameuse « pile of shame ». Actuellement en test interne sur le Play Store.</p>
                     <div class="chip-row">
                         <span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Firestore</span>
                     </div>
@@ -1736,7 +1745,7 @@
                     <div class="methode-number">01</div>
                     <div>
                         <h3>Shift-left</h3>
-                        <p>La qualité s'intègre dès la conception, pas en fin de sprint. Détecter un bug au moment où on écrit la spec coûte infiniment moins cher que de le corriger en production — et évite les arbitrages désagréables la veille d'une release.</p>
+                        <p>La qualité s'intègre dès la conception, pas en fin de sprint. Détecter un bug au moment où on écrit la spec coûte infiniment moins cher que de le corriger en production, et évite les arbitrages désagréables la veille d'une release.</p>
                     </div>
                 </div>
                 <div class="methode-item fade-up">
@@ -1757,7 +1766,7 @@
                     <div class="methode-number">04</div>
                     <div>
                         <h3>Transmettre</h3>
-                        <p>Une stratégie QA qui repose sur une seule personne est un risque. Documenter, former, commenter le code de test, faire monter les juniors — c'est ce qui transforme un travail individuel en capacité d'équipe. C'est aussi ce qui m'a donné envie de piloter.</p>
+                        <p>Une stratégie QA qui repose sur une seule personne est un risque. Documenter, former, commenter le code de test, faire monter les juniors : c'est ce qui transforme un travail individuel en capacité d'équipe. C'est aussi ce qui m'a donné envie de piloter.</p>
                     </div>
                 </div>
             </div>
@@ -1886,7 +1895,7 @@
          ====================================================================== -->
     <footer data-cy="footer">
         <div class="container footer-inner">
-            <div>&copy; 2026 Sylvain Chignaguet — QA Automation Engineer · Bordeaux</div>
+            <div>&copy; 2026 Sylvain Chignaguet · QA Automation Engineer · Bordeaux</div>
             <nav class="footer-links" data-cy="footer-links" aria-label="Liens externes">
                 <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" data-cy="footer-link-linkedin">LinkedIn</a>
                 <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" data-cy="footer-link-github">GitHub</a>
@@ -1942,7 +1951,7 @@
 
                 const tick = now => {
                     const progress = Math.min((now - start) / duration, 1);
-                    // easeOutCubic — la valeur ralentit en approchant de la cible
+                    // easeOutCubic : la valeur ralentit en approchant de la cible
                     const eased = 1 - Math.pow(1 - progress, 3);
                     el.textContent = String(Math.round(eased * target));
                     if (progress < 1) requestAnimationFrame(tick);
@@ -1990,9 +1999,20 @@
                --------------------------------------------------------------- */
             // Accroché à beforeprint plutôt qu'au seul bouton : Ctrl+P doit
             // produire exactement le même document.
+            // Mémorise les blocs qu'on a dépliés pour l'impression, afin de
+            // les refermer ensuite : sans cela « Avant la tech » restait
+            // ouvert au retour sur la page.
+            let depliePourImpression = [];
+
+            window.addEventListener('afterprint', () => {
+                depliePourImpression.forEach(d => { d.open = false; });
+                depliePourImpression = [];
+            });
+
             window.addEventListener('beforeprint', () => {
                 // Le bloc « avant la tech » doit figurer sur le CV imprimé.
-                document.querySelectorAll('.before-tech').forEach(d => { d.open = true; });
+                depliePourImpression = [...document.querySelectorAll('.before-tech')].filter(d => !d.open);
+                depliePourImpression.forEach(d => { d.open = true; });
                 // Les compteurs ne se déclenchent qu'au scroll : sans cela, un CV
                 // imprimé sans avoir fait défiler la page afficherait des zéros.
                 document.querySelectorAll('.counter').forEach(c => {
