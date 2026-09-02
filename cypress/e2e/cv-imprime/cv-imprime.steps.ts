@@ -35,6 +35,24 @@ Then('the browser is asked to print the page', () => {
   cy.get('@print').should('have.been.calledOnce');
 });
 
+// Cypress ne peut pas ouvrir la boîte de dialogue système : on déclenche les
+// évènements que le navigateur émettrait de part et d'autre de l'impression.
+When('the browser prepares the print', () => {
+  cy.window().then((fenetre) => {
+    fenetre.dispatchEvent(new Event('beforeprint'));
+  });
+});
+
+When('the print is over', () => {
+  cy.window().then((fenetre) => {
+    fenetre.dispatchEvent(new Event('afterprint'));
+  });
+});
+
+Then('the document title is {string}', (titre: string) => {
+  cy.title().should('equal', titre);
+});
+
 /* ==========================================================================
    PDF réellement produit
    ========================================================================== */

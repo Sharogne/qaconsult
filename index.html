@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sylvain Chignaguet, QA Automation Engineer | Objectif produit</title>
-    <meta name="description" content="QA Automation Engineer avec 8 ans d'expérience (Phenix, Asobo Studio, Betclic). Cypress, TypeScript, CI/CD, Appium. Certifié PSM I, PSPO I, SAFe. En route vers un poste de pilotage produit. Bordeaux, hybride ou remote.">
+    <title>Sylvain Chignaguet, objectif produit | 8 ans de QA automation</title>
+    <meta name="description" content="Objectif produit, après 8 ans de qualité logicielle (Phenix, Asobo Studio, Betclic). Certifié PSPO I, PSM I, SAFe. Cypress, TypeScript, CI/CD, Appium. Bordeaux, hybride ou remote.">
     <link rel="canonical" href="https://www.chignaguet.fr/">
     <meta name="robots" content="index, follow">
 
@@ -13,16 +13,16 @@
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Sylvain Chignaguet">
     <meta property="og:url" content="https://www.chignaguet.fr/">
-    <meta property="og:title" content="Sylvain Chignaguet, QA Automation Engineer, objectif produit">
-    <meta property="og:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le produit pour objectif.">
+    <meta property="og:title" content="Sylvain Chignaguet, objectif produit, 8 ans de QA automation">
+    <meta property="og:description" content="Objectif produit, après 8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD.">
     <meta property="og:image" content="https://www.chignaguet.fr/images/banner.webp">
     <meta property="og:image:alt" content="Sylvain Chignaguet, QA Automation Engineer">
     <meta property="profile:first_name" content="Sylvain">
     <meta property="profile:last_name" content="Chignaguet">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sylvain Chignaguet, QA Automation Engineer, objectif produit">
-    <meta name="twitter:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le produit pour objectif.">
+    <meta name="twitter:title" content="Sylvain Chignaguet, objectif produit, 8 ans de QA automation">
+    <meta name="twitter:description" content="Objectif produit, après 8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD.">
     <meta name="twitter:image" content="https://www.chignaguet.fr/images/banner.webp">
 
     <meta name="theme-color" content="#0D1117">
@@ -2027,12 +2027,22 @@
             // ouvert au retour sur la page.
             let depliePourImpression = [];
 
+            /* Le nom de fichier proposé par la boîte de dialogue d'impression
+               vient du titre du document. Le titre de la page est écrit pour
+               les moteurs de recherche, où le poste actuel doit rester en
+               tête ; le fichier téléchargé, lui, doit annoncer le poste visé.
+               On les sépare le temps de l'impression. */
+            const TITRE_PAGE = document.title;
+            const TITRE_CV = 'CV Sylvain Chignaguet - Product Owner, gestion de projet';
+
             window.addEventListener('afterprint', () => {
+                document.title = TITRE_PAGE;
                 depliePourImpression.forEach(d => { d.open = false; });
                 depliePourImpression = [];
             });
 
             window.addEventListener('beforeprint', () => {
+                document.title = TITRE_CV;
                 // Le bloc « avant la tech » doit figurer sur le CV imprimé.
                 depliePourImpression = [...document.querySelectorAll('.before-tech')].filter(d => !d.open);
                 depliePourImpression.forEach(d => { d.open = true; });
