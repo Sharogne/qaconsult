@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sylvain Chignaguet, QA Automation Engineer | CV</title>
-    <meta name="description" content="QA Automation Engineer avec 8 ans d'expérience (Phenix, Asobo Studio, Betclic). Cypress, TypeScript, CI/CD, Appium. Certifié PSM I, PSPO I, SAFe. En route vers la gestion de projet. Bordeaux & remote.">
+    <title>Sylvain Chignaguet, QA Automation Engineer | Objectif produit</title>
+    <meta name="description" content="QA Automation Engineer avec 8 ans d'expérience (Phenix, Asobo Studio, Betclic). Cypress, TypeScript, CI/CD, Appium. Certifié PSM I, PSPO I, SAFe. En route vers un poste de pilotage produit. Bordeaux, hybride ou remote.">
     <link rel="canonical" href="https://www.chignaguet.fr/">
     <meta name="robots" content="index, follow">
 
@@ -13,16 +13,16 @@
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Sylvain Chignaguet">
     <meta property="og:url" content="https://www.chignaguet.fr/">
-    <meta property="og:title" content="Sylvain Chignaguet, QA Automation Engineer">
-    <meta property="og:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le cap sur la gestion de projet.">
+    <meta property="og:title" content="Sylvain Chignaguet, QA Automation Engineer, objectif produit">
+    <meta property="og:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le produit pour objectif.">
     <meta property="og:image" content="https://www.chignaguet.fr/images/banner.webp">
     <meta property="og:image:alt" content="Sylvain Chignaguet, QA Automation Engineer">
     <meta property="profile:first_name" content="Sylvain">
     <meta property="profile:last_name" content="Chignaguet">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sylvain Chignaguet, QA Automation Engineer">
-    <meta name="twitter:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le cap sur la gestion de projet.">
+    <meta name="twitter:title" content="Sylvain Chignaguet, QA Automation Engineer, objectif produit">
+    <meta name="twitter:description" content="8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Cypress, TypeScript, CI/CD, et le produit pour objectif.">
     <meta name="twitter:image" content="https://www.chignaguet.fr/images/banner.webp">
 
     <meta name="theme-color" content="#0D1117">
@@ -59,7 +59,7 @@
       "knowsAbout": [
         "Assurance qualité logicielle", "Automatisation de tests", "Cypress", "Playwright",
         "Appium", "TypeScript", "CI/CD", "GitHub Actions", "BDD Cucumber Gherkin",
-        "TestRail", "Gestion de projet", "Méthodes agiles", "Scrum", "SAFe"
+        "TestRail", "Product ownership", "Gestion de projet", "Méthodes agiles", "Scrum", "SAFe"
       ],
       "hasCredential": [
         { "@type": "EducationalOccupationalCredential", "name": "Professional Scrum Master I (PSM I)", "credentialCategory": "certification" },
@@ -165,6 +165,11 @@
 
         a { color: inherit; text-decoration: none; transition: color var(--t-state) var(--ease); }
         a:hover { color: var(--accent-bright); }
+        /* Liens sortants cités dans le parcours : assez visibles pour qu'on
+           sache qu'on peut cliquer, assez discrets pour ne pas hacher la
+           lecture. À l'impression ils redeviennent du texte noir. */
+        .ref-link { color: var(--text); border-bottom: 1px solid var(--accent); }
+        .ref-link:hover { color: var(--accent-bright); border-bottom-color: var(--accent-bright); }
         img { max-width: 100%; display: block; }
         ul { list-style: none; }
 
@@ -949,29 +954,32 @@
             .before-tech-body { padding: 0; }
 
             a { color: #14181D; text-decoration: none; }
+            /* Sur papier l'URL n'est pas cliquable : un soulignement qui ne
+               mène nulle part n'est que du bruit. */
+            .ref-link { border-bottom: none; }
 
             .container, .section, .hero, .chiffres-grid { max-width: none; padding-left: 0; padding-right: 0; }
-            .section { padding: 3pt 0 0; }
+            .section { padding: 2pt 0 0; }
 
             /* Titres de section : un label fin suivi d'un filet, pas un titre
                d'affichage. Le numéro sert à se repérer dans un scroll, il
                n'encode rien sur une feuille. */
             .eyebrow-num { display: none; }
-            .section-head { gap: 3pt; margin-bottom: 5pt; max-width: none; }
+            .section-head { gap: 2pt; margin-bottom: 4pt; max-width: none; }
             .eyebrow {
                 font-family: var(--font-body);
                 font-size: 8pt; font-weight: 700; letter-spacing: 0.16em;
                 text-transform: uppercase;
                 display: block; width: 100%;
                 border-bottom: 1px solid #D8DDE3;
-                padding-bottom: 3pt;
+                padding-bottom: 2pt;
             }
             .section-title, .section-intro { display: none; }
             .projects-head .section-intro { display: none; }
 
             /* En-tête du CV. Une feuille A4 fait 794 px de large : les media
                queries « mobile » s'appliquent aussi ici et doivent être défaites. */
-            .hero { padding: 0 0 8pt; }
+            .hero { padding: 0 0 6pt; }
             .hero-grid { grid-template-columns: minmax(0, 1fr) 96px; gap: 18pt; align-items: start; }
             .hero-visual { order: 1; justify-content: flex-end; }
             .hero-portrait { max-width: 96px; }
@@ -989,7 +997,7 @@
             .chiffres-grid {
                 grid-template-columns: repeat(4, minmax(0, 1fr));
                 border-top: 1px solid #D8DDE3; border-bottom: 1px solid #D8DDE3;
-                padding: 4pt 0; gap: 12pt;
+                padding: 3pt 0; gap: 12pt;
             }
             .chiffre-item { display: flex; align-items: baseline; gap: 5pt; }
             .chiffre-number { font-size: 15pt; }
@@ -1146,9 +1154,9 @@
 
                     <!-- L'espace avant le <br> est volontaire : l'impression masque le saut
                          de ligne, et sans lui les deux phrases se colleraient. -->
-                    <p class="hero-role" data-cy="hero-subtitle">QA Automation Engineer. <br>Cap sur la <span>gestion de projet</span>.</p>
+                    <p class="hero-role" data-cy="hero-subtitle">QA Automation Engineer. <br>Je cherche un poste de <span>pilotage produit</span>.</p>
 
-                    <p class="hero-pitch">Huit ans à construire la qualité de produits qui vont vite : du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai recruté, formé et encadré des QA, défini des stratégies de test de A à Z, piloté des releases. Aujourd'hui je veux en faire mon métier à plein temps.</p>
+                    <p class="hero-pitch">Huit ans à construire la qualité de produits innovants et impactant socialement : du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai recruté, formé et encadré des QA, défini des stratégies de test de A à Z, piloté des releases. J'ai toujours priorisé l'utilisateur final, et aujourd'hui je veux m'orienter vers un poste orienté produit pour aller au bout de cette démarche.</p>
 
                     <div class="hero-location" data-cy="hero-location">
                         <span>
@@ -1156,7 +1164,7 @@
                             Baron (33) · Bordeaux Métropole
                         </span>
                         <span class="dot" aria-hidden="true"></span>
-                        <span>Remote &amp; hybride</span>
+                        <span>Hybride ou remote</span>
                     </div>
 
                     <div class="hero-cta" data-cy="hero-cta">
@@ -1196,7 +1204,7 @@
 
                     <!-- Coordonnées complètes : uniquement sur le CV imprimé -->
                     <div class="print-only">
-                        <p><strong>sylvain.chignaguet@gmail.com</strong> · 06 45 13 01 82 · Baron (33750), Nouvelle-Aquitaine</p>
+                        <p><strong>sylvain.chignaguet@gmail.com</strong> · 06 45 13 01 82 · Baron (33750), Gironde · Hybride ou remote</p>
                         <p>linkedin.com/in/sylvain-chignaguet-a7534286 · github.com/Sharogne · www.chignaguet.fr</p>
                     </div>
                 </div>
@@ -1225,16 +1233,16 @@
                     <div class="chiffre-label">Années d'expérience QA</div>
                 </div>
                 <div class="chiffre-item fade-up delay-1">
-                    <div class="chiffre-number"><span class="counter" data-target="5">0</span><span class="suffix">+</span></div>
-                    <div class="chiffre-label">Frameworks maîtrisés</div>
+                    <div class="chiffre-number"><span class="counter" data-target="30">0</span><span class="suffix">+</span></div>
+                    <div class="chiffre-label">Projets livrés, du grand public au B2B</div>
                 </div>
                 <div class="chiffre-item fade-up delay-2">
-                    <div class="chiffre-number"><span class="counter" data-target="30">0</span><span class="suffix">+</span></div>
-                    <div class="chiffre-label">Projets accompagnés</div>
+                    <div class="chiffre-number"><span class="counter" data-target="2">0</span></div>
+                    <div class="chiffre-label">Équipes QA montées et recrutées</div>
                 </div>
                 <div class="chiffre-item fade-up delay-3">
                     <div class="chiffre-number"><span class="counter" data-target="4">0</span></div>
-                    <div class="chiffre-label">Certifications agile &amp; pilotage</div>
+                    <div class="chiffre-label">Certifications agile &amp; produit</div>
                 </div>
             </div>
         </section>
@@ -1251,12 +1259,12 @@
                     </div>
                     <div class="profil-body">
                         <p>Ex-militaire reconverti, je suis arrivé à la qualité logicielle par le jeu vidéo et je n'en suis plus sorti. Huit ans plus tard, j'ai fait le tour du métier : le test manuel, l'automatisation, la stratégie, l'outillage, la release.</p>
-                        <p>Ce qui m'anime aujourd'hui a changé de nature. Ce n'est plus d'écrire le test le plus élégant, c'est de <strong>faire en sorte qu'une équipe livre bien</strong> : arbitrer ce qu'on teste et ce qu'on ne teste pas, poser un plan que tout le monde comprend, désamorcer les risques avant qu'ils ne deviennent des incidents, et faire monter les gens en compétence.</p>
-                        <p>Cette bascule, je l'ai déjà pratiquée sur le terrain avant de la décider : encadrement, recrutement, définition de stratégie, gestion de release. La formation en gestion de projet et les certifications agiles sont venues structurer ce que le métier m'avait appris.</p>
-                        <p>Je cherche donc un poste où la qualité et le pilotage ne sont pas deux métiers séparés : <strong>lead QA, engineering manager, chef de projet technique</strong>. Le titre compte moins que le périmètre.</p>
+                        <p>Ce qui m'anime aujourd'hui a changé de nature. Écrire le test le plus élégant m'intéresse moins que <strong>faire en sorte qu'une équipe livre bien</strong> : arbitrer ce qu'on construit et ce qu'on remet à plus tard, poser un plan que tout le monde comprend, désamorcer les risques avant qu'ils ne deviennent des incidents, et faire monter les gens en compétence.</p>
+                        <p>Cette bascule, je l'ai déjà pratiquée sur le terrain avant de la décider : encadrement, recrutement, définition de stratégie, gestion de release. La formation en gestion de projet et les certifications agiles, dont le <strong>Professional Scrum Product Owner</strong>, sont venues structurer ce que le métier m'avait appris.</p>
+                        <p>Je cherche donc un poste où la qualité et le produit ne sont pas deux métiers séparés : <strong>product owner, product manager</strong>, ou tout rôle où arbitrer ce qu'on construit et garantir ce qu'on livre reviennent à la même personne. Le titre compte moins que le périmètre.</p>
 
                         <!-- Sur le CV imprimé, ce paragraphe unique remplace les quatre ci-dessus. -->
-                        <p class="print-only profil-print">Ex-militaire reconverti, huit ans de qualité logicielle, du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai fait le tour du métier : test manuel, automatisation, stratégie, outillage, release. <strong>Le pilotage, je l'ai déjà pratiqué</strong> : encadrement de deux QA juniors, deux recrutements, stratégies QA définies de A à Z, gestion de release sur des titres livrés. Je cherche un poste où qualité et pilotage ne sont pas deux métiers séparés : lead QA, engineering manager, chef de projet technique.</p>
+                        <p class="print-only profil-print">Ex-militaire reconverti, huit ans de qualité logicielle, du jeu vidéo chez Asobo Studio à la tech à impact chez Phenix. J'ai fait le tour du métier : test manuel, automatisation, stratégie, outillage, release. <strong>Le pilotage, je l'ai déjà pratiqué</strong> : montage de deux équipes QA, stratégies définies de A à Z, gestion de release sur des titres livrés, et chez Phenix la mise en place des refinements et des sprint plannings, où je challenge les specs et définis les tests d'acceptation. Je cherche un poste où qualité et produit ne sont pas deux métiers séparés : product owner, product manager, ou tout rôle où arbitrer ce qu'on construit et garantir ce qu'on livre reviennent à la même personne.</p>
                     </div>
                 </div>
 
@@ -1285,8 +1293,8 @@
                     <div class="proof-item" data-cy="proof-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                         <div>
-                            <b>Le cadre formel</b>
-                            <span>PSM I, PSPO I, Scrum Master Certified, SAFe®, et une formation en gestion de projet chez Crossthink en 2024.</span>
+                            <b>Rituels &amp; priorisation</b>
+                            <span>L'équipe Phenix n'avait ni refinement ni sprint planning : j'ai porté leur mise en place pendant la restructuration, et travaillé avec l'équipe pour qu'on les adopte ensemble. J'y challenge les specs et j'y définis les tests d'acceptation. Terrain avec les CSM et le métier pour arbitrer priorités et criticités.</span>
                         </div>
                     </div>
                 </div>
@@ -1299,7 +1307,7 @@
         <section id="parcours" class="section container" data-cy="experience-section">
             <div class="section-head fade-up">
                 <p class="eyebrow"><span class="eyebrow-num">02 · </span>Parcours</p>
-                <h2 class="section-title">Huit ans de qualité, quatre passages en pilotage</h2>
+                <h2 class="section-title">De testeur à QA Lead</h2>
             </div>
 
             <div class="timeline">
@@ -1325,9 +1333,9 @@
                             </div>
                             <ul class="job-points">
                                 <li><strong>QA owner de la squad</strong> : garant de la qualité produit, identification des risques en amont, amélioration continue de la stratégie de test.</li>
+                                <li><strong>Au contact du produit</strong> : mise en place des refinements et des sprint plannings lors de la restructuration de l'équipe, qui n'en pratiquait aucun, et adoption menée avec toute l'équipe. J'y challenge les specs et j'y définis les tests d'acceptation. Terrain avec les équipes CSM pour comprendre les besoins, les priorités et les criticités.</li>
                                 <li>Cycle QA complet : automatisation Cypress + TypeScript, automatisation Android avec Appium, tests manuels et recette utilisateur (UAT).</li>
                                 <li>Pipelines end-to-end intégrés aux workflows GitHub Actions, suites BDD Cucumber/Gherkin, campagnes de test pilotées sous TestRail.</li>
-                                <li>Collaboration étroite avec les équipes produit et développement, de la planification des tests à la validation en production.</li>
                             </ul>
                             <div class="chip-row">
                                 <span class="chip">Cypress</span><span class="chip">TypeScript</span><span class="chip">Appium</span><span class="chip">GitHub Actions</span><span class="chip">TestRail</span><span class="chip">Cucumber</span>
@@ -1352,7 +1360,7 @@
                             <div class="job-group-head">
                                 <div>
                                     <h3 class="job-title">Asobo Studio</h3>
-                                    <p class="job-org">Bordeaux · quatre postes, une progression continue</p>
+                                    <p class="job-org">Bordeaux · quatre postes, chaque fois plus de périmètre</p>
                                 </div>
                                 <p class="badge">Tester - Lead</p>
                             </div>
@@ -1365,7 +1373,7 @@
                                             <h4>Build &amp; Release Specialist</h4>
                                             <span class="mono">déc. 2022 - févr. 2024</span>
                                         </div>
-                                        <p>Build &amp; release sur <cite>Microsoft Flight Simulator 2024</cite> : gestion des releases et des builds internes, livraison, test des outils du SDK.</p>
+                                        <p>Build &amp; release sur <cite><a class="ref-link" href="https://www.asobostudio.com/fr/jeux/microsoft-flight-simulator-2024" target="_blank" rel="noopener noreferrer">Microsoft Flight Simulator 2024</a></cite> : gestion des releases et des builds internes, livraison, test des outils du SDK.</p>
                                     </div>
                                 </div>
 
@@ -1389,7 +1397,7 @@
                                             <span class="mono">mai 2020 - août 2022</span>
                                             <span class="badge badge--support">Management</span>
                                         </div>
-                                        <p><strong>Recrutement, onboarding et encadrement de deux QA juniors.</strong> Rédaction de la stratégie et du plan QA sous Notion, introduction de TestRail dans l'équipe, support client via Zendesk.</p>
+                                        <p><strong>Montage de l'équipe QA : recrutement, onboarding et encadrement de deux QA juniors.</strong> <a class="ref-link" href="https://www.holoforge.io/projets" target="_blank" rel="noopener noreferrer">Projets HoloLens B2B de l'équipe HoloForge</a> : rédaction de la stratégie et du plan QA sous Notion, introduction de TestRail dans l'équipe, support client via Zendesk.</p>
                                     </div>
                                 </div>
 
@@ -1400,7 +1408,7 @@
                                             <h4>QA Tester</h4>
                                             <span class="mono">juin 2017 - mai 2020</span>
                                         </div>
-                                        <p><cite>A Plague Tale : Innocence</cite> : debug et feedback, création et suivi de tickets sous TFS, build &amp; release management, sanity checks hebdomadaires et rapports de performance.</p>
+                                        <p><cite><a class="ref-link" href="https://www.asobostudio.com/fr/jeux/plague-tale-innocence" target="_blank" rel="noopener noreferrer">A Plague Tale : Innocence</a></cite> : debug et feedback, création et suivi de tickets sous TFS, build &amp; release management, sanity checks hebdomadaires et rapports de performance.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1479,7 +1487,7 @@
                                         <span>Opéra National de Bordeaux · 2009-2010</span>
                                     </div>
                                 </div>
-                                <p class="before-tech-note">Opération Unified Protector (OTAN) à bord du LV Lavallée. La rigueur militaire et le travail de plateau ont façonné ma façon de tenir un planning et une équipe. C'est de là que vient le reste.</p>
+                                <p class="before-tech-note">Opération Unified Protector (OTAN) à bord du LV Lavallée. La rigueur militaire et le travail de plateau ont façonné ma façon de tenir un planning et une équipe.</p>
                             </div>
                         </details>
                     </div>
@@ -1495,7 +1503,7 @@
             <div class="section-head fade-up">
                 <p class="eyebrow"><span class="eyebrow-num">03 · </span>Compétences</p>
                 <h2 class="section-title">Ce que je sais faire</h2>
-                <p class="section-intro">Des outils pratiqués en production, pas en tutoriel.</p>
+                <p class="section-intro">Tous ces outils, je les ai utilisés sur des projets livrés.</p>
             </div>
 
             <div class="skills-grid">
@@ -1539,37 +1547,32 @@
                     <h3>Jeu vidéo</h3>
                     <div class="chip-row"><span class="chip">Gameplay</span><span class="chip">Build &amp; release</span><span class="chip">Perforce</span></div>
                 </div>
-                <div class="skill-card fade-up" data-cy="skill-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h10"></path><path d="M9 3v2c0 4.4-2.2 8-5 8"></path><path d="M5 9c0 2.6 2.7 4.8 6 5"></path><path d="M12 20l4-9 4 9"></path><path d="M13.5 17h5"></path></svg>
-                    <h3>Langues</h3>
-                    <div class="chip-row"><span class="chip">Français natif</span><span class="chip">Anglais professionnel</span></div>
-                </div>
             </div>
 
             <div class="savoirfaire">
                 <div class="savoirfaire-card fade-up" data-cy="savoirfaire-card">
+                    <h3>Pilotage d'équipe</h3>
+                    <p>Recrutement, onboarding, montée en compétence, animation de rituels agiles et interface entre produit et développement. Deux équipes QA montées et accompagnées, et des rituels de refinement mis en place avec l'équipe produit.</p>
+                </div>
+                <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
                     <h3>Automatisation de tests</h3>
                     <p>Mise en place de suites robustes avec Cypress et Playwright (E2E, API, composants), intégrées aux pipelines CI/CD pour un feedback continu.</p>
                 </div>
-                <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
+                <div class="savoirfaire-card fade-up delay-2" data-cy="savoirfaire-card">
                     <h3>QA mobile cross-platform</h3>
                     <p>Automatisation des parcours utilisateurs iOS et Android avec Appium, et stratégie de test mobile adaptée aux contraintes réelles de devices et d'OS.</p>
                 </div>
-                <div class="savoirfaire-card fade-up delay-2" data-cy="savoirfaire-card">
+                <div class="savoirfaire-card fade-up" data-cy="savoirfaire-card">
                     <h3>Stratégie QA &amp; coaching</h3>
                     <p>Audit de maturité, définition des KPI qualité, rédaction des plans de test, accompagnement des équipes. Structurer une approche testing de bout en bout.</p>
                 </div>
-                <div class="savoirfaire-card fade-up" data-cy="savoirfaire-card">
+                <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
                     <h3>IA au service de la qualité</h3>
                     <p>Génération assistée de scénarios, maintenance prédictive des tests, réduction du flaky testing, copilotes QA sur mesure, avec le recul nécessaire sur leurs limites.</p>
                 </div>
-                <div class="savoirfaire-card fade-up delay-1" data-cy="savoirfaire-card">
+                <div class="savoirfaire-card fade-up delay-2" data-cy="savoirfaire-card">
                     <h3>QA jeu vidéo</h3>
                     <p>Tests fonctionnels et de gameplay, tests de performance, pipelines de build et de release adaptés aux workflows studio : Perforce, TFS, sanity checks.</p>
-                </div>
-                <div class="savoirfaire-card fade-up delay-2" data-cy="savoirfaire-card">
-                    <h3>Pilotage d'équipe</h3>
-                    <p>Recrutement, onboarding, montée en compétence, animation de rituels agiles et interface entre produit et développement. La partie du métier que je veux élargir.</p>
                 </div>
             </div>
         </section>
@@ -1582,16 +1585,16 @@
                 <div class="fade-up">
                     <div class="section-head">
                         <p class="eyebrow eyebrow--support"><span class="eyebrow-num">04 · </span>Certifications</p>
-                        <h2 class="section-title">Le socle pilotage</h2>
+                        <h2 class="section-title">Le socle produit &amp; agile</h2>
                     </div>
                     <div class="certs-grid">
                         <div class="cert-card" data-cy="certification-card">
-                            <b>Professional Scrum Master I</b>
-                            <span>PSM I · Scrum.org</span>
-                        </div>
-                        <div class="cert-card" data-cy="certification-card">
                             <b>Professional Scrum Product Owner I</b>
                             <span>PSPO I · Scrum.org</span>
+                        </div>
+                        <div class="cert-card" data-cy="certification-card">
+                            <b>Professional Scrum Master I</b>
+                            <span>PSM I · Scrum.org</span>
                         </div>
                         <div class="cert-card" data-cy="certification-card">
                             <b>Scrum Master Certified</b>
@@ -1611,7 +1614,7 @@
                 <div class="fade-up delay-1">
                     <div class="section-head">
                         <p class="eyebrow eyebrow--muted"><span class="eyebrow-num">05 · </span>Formation</p>
-                        <h2 class="section-title">Parcours de formation</h2>
+                        <h2 class="section-title">Formation &amp; langues</h2>
                     </div>
                     <ul class="diplomas">
                         <li>
@@ -1621,21 +1624,11 @@
                                 <span>Crossthink · janvier - mars 2024</span>
                             </div>
                         </li>
-                        <li>
-                            <span class="year">2009</span>
-                            <div>
-                                <b>BAC Techniques des métiers de la scène</b>
-                                <span>Lycée Antoine Lomet · 2007-2009</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="year">2007</span>
-                            <div>
-                                <b>BEP Électrotechnique</b>
-                                <span>Lycée Philadelphe de Gerde · 2005-2007</span>
-                            </div>
-                        </li>
                     </ul>
+                    <p class="cert-note">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h10"></path><path d="M9 3v2c0 4.4-2.2 8-5 8"></path><path d="M5 9c0 2.6 2.7 4.8 6 5"></path><path d="M12 20l4-9 4 9"></path><path d="M13.5 17h5"></path></svg>
+                        <span><strong>Français</strong> natif · <strong>Anglais</strong> professionnel</span>
+                    </p>
                 </div>
             </div>
         </section>
@@ -1648,7 +1641,7 @@
                 <div class="section-head fade-up" style="margin-bottom: 0;">
                     <p class="eyebrow"><span class="eyebrow-num">06 · </span>Projets personnels</p>
                     <h2 class="section-title">Je livre aussi mes propres produits</h2>
-                    <p class="section-intro">Sur mon temps libre, je conçois et je déploie des applications complètes en pilotant des agents IA, Claude Code au quotidien. L'objectif reste la <strong style="color: var(--text); font-weight: 500;">livraison</strong> : chaque projet embarque sa suite de tests, sa CI et sa documentation d'architecture. Cadrer, arbitrer, faire livrer, vérifier : c'est là que le réflexe QA et l'envie de piloter se rejoignent.</p>
+                    <p class="section-intro">Sur mon temps libre, je conçois et je déploie des applications complètes en pilotant des agents IA, Claude Code au quotidien. L'objectif reste la <strong style="color: var(--text); font-weight: 500;">livraison</strong> : chaque projet embarque sa suite de tests, sa CI et sa documentation d'architecture. Cadrer, arbitrer, faire livrer, vérifier : c'est là que le réflexe QA et le travail produit se rejoignent.</p>
                 </div>
                 <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm fade-up delay-1" data-cy="all-repos-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -1750,28 +1743,28 @@
                     <div class="methode-number">01</div>
                     <div>
                         <h3>Shift-left</h3>
-                        <p>La qualité s'intègre dès la conception, pas en fin de sprint. Détecter un bug au moment où on écrit la spec coûte infiniment moins cher que de le corriger en production, et évite les arbitrages désagréables la veille d'une release.</p>
+                        <p>La qualité s'intègre dès la conception, pas en fin de sprint. Un problème repéré au moment où on écrit la spec coûte infiniment moins cher qu'un correctif en production, et évite les arbitrages désagréables la veille d'une release.</p>
                     </div>
                 </div>
                 <div class="methode-item fade-up" data-cy="methode-item">
                     <div class="methode-number">02</div>
                     <div>
                         <h3>Automatiser l'essentiel</h3>
-                        <p>Je ne cherche pas 100 % de couverture. Je cible les parcours critiques, ceux dont la régression coûte vraiment, pour un retour sur investissement réel et une maintenance qui ne mange pas l'équipe. Une suite qu'on n'ose plus toucher est une suite morte.</p>
+                        <p>Je ne cherche pas 100 % de couverture, je cible les parcours dont la régression coûte vraiment. Passé ce seuil, la maintenance coûte plus que ce que la suite rapporte, et l'équipe finit par la contourner. Le même arbitrage vaut pour un backlog.</p>
                     </div>
                 </div>
                 <div class="methode-item fade-up" data-cy="methode-item">
                     <div class="methode-number">03</div>
                     <div>
                         <h3>Décider sur des données</h3>
-                        <p>Un plan de test se défend avec des chiffres : taux d'échec, temps de feedback, zones de code les plus fragiles. Des métriques lisibles évitent les débats d'opinion et permettent d'expliquer une décision de qualité à un product owner comme à une direction.</p>
+                        <p>Une priorité se défend avec des chiffres : taux d'échec, temps de feedback, zones les plus fragiles, ce que coûte un incident. Des métriques lisibles évitent les débats d'opinion et permettent d'expliquer un arbitrage à une équipe comme à une direction.</p>
                     </div>
                 </div>
                 <div class="methode-item fade-up" data-cy="methode-item">
                     <div class="methode-number">04</div>
                     <div>
                         <h3>Transmettre</h3>
-                        <p>Une stratégie QA qui repose sur une seule personne est un risque. Documenter, former, commenter le code de test, faire monter les juniors : c'est ce qui transforme un travail individuel en capacité d'équipe. C'est aussi ce qui m'a donné envie de piloter.</p>
+                        <p>Une stratégie QA qui repose sur une seule personne est un risque. Documenter, former, commenter le code de test, faire monter les juniors : c'est ce qui transforme un travail individuel en capacité d'équipe. C'est aussi ce qui m'a donné envie d'élargir le périmètre.</p>
                     </div>
                 </div>
             </div>
@@ -1783,7 +1776,7 @@
         <section id="terrain" class="section container terrain-section" data-cy="terrain-section">
             <div class="section-head fade-up">
                 <p class="eyebrow eyebrow--muted"><span class="eyebrow-num">08 · </span>En terrain</p>
-                <h2 class="section-title">Sur le matériel, pas seulement sur l'écran</h2>
+                <h2 class="section-title">Tester avec le matériel dans les mains</h2>
             </div>
             <div class="terrain-grid">
                 <figure class="terrain-photo fade-up" data-cy="terrain-photo">
@@ -1838,7 +1831,7 @@
                     <div class="section-head">
                         <p class="eyebrow"><span class="eyebrow-num">10 · </span>Contact</p>
                         <h2 class="section-title">Parlons-en</h2>
-                        <p class="section-intro">Je suis à l'écoute pour un poste en CDI sur Bordeaux, en remote ou en hybride. Si le profil vous parle, le plus simple est de m'écrire.</p>
+                        <p class="section-intro">Je cherche un poste en CDI sur Bordeaux, en hybride ou en remote. Si le profil vous parle, le plus simple est de m'écrire.</p>
                     </div>
                     <div class="contact-methods">
                         <div class="contact-method">
@@ -1900,7 +1893,7 @@
          ====================================================================== -->
     <footer data-cy="footer">
         <div class="container footer-inner">
-            <div>&copy; 2026 Sylvain Chignaguet · QA Automation Engineer · Bordeaux</div>
+            <div>&copy; 2026 Sylvain Chignaguet · QA Automation Engineer, objectif produit · Bordeaux</div>
             <nav class="footer-links" data-cy="footer-links" aria-label="Liens externes">
                 <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" data-cy="footer-link-linkedin">LinkedIn</a>
                 <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" data-cy="footer-link-github">GitHub</a>

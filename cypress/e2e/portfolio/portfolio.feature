@@ -24,7 +24,7 @@ Feature: CV en ligne de Sylvain Chignaguet
 
   Scenario: Hero section display
     Then the main title is visible
-    And the subtitle mentions "gestion de projet"
+    And the subtitle mentions "pilotage produit"
     And the location "Bordeaux" is displayed
     And the profile picture loads correctly
     And the hero offers a link to the contact section
@@ -33,9 +33,9 @@ Feature: CV en ligne de Sylvain Chignaguet
     Then the LinkedIn card links to the LinkedIn profile
     And the GitHub card links to the GitHub profile
 
-  Scenario: The profile states the move towards project management
+  Scenario: The profile states the move towards product
     Then the profile section is visible
-    And the profile tells the move towards project management
+    And the profile tells the move towards product
     And 4 proof items back the profile
 
   Scenario: Animated counters
