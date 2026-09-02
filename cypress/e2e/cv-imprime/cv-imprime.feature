@@ -50,9 +50,9 @@ Feature: CV téléchargeable
   Scenario: The printable CV carries the counters at their final value
     When I generate the printable CV
     Then the printable CV shows "8+ Années d'expérience QA"
-    And the printable CV shows "5+ Frameworks maîtrisés"
-    And the printable CV shows "30+ Projets accompagnés"
-    And the printable CV shows "4 Certifications agile & pilotage"
+    And the printable CV shows "30+ Projets livrés, du grand public au B2B"
+    And the printable CV shows "2 Équipes QA montées et recrutées"
+    And the printable CV shows "4 Certifications agile & produit"
 
   # Ce qui n'a pas sa place sur un CV papier : la navigation, les appels à
   # l'action, le formulaire, et le paragraphe de profil long réservé à l'écran.
