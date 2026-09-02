@@ -17,6 +17,16 @@ Feature: CV téléchargeable
     When I click the CV download button
     Then the browser is asked to print the page
 
+  # Le nom de fichier proposé par la boîte de dialogue vient du titre du
+  # document. Celui de la page est écrit pour les moteurs de recherche et
+  # ouvre sur le poste actuel ; le fichier téléchargé doit annoncer le poste
+  # visé, et le titre de la page doit revenir après l'impression.
+  Scenario: The downloaded file is named after the target role
+    When the browser prepares the print
+    Then the document title is "CV Sylvain Chignaguet - Product Owner, gestion de projet"
+    When the print is over
+    Then the document title is "Sylvain Chignaguet, objectif produit | 8 ans de QA automation"
+
   # Deux pages, c'est la contrainte de fond : un CV qui déborde sur une
   # troisième page se fait lire en diagonale. La marge résiduelle est vérifiée
   # séparément parce que Firefox arrondit les métriques de police autrement que
