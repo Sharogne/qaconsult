@@ -39,7 +39,7 @@ Feature: CV téléchargeable
     And the printable CV shows "Asobo Studio"
     And the printable CV shows "QA Lead"
     And the printable CV shows "Marine Nationale"
-    And the printable CV shows "Professional Scrum Master I"
+    And the printable CV shows "Professional Scrum Product Owner I"
     And the printable CV shows "Crossthink"
     And the printable CV shows "Estran"
     And the printable CV shows "Peinture"

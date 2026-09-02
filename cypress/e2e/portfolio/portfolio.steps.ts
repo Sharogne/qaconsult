@@ -135,10 +135,10 @@ Then('the profile section is visible', () => {
   profilPage.section.scrollIntoView().should('be.visible');
 });
 
-Then('the profile tells the move towards project management', () => {
+Then('the profile tells the move towards product', () => {
   profilPage.section
     .should('contain.text', 'pilotage')
-    .and('contain.text', 'lead QA, engineering manager, chef de projet technique');
+    .and('contain.text', 'product owner, product manager');
 });
 
 Then('{int} proof items back the profile', (count: number) => {
