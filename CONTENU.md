@@ -62,8 +62,8 @@ Le bouton « Télécharger le CV » réutilise la même page, remise en forme pa
 ```html
 <div class="tl-date">
     <b class="tl-year">2024</b>                                   <!-- écran -->
-    <span class="tl-period">juin 2017 - févr. 2024</span>         <!-- CV imprimé -->
-    <em class="tl-duration">6 ans 9 mois</em>                     <!-- CV imprimé -->
+    <span class="tl-period">juin 2017 - déc. 2018, puis mai 2020 - févr. 2024</span>  <!-- CV imprimé -->
+    <em class="tl-duration">5 ans 5 mois</em>                     <!-- CV imprimé -->
 </div>
 ```
 
