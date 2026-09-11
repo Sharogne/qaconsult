@@ -164,7 +164,7 @@ par le texte visible. On évite ainsi de multiplier les identifiants, et le test
 reste ancré sur ce que lit l'utilisateur.
 
 ```html
-<article data-cy="project-card"><h3>Estran</h3>...</article>
+<article data-cy="project-card"><h3>Affirmatif ! éditions</h3>...</article>
 <article data-cy="project-card"><h3>CarCare</h3>...</article>
 ```
 

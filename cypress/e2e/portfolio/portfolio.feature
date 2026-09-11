@@ -72,14 +72,18 @@ Feature: CV en ligne de Sylvain Chignaguet
     And the certification "Professional Scrum Master I" is present
     And the project management training at "Crossthink" is mentioned
 
-  # Trois des quatre projets sont privés ou pas encore livrés : leur carte ne
-  # doit exposer aucun lien, sous peine d'envoyer un recruteur sur une 404.
+  # Deux des quatre projets ne sont pas encore publics : leur carte ne doit
+  # exposer aucun lien, sous peine d'envoyer un recruteur sur une 404. Les
+  # deux autres sont en ligne, et chaque lien est vérifié sur sa propre carte
+  # plutôt qu'en bloc : un href juste sur la mauvaise carte resterait une
+  # erreur.
   Scenario: Personal projects have no dead links
     Then the projects section is visible
     And 4 project cards are displayed
-    And only 1 project card exposes a repository link
-    And that link points to "https://github.com/Sharogne/qaconsult"
-    And the card "Estran" exposes no link
+    And only 2 project cards expose a link
+    And the card "chignaguet.fr" links to "https://github.com/Sharogne/qaconsult"
+    And the card "Affirmatif ! éditions" links to "https://affirmatif-editions.fr/"
+    And the card "Pile of Fame" exposes no link
     And the section links to all public repositories
 
   Scenario: Working style and field photos
