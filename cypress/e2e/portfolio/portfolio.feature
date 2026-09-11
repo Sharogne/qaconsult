@@ -52,7 +52,7 @@ Feature: CV en ligne de Sylvain Chignaguet
   # période, pas son début. La colonne doit donc décroître de haut en bas.
   Scenario: Timeline dates read as change markers
     Then each entry carries a single date marker
-    And the date column reads "aujourd'hui, 2024, 2020, 2017" from the top down
+    And the date column reads "aujourd'hui, 2024, 2020, 2019, 2017" from the top down
     And the full periods stay hidden on screen
 
   Scenario: The pre-tech years stay folded until asked for

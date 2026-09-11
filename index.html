@@ -1024,7 +1024,7 @@
             .tl-body {
                 grid-column: 2; grid-row: 1;
                 border-left: 1px solid #D8DDE3;
-                padding: 0 0 6pt 12pt;
+                padding: 0 0 4pt 12pt;
             }
 
             .job, .project-card, .skill-card, .cert-card, .hobby-card, .contact-form {
@@ -1041,6 +1041,16 @@
             .job-role-meta { margin-bottom: 1pt; gap: 5pt; }
             .job-role-meta h4 { font-size: 9.5pt; }
             .job-role p { font-size: 9pt; line-height: 1.34; }
+
+            /* La parenthèse de 2019 n'est pas un poste : au CV papier, elle
+               tient sur une ligne, titre et pays côte à côte, et le détail
+               reste à l'écran. */
+            .tl-row--aside .job-points { display: none; }
+            .tl-row--aside .job-head > div {
+                display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 6pt;
+            }
+            .tl-row--aside .job-title { font-size: 9.5pt; }
+            .tl-row--aside .job-org { font-size: 8.5pt; margin-top: 0; }
 
             .badge { padding: 0 5pt; font-size: 7pt; border-color: #B4BCC5; }
             /* Une seule forme de liste sur tout le CV : des valeurs séparées
@@ -1449,6 +1459,32 @@
                     </div>
                 </article>
 
+                <!-- Interprojet et voyage -->
+                <article class="tl-row tl-row--aside fade-up" data-cy="experience-item">
+                    <div class="tl-date">
+                        <b class="tl-year">2019</b>
+                        <span class="tl-period">janv. 2019 - déc. 2019</span>
+                    </div>
+                    <div class="tl-rail" aria-hidden="true">
+                        <div class="tl-line"><div class="tl-line-fill"></div></div>
+                        <div class="tl-node"></div>
+                    </div>
+                    <div class="tl-body">
+                        <div class="job">
+                            <div class="job-head">
+                                <div>
+                                    <h3 class="job-title">Interprojet et voyage</h3>
+                                    <p class="job-org">WWOOFing · Corée du Sud, Grèce, Californie</p>
+                                </div>
+                            </div>
+                            <ul class="job-points">
+                                <li>L'interprojet chez Asobo mis à profit pour partir une année en <strong>WWOOFing</strong> : travail dans des fermes en Corée du Sud, en Grèce et en Californie, en échange du gîte et du couvert.</li>
+                                <li>Une année d'anglais au quotidien, et l'habitude d'arriver dans une équipe et un cadre inconnus pour y être utile vite.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Avant la tech -->
                 <article class="tl-row fade-up" data-cy="experience-item">
                     <div class="tl-date">
@@ -1660,7 +1696,7 @@
                         <h3>Affirmatif ! éditions</h3>
                         <p class="project-sub">Site vitrine bilingue &amp; back office</p>
                     </div>
-                    <p class="project-desc">Une maison d'édition indépendante, deux langues, un back office qui laisse l'éditeur gérer seul son catalogue : couvertures, quatrièmes, statuts brouillon/publié, traductions. Architecture volontairement frugale, déployée en conteneur sur VPS. <strong>Livré et en production</strong> : l'éditeur alimente et traduit son catalogue sans repasser par moi.</p>
+                    <p class="project-desc">Une maison d'édition indépendante, deux langues, un back office qui laisse l'éditeur gérer seul son catalogue : couvertures, quatrièmes, statuts brouillon/publié, traductions. Architecture volontairement frugale, déployée en conteneur sur VPS. <strong>Livré et en production.</strong></p>
                     <div class="chip-row">
                         <span class="chip">Next.js 16</span><span class="chip">TypeScript</span><span class="chip">Tailwind v4</span><span class="chip">next-intl</span><span class="chip">Cypress</span><span class="chip">Docker</span>
                     </div>

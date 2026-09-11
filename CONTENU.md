@@ -75,6 +75,7 @@ Le CV imprimé rétablit la période complète et la durée. L'écran, lui, n'af
 aujourd'hui   ← Phenix, toujours en cours
 2024          ← fin d'Asobo Studio
 2020          ← fin de Betclic
+2019          ← fin de l'année d'interprojet et de voyage
 2017          ← fin des années d'avant la tech
 ```
 
