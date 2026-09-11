@@ -51,7 +51,7 @@ Feature: CV téléchargeable
     And the printable CV shows "Marine Nationale"
     And the printable CV shows "Professional Scrum Product Owner I"
     And the printable CV shows "Crossthink"
-    And the printable CV shows "Estran"
+    And the printable CV shows "Affirmatif ! éditions"
     And the printable CV shows "Peinture"
 
   # Les compteurs mettent 1,6 s à rejoindre leur valeur et ne démarrent qu'au

@@ -274,12 +274,12 @@ Then('{int} project cards are displayed', (count: number) => {
   projectsPage.cards.should('have.length', count);
 });
 
-Then('only {int} project card exposes a repository link', (count: number) => {
+Then('only {int} project cards expose a link', (count: number) => {
   projectsPage.links.should('have.length', count);
 });
 
-Then('that link points to {string}', (url: string) => {
-  projectsPage.links.should('have.attr', 'href', url);
+Then('the card {string} links to {string}', (name: string, url: string) => {
+  projectsPage.getCardLink(name).should('have.attr', 'href', url);
 });
 
 Then('the card {string} exposes no link', (name: string) => {
