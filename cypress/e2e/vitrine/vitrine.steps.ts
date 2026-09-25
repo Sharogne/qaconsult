@@ -68,7 +68,7 @@ Then('{int} offers are displayed', (count: number) => {
   vitrinePage.offers.should('have.length', count);
 });
 
-// « 490 € », « 1 200 € » : un montant, puis le symbole euro. Un prix laissé
+// « 800 € », « 1 200 € » : un montant, puis le symbole euro. Un prix laissé
 // vide ou remplacé par un « XX » de maquette ferait échouer ce step.
 Then('every offer shows a starting price in euros', () => {
   vitrinePage.offers.each(($offer) => {

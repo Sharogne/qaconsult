@@ -181,7 +181,7 @@ Ce second fichier surveille aussi la longueur du CV : il génère le PDF pour de
 | Tarifs | `<!-- Tarifs` | Les trois formules, l'option maintenance, la note sur le nom de domaine |
 | Contact | `<!-- Contact` | Formulaire de devis |
 
-**Les prix** s'écrivent sous la forme `490 €` ou `1 200 €` (chiffres, espace, symbole euro) : un test vérifie ce format et échoue sur un prix vide ou un « XX € » de maquette.
+**Les prix** partent d'un tarif journalier de 400 € : Essentiel ≈ 2 jours (800 €), Vitrine ≈ 3 jours (1 200 €), Sur mesure à partir de 7,5 jours (3 000 €). Ils s'écrivent sous la forme `800 €` ou `1 200 €` (chiffres, espace, symbole euro) : un test vérifie ce format et échoue sur un prix vide ou un « XX € » de maquette.
 
 **Le nom d'une formule** (`<h3>Essentiel</h3>`…) figure aussi dans la liste déroulante du formulaire de devis (`<option value="Essentiel">`). Si vous renommez une formule, renommez l'option : un test le contrôle.
 
