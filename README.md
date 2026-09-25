@@ -90,7 +90,8 @@ qaconsult/
 │       │   ├── hobbies.po.ts      # Centres d'intérêt         [data-cy]
 │       │   ├── contact.po.ts      # Formulaire de contact     [data-cy]
 │       │   ├── footer.po.ts       # Pied de page              [data-cy]
-│       │   └── vitrine.po.ts      # Vitrine : atouts, tarifs, liens CV [data-cy]
+│       │   ├── vitrine.po.ts      # Vitrine : atouts, tarifs, liens CV [data-cy]
+│       │   └── mentions-legales.po.ts # Mentions légales       [data-cy]
 │       ├── commands.ts            # Commandes Cypress personnalisées
 │       └── e2e.ts                 # Support global
 ├── .claude/                       # Versionné (settings.json exclus du git)
@@ -103,6 +104,8 @@ qaconsult/
 ├── index.html                     # Vitrine grand public, servie à /
 ├── cv/
 │   └── index.html                 # CV complet, servi à /cv/ (écran + @media print)
+├── mentions-legales/
+│   └── index.html                 # Mentions légales et confidentialité (noindex)
 ├── cypress.config.ts              # Configuration Cypress + Cucumber
 ├── vite.config.ts
 ├── tsconfig.json
@@ -234,7 +237,7 @@ un `data-cy` par-dessus ajouterait un alias sans rien découpler.
 
 **`cv-imprime.feature`** — 7 scénarios sur le CV téléchargeable (voir plus bas).
 
-**`vitrine.feature`** — 7 scénarios sur la vitrine servie à la racine. L'en-tête, le menu mobile, les cartes de réalisations et le formulaire portent les mêmes `data-cy` que sur le CV : leurs Page Objects et leurs steps servent aux deux pages.
+**`vitrine.feature`** — 8 scénarios sur la vitrine servie à la racine. L'en-tête, le menu mobile, les cartes de réalisations et le formulaire portent les mêmes `data-cy` que sur le CV : leurs Page Objects et leurs steps servent aux deux pages.
 
 | Scénario | Page Object(s) |
 |---|---|
@@ -244,6 +247,7 @@ un `data-cy` par-dessus ajouterait un alias sans rien découpler.
 | **Tarifs : trois formules chiffrées et l'option maintenance** | `vitrine.po.ts` |
 | Réalisations sans lien mort | `projects.po.ts` |
 | Formulaire de devis (formules proposées, objet du mail) | `contact.po.ts`, `vitrine.po.ts` |
+| **Mentions légales complètes** (éditeur, SIRET, TVA, hébergeur, données, noindex) | `mentions-legales.po.ts` |
 | Aucune donnée personnelle dans le code de la vitrine | — |
 
 Quatre scénarios méritent un mot, parce qu'ils testent une règle et pas seulement un affichage :

@@ -39,6 +39,7 @@ Feature: Vitrine de création de sites web
     And every offer shows a starting price in euros
     And every offer leads to the contact form
     And the maintenance option shows a monthly price
+    And the pricing states the VAT exemption
 
   # Même garde-fou que sur le CV : un projet pas encore public ne doit pas
   # envoyer le visiteur sur une 404.
@@ -59,6 +60,20 @@ Feature: Vitrine de création de sites web
     And the quote form lets the visitor pick an offer
     And the quote form is sent with the subject "Demande de devis depuis chignaguet.fr"
     And the submit button is visible
+
+  # Obligatoires pour une micro-entreprise : identité de l'éditeur, SIRET,
+  # régime de TVA, hébergeur. La page n'est pas indexée par les moteurs.
+  Scenario: The legal notice is one click away and complete
+    Then the footer links to the legal notice
+    When I follow the footer link to the legal notice
+    Then I land on the legal notice
+    And the legal notice names the publisher "Sylvain Chignaguet"
+    And the legal notice shows the SIRET "101 817 237 00015"
+    And the legal notice states the VAT exemption
+    And the legal notice names the host "GitHub"
+    And the legal notice explains what happens to form data
+    And the legal notice is kept out of search engines
+    And the phone number is nowhere in the showcase
 
   # Le téléphone n'existe que sur le CV imprimé : la vitrine ne doit même pas
   # l'avoir dans son code source.

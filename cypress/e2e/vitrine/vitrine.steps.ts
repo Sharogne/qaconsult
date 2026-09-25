@@ -1,6 +1,11 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
-import { contactPage, heroPage, vitrinePage } from '../../support/page-objects';
+import {
+  contactPage,
+  heroPage,
+  mentionsLegalesPage,
+  vitrinePage,
+} from '../../support/page-objects';
 
 // Les step definitions sont globales (voir cypress-cucumber-preprocessor dans
 // package.json) : l'en-tête, le menu mobile, les cartes de projets et le
@@ -8,6 +13,7 @@ import { contactPage, heroPage, vitrinePage } from '../../support/page-objects';
 // ce qui est propre à la vitrine.
 
 const CV_PATH = '/cv/';
+const LEGAL_PATH = '/mentions-legales/';
 
 /* ==========================================================================
    Background
@@ -92,6 +98,12 @@ Then('the maintenance option shows a monthly price', () => {
   vitrinePage.maintenanceOffer.scrollIntoView().should('be.visible').and('contain.text', '€').and('contain.text', '/ mois');
 });
 
+// Micro-entreprise en franchise de TVA : la mention est obligatoire à côté
+// des prix, sans quoi un client peut croire les montants hors taxes.
+Then('the pricing states the VAT exemption', () => {
+  vitrinePage.pricingSection.should('contain.text', 'TVA non applicable, art. 293 B du CGI');
+});
+
 /* ==========================================================================
    Formulaire de devis
    ========================================================================== */
@@ -120,4 +132,49 @@ Then('the phone number is nowhere in the showcase', () => {
     const html = doc.documentElement.outerHTML.replace(/[\s.]/g, '');
     expect(html, 'code source de la vitrine').to.not.include('0645130182');
   });
+});
+
+/* ==========================================================================
+   Mentions légales
+   Le lien de pied de page existe sur la vitrine et sur le CV : ce step sert
+   aux deux features.
+   ========================================================================== */
+
+Then('the footer links to the legal notice', () => {
+  mentionsLegalesPage.footerLink.should('have.attr', 'href', LEGAL_PATH);
+});
+
+When('I follow the footer link to the legal notice', () => {
+  mentionsLegalesPage.footerLink.click();
+});
+
+Then('I land on the legal notice', () => {
+  cy.location('pathname').should('equal', LEGAL_PATH);
+  mentionsLegalesPage.page.should('be.visible');
+});
+
+Then('the legal notice names the publisher {string}', (name: string) => {
+  mentionsLegalesPage.publisher.should('contain.text', name).and('contain.text', 'entrepreneur individuel');
+});
+
+Then('the legal notice shows the SIRET {string}', (siret: string) => {
+  mentionsLegalesPage.siret.should('have.text', siret);
+});
+
+Then('the legal notice states the VAT exemption', () => {
+  mentionsLegalesPage.vat.should('contain.text', 'TVA non applicable').and('contain.text', '293 B');
+});
+
+Then('the legal notice names the host {string}', (host: string) => {
+  mentionsLegalesPage.host.should('contain.text', host);
+});
+
+Then('the legal notice explains what happens to form data', () => {
+  mentionsLegalesPage.privacy.should('contain.text', 'FormSubmit').and('contain.text', 'CNIL');
+});
+
+// Page obligatoire mais sans valeur pour la recherche : elle ne doit pas
+// remonter l'adresse du siège dans les résultats des moteurs.
+Then('the legal notice is kept out of search engines', () => {
+  cy.get('meta[name="robots"]').should('have.attr', 'content').and('include', 'noindex');
 });

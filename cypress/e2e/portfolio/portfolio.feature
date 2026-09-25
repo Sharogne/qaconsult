@@ -115,4 +115,5 @@ Feature: CV en ligne de Sylvain Chignaguet
     And the LinkedIn link is present in the footer
     And the GitHub link is present in the footer
     And the website link is present in the footer
+    And the footer links to the legal notice
     And the footer has no Malt link

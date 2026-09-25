@@ -144,7 +144,7 @@ Deux exceptions, à écrire sous forme d'entité pour ne pas casser le HTML :
 
 ```bash
 npm run lint     # vérifie le code des tests
-npm run cy:run   # exécute les 31 scénarios
+npm run cy:run   # exécute les 32 scénarios
 npm run build    # génère dist/
 ```
 
@@ -186,4 +186,12 @@ Ce second fichier surveille aussi la longueur du CV : il génère le PDF pour de
 **Le nom d'une formule** (`<h3>Essentiel</h3>`…) figure aussi dans la liste déroulante du formulaire de devis (`<option value="Essentiel">`). Si vous renommez une formule, renommez l'option : un test le contrôle.
 
 **Les projets** existent en deux versions, une par page : celle du CV parle technique aux recruteurs, celle de la vitrine parle résultat aux clients. Modifier l'une ne modifie pas l'autre.
+
+---
+
+## Les mentions légales
+
+`mentions-legales/index.html` porte l'identité de l'éditeur (SIRET, siège, régime de TVA), l'hébergeur et la politique de données. À mettre à jour en cas de déménagement du siège ou de changement de statut. La page n'est pas indexée par les moteurs (`noindex`) et n'affiche volontairement aucun numéro de téléphone.
+
+**La mention de TVA** « art. 293 B du CGI » figure sous les tarifs de la vitrine et dans les mentions légales. Elle reste acceptée jusqu'au 31 décembre 2027 ; la nouvelle référence est dans le Code des impositions sur les biens et services (CIBS). Changez les deux endroits en même temps.
 
