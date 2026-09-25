@@ -6,7 +6,7 @@ Feature: CV en ligne de Sylvain Chignaguet
   consulting, aucune donnée personnelle de trop).
 
   Background:
-    Given I visit the homepage
+    Given I visit the CV page
 
   Scenario: Header and navigation display
     Then the header is visible

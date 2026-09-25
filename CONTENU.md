@@ -1,6 +1,13 @@
-# Modifier les textes du CV
+# Modifier les textes du site
 
-Tout le site tient dans **un seul fichier : `index.html`**. Pas de base de données, pas de CMS, pas d'étape de génération. Vous ouvrez le fichier, vous changez le texte entre les balises, vous enregistrez.
+Le site tient dans **deux fichiers** :
+
+- **`index.html`** : la vitrine grand public, à l'adresse `chignaguet.fr` (offre, réalisations, tarifs, demande de devis) ;
+- **`cv/index.html`** : le CV, à l'adresse `chignaguet.fr/cv/`.
+
+Ce guide porte surtout sur le CV, le plus piégeux des deux. La vitrine est décrite à la fin, dans « La vitrine ».
+
+Pas de base de données, pas de CMS, pas d'étape de génération. Vous ouvrez le fichier, vous changez le texte entre les balises, vous enregistrez.
 
 Ce guide dit où chercher, et surtout ce qu'il ne faut pas casser en passant.
 
@@ -8,7 +15,7 @@ Ce guide dit où chercher, et surtout ce qu'il ne faut pas casser en passant.
 
 ## La méthode en trois étapes
 
-1. Ouvrez `index.html` dans n'importe quel éditeur de texte.
+1. Ouvrez `cv/index.html` (ou `index.html` pour la vitrine) dans n'importe quel éditeur de texte.
 2. Cherchez (`Ctrl+F`) la phrase à modifier **telle qu'elle s'affiche sur le site**. Elle apparaît une seule fois, sauf exception signalée plus bas.
 3. Changez le texte **entre** les chevrons, jamais les chevrons eux-mêmes.
 
@@ -137,7 +144,7 @@ Deux exceptions, à écrire sous forme d'entité pour ne pas casser le HTML :
 
 ```bash
 npm run lint     # vérifie le code des tests
-npm run cy:run   # exécute les 23 scénarios
+npm run cy:run   # exécute les 31 scénarios
 npm run build    # génère dist/
 ```
 
@@ -157,3 +164,26 @@ Ce second fichier surveille aussi la longueur du CV : il génère le PDF pour de
 | Les polices | Variables `--font-display`, `--font-body`, `--font-code`, plus le `<link>` Google Fonts en haut |
 | La photo | Remplacez `public/images/profile.jpg`, gardez le nom |
 | La mise en page du CV imprimé | Bloc `@media print` en bas du `<style>` |
+
+---
+
+## La vitrine
+
+`index.html`, à la racine, suit la même logique de commentaires que le CV :
+
+| Section | Commentaire à chercher | Ce qu'on y trouve |
+|---|---|---|
+| Barre de navigation | `<!-- En-tête` | Liens, dont « Mon CV » |
+| Bandeau d'accueil | `<!-- Hero` | Accroche, boutons, carte « Qui suis-je ? » qui mène au CV |
+| Atouts | `<!-- Atouts` | Les quatre arguments |
+| Réalisations | `<!-- Réalisations` | Les quatre projets, réécrits pour un public non technique |
+| Méthode | `<!-- Méthode` | Les quatre étapes |
+| Tarifs | `<!-- Tarifs` | Les trois formules, l'option maintenance, la note sur le nom de domaine |
+| Contact | `<!-- Contact` | Formulaire de devis |
+
+**Les prix** s'écrivent sous la forme `490 €` ou `1 200 €` (chiffres, espace, symbole euro) : un test vérifie ce format et échoue sur un prix vide ou un « XX € » de maquette.
+
+**Le nom d'une formule** (`<h3>Essentiel</h3>`…) figure aussi dans la liste déroulante du formulaire de devis (`<option value="Essentiel">`). Si vous renommez une formule, renommez l'option : un test le contrôle.
+
+**Les projets** existent en deux versions, une par page : celle du CV parle technique aux recruteurs, celle de la vitrine parle résultat aux clients. Modifier l'une ne modifie pas l'autre.
+

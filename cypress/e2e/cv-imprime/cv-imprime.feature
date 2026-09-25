@@ -9,7 +9,7 @@ Feature: CV téléchargeable
   sans interface. Sans elle, la seule chose testable serait le clic.
 
   Background:
-    Given I visit the homepage
+    Given I visit the CV page
 
   Scenario: The download button triggers printing
     Then the CV download button is visible

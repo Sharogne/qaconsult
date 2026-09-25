@@ -1,13 +1,15 @@
 Effectue un audit complet de la couverture `data-cy` dans ce projet.
 
+Le site compte deux pages : `index.html` (la vitrine, servie à `/`) et `cv/index.html` (le CV, servi à `/cv/`). Ci-dessous, « le HTML » désigne les deux : un `data-cy` est couvert s'il est ciblé depuis l'une ou l'autre.
+
 ## 1. Vérification `index.html` → Page Objects
 
-Pour chaque `data-cy` présent dans `index.html`, vérifie qu'il est utilisé dans au moins un page object de `cypress/support/page-objects/`.
+Pour chaque `data-cy` présent dans `index.html` ou `cv/index.html`, vérifie qu'il est utilisé dans au moins un page object de `cypress/support/page-objects/`.
 Liste les `data-cy` orphelins (présents dans le HTML mais jamais ciblés dans les tests).
 
 ## 2. Vérification Page Objects → `index.html`
 
-Pour chaque sélecteur `[data-cy="..."]` dans les page objects, vérifie que l'attribut correspondant existe bien dans `index.html`.
+Pour chaque sélecteur `[data-cy="..."]` dans les page objects, vérifie que l'attribut correspondant existe bien dans `index.html` ou `cv/index.html`.
 Liste les sélecteurs qui ciblent un `data-cy` absent du HTML (sélecteurs cassés).
 
 ## 3. Vérification des sélecteurs non-`data-cy`
@@ -36,6 +38,7 @@ Liste les methods inutilisées.
 
 Fichiers à analyser :
 - `index.html`
+- `cv/index.html`
 - `cypress/support/page-objects/*.po.ts`
-- `cypress/e2e/portfolio/portfolio.steps.ts`
+- `cypress/e2e/**/*.steps.ts`
 - `cypress/e2e/portfolio/portfolio.feature`
