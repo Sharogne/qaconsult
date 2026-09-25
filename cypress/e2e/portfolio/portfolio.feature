@@ -6,7 +6,7 @@ Feature: CV en ligne de Sylvain Chignaguet
   consulting, aucune donnée personnelle de trop).
 
   Background:
-    Given I visit the homepage
+    Given I visit the CV page
 
   Scenario: Header and navigation display
     Then the header is visible
@@ -115,4 +115,5 @@ Feature: CV en ligne de Sylvain Chignaguet
     And the LinkedIn link is present in the footer
     And the GitHub link is present in the footer
     And the website link is present in the footer
+    And the footer links to the legal notice
     And the footer has no Malt link

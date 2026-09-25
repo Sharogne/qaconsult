@@ -14,3 +14,5 @@ export { terrainPage } from './terrain.po';
 export { hobbiesPage } from './hobbies.po';
 export { contactPage } from './contact.po';
 export { footerPage } from './footer.po';
+export { vitrinePage } from './vitrine.po';
+export { mentionsLegalesPage } from './mentions-legales.po';

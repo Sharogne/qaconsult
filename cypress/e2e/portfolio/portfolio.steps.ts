@@ -24,8 +24,9 @@ const SITE_URL = 'https://www.chignaguet.fr';
    Background et navigation
    ========================================================================== */
 
-Given('I visit the homepage', () => {
-  cy.visit('/');
+// Le CV vit sous /cv/ depuis que la racine accueille la vitrine.
+Given('I visit the CV page', () => {
+  cy.visit('/cv/');
 });
 
 When('I navigate to the section {string}', (sectionId: string) => {

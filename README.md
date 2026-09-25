@@ -23,7 +23,11 @@
 
 Ce dépôt remplit trois fonctions :
 
-1. **CV en ligne** — le code source de [chignaguet.fr](https://www.chignaguet.fr), le CV one-page de Sylvain Chignaguet, QA Automation Engineer à Bordeaux. Page unique statique en HTML/CSS/JS pur, servie par Vite, avec une feuille `@media print` qui la transforme en CV imprimable de trois pages.
+1. **Site en ligne** — le code source de [chignaguet.fr](https://www.chignaguet.fr), en deux pages statiques HTML/CSS/JS pur, servies par Vite :
+   - **la vitrine** (`/`), destinée au grand public : création de sites web, réalisations, tarifs, demande de devis ;
+   - **le CV** ([`/cv/`](https://www.chignaguet.fr/cv/)), destiné aux recruteurs, avec une feuille `@media print` qui le transforme en CV imprimable de deux pages.
+
+   Les deux pages partagent la même charte et se renvoient l'une à l'autre. Certaines informations figurent sur les deux (projets, contact) : c'est voulu, ce sont deux supports distincts.
 
 2. **Démonstration QA assistée par IA** — une suite de tests Cypress E2E structurée en **Gherkin/Cucumber** avec **Page Objects**, conçue avec l'assistance de [Claude Code](https://claude.ai/claude-code) (Anthropic). Ce projet illustre comment l'IA peut accélérer la mise en place d'une stratégie de test sans sacrifier la qualité ni la lisibilité.
 
@@ -59,8 +63,11 @@ qaconsult/
 │       └── illu2.webp
 ├── cypress/
 │   ├── e2e/
+│   │   ├── vitrine/
+│   │   │   ├── vitrine.feature    # Scénarios Gherkin — la vitrine (/)
+│   │   │   └── vitrine.steps.ts
 │   │   ├── portfolio/
-│   │   │   ├── portfolio.feature  # Scénarios Gherkin — le site à l'écran
+│   │   │   ├── portfolio.feature  # Scénarios Gherkin — le CV à l'écran (/cv/)
 │   │   │   └── portfolio.steps.ts # Step definitions → Page Objects
 │   │   └── cv-imprime/
 │   │       ├── cv-imprime.feature # Scénarios Gherkin — le CV téléchargeable
@@ -82,7 +89,9 @@ qaconsult/
 │       │   ├── terrain.po.ts      # Photos de terrain         [data-cy]
 │       │   ├── hobbies.po.ts      # Centres d'intérêt         [data-cy]
 │       │   ├── contact.po.ts      # Formulaire de contact     [data-cy]
-│       │   └── footer.po.ts       # Pied de page              [data-cy]
+│       │   ├── footer.po.ts       # Pied de page              [data-cy]
+│       │   ├── vitrine.po.ts      # Vitrine : atouts, tarifs, liens CV [data-cy]
+│       │   └── mentions-legales.po.ts # Mentions légales       [data-cy]
 │       ├── commands.ts            # Commandes Cypress personnalisées
 │       └── e2e.ts                 # Support global
 ├── .claude/                       # Versionné (settings.json exclus du git)
@@ -92,7 +101,11 @@ qaconsult/
 │       ├── new-page-object.md     # /new-page-object   — crée un page object
 │       ├── audit-cy.md            # /audit-cy          — audit couverture data-cy
 │       └── cypress-review.md      # /cypress-review    — revue qualité tests
-├── index.html                     # CV one-page complet (HTML/CSS/JS + attributs data-cy)
+├── index.html                     # Vitrine grand public, servie à /
+├── cv/
+│   └── index.html                 # CV complet, servi à /cv/ (écran + @media print)
+├── mentions-legales/
+│   └── index.html                 # Mentions légales et confidentialité (noindex)
 ├── cypress.config.ts              # Configuration Cypress + Cucumber
 ├── vite.config.ts
 ├── tsconfig.json
@@ -103,7 +116,7 @@ qaconsult/
 
 ## Modifier les textes
 
-Le site tient dans un seul fichier, `index.html`. Pour changer une phrase, un poste ou une date sans toucher au reste : **[CONTENU.md](CONTENU.md)** dit où chercher et quels sont les sept pièges (textes en double écran/impression, compteurs pilotés par attribut, `data-cy` à ne pas supprimer).
+Le site tient dans deux fichiers : `index.html` pour la vitrine, `cv/index.html` pour le CV. Pour changer une phrase, un poste ou une date sans toucher au reste : **[CONTENU.md](CONTENU.md)** dit où chercher et quels sont les sept pièges (textes en double écran/impression, compteurs pilotés par attribut, `data-cy` à ne pas supprimer).
 
 ---
 
@@ -158,7 +171,7 @@ Les tests sont organisés en **4 couches** :
       ↓
 *.po.ts                 ← Page Objects : sélecteurs via [data-cy="..."]
       ↓
-index.html              ← Attributs data-cy sur chaque élément testé
+index.html, cv/index.html ← Attributs data-cy sur chaque élément testé
 ```
 
 Le CV téléchargeable ajoute une cinquième pièce, à côté et non au-dessus :
@@ -222,7 +235,20 @@ un `data-cy` par-dessus ajouterait un alias sans rien découpler.
 | **Absence de résidus freelance et de données personnelles** | — |
 | Footer et liens sociaux | `footer.po.ts` |
 
-**`cv-imprime.feature`** — 6 scénarios sur le CV téléchargeable (voir plus bas).
+**`cv-imprime.feature`** — 7 scénarios sur le CV téléchargeable (voir plus bas).
+
+**`vitrine.feature`** — 8 scénarios sur la vitrine servie à la racine. L'en-tête, le menu mobile, les cartes de réalisations et le formulaire portent les mêmes `data-cy` que sur le CV : leurs Page Objects et leurs steps servent aux deux pages.
+
+| Scénario | Page Object(s) |
+|---|---|
+| Présentation de l'offre (titre, appel au devis, atouts) | `vitrine.po.ts`, `navigation.po.ts` |
+| **Le CV à un clic** (menu, hero, pied de page, arrivée sur `/cv/`) | `vitrine.po.ts`, `hero.po.ts` |
+| Menu mobile jusqu'aux tarifs | `navigation.po.ts` |
+| **Tarifs : trois formules chiffrées et l'option maintenance** | `vitrine.po.ts` |
+| Réalisations sans lien mort | `projects.po.ts` |
+| Formulaire de devis (formules proposées, objet du mail) | `contact.po.ts`, `vitrine.po.ts` |
+| **Mentions légales complètes** (éditeur, SIRET, TVA, hébergeur, données, noindex) | `mentions-legales.po.ts` |
+| Aucune donnée personnelle dans le code de la vitrine | — |
 
 Quatre scénarios méritent un mot, parce qu'ils testent une règle et pas seulement un affichage :
 

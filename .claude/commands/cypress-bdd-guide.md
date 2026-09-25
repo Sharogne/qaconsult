@@ -14,6 +14,8 @@ portfolio.steps.ts         ← COMMENT orchestrer (colle feature → PO)
 index.html [data-cy="..."] ← CE QUI est testé (ancres stables)
 ```
 
+Le HTML se répartit sur deux pages : `index.html` (la vitrine, `/`, testée par `vitrine.feature`) et `cv/index.html` (le CV, `/cv/`, testé par `portfolio.feature` et `cv-imprime.feature`). Ce guide écrit `index.html` pour « le HTML de la page concernée ».
+
 **Règle absolue : chaque couche ne connaît que la couche immédiatement en dessous.**
 - Les steps ne touchent jamais `index.html` directement
 - Les page objects ne contiennent aucune assertion
@@ -38,7 +40,7 @@ index.html [data-cy="..."] ← CE QUI est testé (ancres stables)
 - **1 scénario = 1 comportement** : ne pas tester plusieurs features dans un scénario
 - **Pas de technique dans le Gherkin** : `Then the form is submitted` ✓ — `Then cy.get('.form').submit()` ✗
 - **Paramètres `{string}`** pour les valeurs variables, jamais hardcodées dans le step text
-- **Background** pour les préconditions communes (ex: `Given I visit the homepage`)
+- **Background** pour les préconditions communes (ex: `Given I visit the CV page`)
 - **Titres de scénarios** : courts, descriptifs, sans verbe conjugué inutile
 
 ```gherkin

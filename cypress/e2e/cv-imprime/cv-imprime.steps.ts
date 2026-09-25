@@ -60,7 +60,7 @@ Then('the document title is {string}', (titre: string) => {
 When('I generate the printable CV', () => {
   cy.task<RapportCvImprime>(
     'analyserCvImprime',
-    { url: `${Cypress.config('baseUrl')}/`, cheminNavigateur: cheminNavigateurCypress() },
+    { url: `${Cypress.config('baseUrl')}/cv/`, cheminNavigateur: cheminNavigateurCypress() },
     { timeout: DELAI_GENERATION }
   ).as(ALIAS);
 });
