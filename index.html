@@ -602,8 +602,8 @@
                 <a href="#atouts">L'offre</a>
                 <a href="#realisations">Réalisations</a>
                 <a href="#tarifs">Tarifs</a>
-                <a href="/cv/" data-cy="nav-cv">Mon CV</a>
-                <a href="#contact" class="btn btn-primary btn-sm">Demander un devis</a>
+                <a href="/cv/" data-cy="nav-cv" data-umami-event="vers-cv" data-umami-event-emplacement="menu">Mon CV</a>
+                <a href="#contact" class="btn btn-primary btn-sm" data-umami-event="cta-devis" data-umami-event-emplacement="menu">Demander un devis</a>
             </nav>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links" data-cy="mobile-menu-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -624,8 +624,8 @@
                     <p class="hero-pitch">Artisans, commerçants, associations, indépendants : je conçois votre site de A à Z, je le mets en ligne et je vous montre comment le faire vivre. Et parce que je viens du test logiciel, chaque page est vérifiée avant d'arriver chez vous.</p>
 
                     <div class="hero-cta" data-cy="hero-cta">
-                        <a href="#contact" class="btn btn-primary">Demander un devis gratuit</a>
-                        <a href="#tarifs" class="btn btn-secondary">Voir les tarifs</a>
+                        <a href="#contact" class="btn btn-primary" data-umami-event="cta-devis" data-umami-event-emplacement="hero">Demander un devis gratuit</a>
+                        <a href="#tarifs" class="btn btn-secondary" data-umami-event="voir-tarifs" data-umami-event-emplacement="hero">Voir les tarifs</a>
                     </div>
 
                     <div class="hero-reassure">
@@ -639,7 +639,7 @@
                         <img src="/images/profile.jpg" alt="Portrait de Sylvain Chignaguet" width="400" height="470" data-cy="profile-image">
                     </div>
                     <!-- Le pont vers le CV : visible dès l'arrivée, sans détour par le menu. -->
-                    <a href="/cv/" class="cv-card" data-cy="hero-cv-link">
+                    <a href="/cv/" class="cv-card" data-cy="hero-cv-link" data-umami-event="vers-cv" data-umami-event-emplacement="hero">
                         <span class="cv-card-text">
                             <strong>Qui suis-je ?</strong>
                             <span>Sylvain Chignaguet, 8 ans de qualité logicielle, du jeu vidéo à la tech à impact. Consultez mon CV.</span>
@@ -690,7 +690,7 @@
         <!-- ==================================================================
              Réalisations
              ================================================================== -->
-        <section id="realisations" class="section container" data-cy="projects-section">
+        <section id="realisations" class="section container" data-cy="projects-section" data-track-view="realisations">
             <div class="projects-head">
                 <div class="section-head fade-up" style="margin-bottom: 0;">
                     <p class="eyebrow">Réalisations</p>
@@ -714,7 +714,7 @@
                     <div class="chip-row">
                         <span class="chip">Bilingue</span><span class="chip">Catalogue</span><span class="chip">Back office</span><span class="chip">Mobile</span>
                     </div>
-                    <a href="https://affirmatif-editions.fr/" target="_blank" rel="noopener noreferrer" class="project-foot project-foot--link" data-cy="project-link">
+                    <a href="https://affirmatif-editions.fr/" target="_blank" rel="noopener noreferrer" class="project-foot project-foot--link" data-cy="project-link" data-umami-event="lien-realisation" data-umami-event-projet="affirmatif-editions">
                         affirmatif-editions.fr
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                     </a>
@@ -733,7 +733,7 @@
                     <div class="chip-row">
                         <span class="chip">Vitrine</span><span class="chip">CV imprimable</span><span class="chip">Tests automatiques</span>
                     </div>
-                    <a href="https://github.com/Sharogne/qaconsult" target="_blank" rel="noopener noreferrer" class="project-foot project-foot--link" data-cy="project-link">
+                    <a href="https://github.com/Sharogne/qaconsult" target="_blank" rel="noopener noreferrer" class="project-foot project-foot--link" data-cy="project-link" data-umami-event="lien-realisation" data-umami-event-projet="chignaguet-fr">
                         Voir le code source
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                     </a>
@@ -820,7 +820,7 @@
              ≈ 2 jours, Vitrine ≈ 3 jours, Sur mesure à partir de 7,5 jours.
              Chaque formule garde un data-cy="offer-card" pour les tests.
              ================================================================== -->
-        <section id="tarifs" class="section container" data-cy="pricing-section">
+        <section id="tarifs" class="section container" data-cy="pricing-section" data-track-view="tarifs">
             <div class="section-head fade-up">
                 <p class="eyebrow">Tarifs</p>
                 <h2 class="section-title">Des prix clairs, annoncés avant de commencer</h2>
@@ -840,7 +840,7 @@
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Référencement de base</li>
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Mise en ligne incluse</li>
                     </ul>
-                    <a href="#contact" class="btn btn-secondary" data-cy="offer-cta">Demander un devis</a>
+                    <a href="#contact" class="btn btn-secondary" data-cy="offer-cta" data-umami-event="cta-devis" data-umami-event-emplacement="tarifs" data-umami-event-formule="Essentiel">Demander un devis</a>
                 </article>
 
                 <article class="offer offer--featured fade-up delay-1" data-cy="offer-card">
@@ -857,7 +857,7 @@
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Mentions légales et page de confidentialité</li>
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Une heure de prise en main</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary" data-cy="offer-cta">Demander un devis</a>
+                    <a href="#contact" class="btn btn-primary" data-cy="offer-cta" data-umami-event="cta-devis" data-umami-event-emplacement="tarifs" data-umami-event-formule="Vitrine">Demander un devis</a>
                 </article>
 
                 <article class="offer fade-up delay-2" data-cy="offer-card">
@@ -873,7 +873,7 @@
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Suivi et maintenance inclus</li>
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Fonctionnalités à la demande</li>
                     </ul>
-                    <a href="#contact" class="btn btn-secondary" data-cy="offer-cta">Parlons de votre projet</a>
+                    <a href="#contact" class="btn btn-secondary" data-cy="offer-cta" data-umami-event="cta-devis" data-umami-event-emplacement="tarifs" data-umami-event-formule="Sur mesure">Parlons de votre projet</a>
                 </article>
             </div>
 
@@ -891,7 +891,7 @@
         <!-- ==================================================================
              Contact
              ================================================================== -->
-        <section id="contact" class="section container" data-cy="contact-section">
+        <section id="contact" class="section container" data-cy="contact-section" data-track-view="contact">
             <div class="contact-layout">
                 <div class="fade-up">
                     <div class="section-head">
@@ -906,7 +906,7 @@
                             </span>
                             <div>
                                 <h3>Email</h3>
-                                <a href="mailto:sylvain.chignaguet@gmail.com">sylvain.chignaguet@gmail.com</a>
+                                <a href="mailto:sylvain.chignaguet@gmail.com" data-umami-event="clic-email">sylvain.chignaguet@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact-method">
@@ -961,9 +961,9 @@
         <div class="container footer-inner">
             <div>&copy; 2026 Sylvain Chignaguet · Création de sites web · Bordeaux</div>
             <nav class="footer-links" data-cy="footer-links" aria-label="Liens">
-                <a href="/cv/" data-cy="footer-link-cv">Mon CV</a>
-                <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" data-cy="footer-link-linkedin">LinkedIn</a>
-                <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" data-cy="footer-link-github">GitHub</a>
+                <a href="/cv/" data-cy="footer-link-cv" data-umami-event="vers-cv" data-umami-event-emplacement="footer">Mon CV</a>
+                <a href="https://www.linkedin.com/in/sylvain-chignaguet-a7534286/" target="_blank" rel="noopener noreferrer" data-cy="footer-link-linkedin" data-umami-event="lien-externe" data-umami-event-cible="linkedin" data-umami-event-emplacement="footer">LinkedIn</a>
+                <a href="https://github.com/Sharogne" target="_blank" rel="noopener noreferrer" data-cy="footer-link-github" data-umami-event="lien-externe" data-umami-event-cible="github" data-umami-event-emplacement="footer">GitHub</a>
                 <a href="/mentions-legales/" data-cy="footer-link-legal">Mentions légales</a>
             </nav>
         </div>
@@ -971,6 +971,33 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            /* ---------------------------------------------------------------
+               Mesure d'audience (Umami)
+               Les clics passent par les attributs data-umami-event. Ici, ce
+               que les attributs ne savent pas faire : l'envoi réel du
+               formulaire (pas un clic sur un formulaire invalide) et
+               l'arrivée à l'écran des sections clés, pour lire l'entonnoir
+               réalisations → tarifs → contact. Umami n'est chargé qu'en
+               production : hors de là, track() ne fait rien.
+               --------------------------------------------------------------- */
+            const track = (event, data) => window.umami?.track(event, data);
+
+            const form = document.querySelector('[data-cy="contact-form"]');
+            form.addEventListener('submit', () => {
+                track('formulaire-envoye', { page: 'vitrine', formule: form.elements.formule.value });
+            });
+
+            if ('IntersectionObserver' in window) {
+                const vues = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        track('section-vue', { section: entry.target.dataset.trackView });
+                        obs.unobserve(entry.target);
+                    });
+                }, { threshold: 0.3 });
+                document.querySelectorAll('[data-track-view]').forEach(el => vues.observe(el));
+            }
+
             /* ---------------------------------------------------------------
                Menu mobile
                --------------------------------------------------------------- */

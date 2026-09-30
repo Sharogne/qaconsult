@@ -46,6 +46,7 @@ Ce dépôt remplit trois fonctions :
 | Pattern | Page Objects + `data-cy` |
 | Typage | TypeScript |
 | Formulaire contact | [FormSubmit.co](https://formsubmit.co/) |
+| Mesure d'audience | [Umami](https://umami.is/) (sans cookie) |
 | Hébergement | GitHub Pages (domaine `chignaguet.fr`) |
 
 ---
@@ -117,6 +118,37 @@ qaconsult/
 ## Modifier les textes
 
 Le site tient dans deux fichiers : `index.html` pour la vitrine, `cv/index.html` pour le CV. Pour changer une phrase, un poste ou une date sans toucher au reste : **[CONTENU.md](CONTENU.md)** dit où chercher et quels sont les sept pièges (textes en double écran/impression, compteurs pilotés par attribut, `data-cy` à ne pas supprimer).
+
+---
+
+## Mesure d'audience (Umami)
+
+Le script Umami est injecté par `vite.config.ts` **au build uniquement**, et seulement si la variable `UMAMI_WEBSITE_ID` est définie. En dev et pendant les tests Cypress, rien n'est chargé ; `data-domains` limite de plus le suivi à `chignaguet.fr`.
+
+**Mise en route** : créer le site dans Umami, puis dans GitHub → *Settings → Secrets and variables → Actions → Variables* :
+
+| Variable | Rôle |
+|---|---|
+| `UMAMI_WEBSITE_ID` | Identifiant du site dans Umami (obligatoire pour activer la mesure) |
+| `UMAMI_SCRIPT_URL` | URL du script, si Umami est auto-hébergé (défaut : `https://cloud.umami.is/script.js`) |
+
+**Événements suivis** — les clics passent par des attributs `data-umami-event` dans le HTML, le reste par `window.umami?.track()` dans le script de chaque page :
+
+| Événement | Page | Propriétés | Ce que ça mesure |
+|---|---|---|---|
+| `cta-devis` | vitrine | `emplacement` (menu, hero, tarifs), `formule` | Intention de devis, et quel bouton convertit |
+| `voir-tarifs` | vitrine | `emplacement` | Intérêt pour les prix depuis le hero |
+| `formulaire-envoye` | vitrine, CV | `page`, `formule` (vitrine) | Conversion : formulaire valide envoyé |
+| `clic-email` | vitrine, CV | — | Contact direct par email |
+| `section-vue` | vitrine, CV | `section` | Entonnoir de lecture (réalisations → tarifs → contact ; parcours → projets → contact) |
+| `vers-cv` / `vers-vitrine` | vitrine / CV | `emplacement` | Passage d'une page à l'autre |
+| `cta-contact` | CV | `emplacement` | Intention de contact recruteur |
+| `cv-imprime` | CV | `declencheur` (bouton, navigateur) | Téléchargement du CV en PDF |
+| `lien-externe` | vitrine, CV | `cible` (linkedin, github), `emplacement` | Sorties vers les profils |
+| `lien-realisation` | vitrine, CV | `projet` | Clics vers les sites réalisés |
+| `lien-reference` | CV | `cible` | Clics vers les jeux et projets cités au parcours |
+
+Les noms de propriétés ajoutés ici doivent rester cohérents avec ce tableau : ce sont eux qu'on filtre dans le tableau de bord Umami. Les mentions légales décrivent cette mesure ; les mettre à jour si le périmètre change.
 
 ---
 

@@ -37,8 +37,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Sans cette variable (Settings → Secrets and variables → Actions →
+      # Variables), le build sort sans Umami : rien ne casse, rien n'est mesuré.
       - name: Build
         run: npm run build
+        env:
+          UMAMI_WEBSITE_ID: ${{ vars.UMAMI_WEBSITE_ID }}
+          UMAMI_SCRIPT_URL: ${{ vars.UMAMI_SCRIPT_URL }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
